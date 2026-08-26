@@ -69,6 +69,29 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="it">
+      <head>
+        {/*
+          Inter e' l'unica famiglia usata dal tema: senza precaricarla il
+          browser la scopre solo dopo aver scaricato e interpretato il CSS, e
+          il testo resta invisibile (font-display: block) per tutto quel tempo.
+          Le altre @font-face dichiarate nel tema non vengono mai richieste,
+          perche' nessuna regola le usa.
+        */}
+        <link
+          rel="preload"
+          href="/assets/font/Inter-Regular.ttf"
+          as="font"
+          type="font/ttf"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/assets/font/Inter-Medium.ttf"
+          as="font"
+          type="font/ttf"
+          crossOrigin="anonymous"
+        />
+      </head>
       <body className="header-fixed main home1">
         <RestaurantJsonLd />
         <Preloader />
