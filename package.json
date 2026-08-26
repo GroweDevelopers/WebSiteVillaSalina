@@ -7,7 +7,7 @@
   "license": "UNLICENSED",
   "scripts": {
     "dev": "node scripts/optimize-images.mjs && next dev",
-    "build": "node scripts/optimize-images.mjs && next build && node scripts/prune-export.mjs",
+    "build": "node scripts/optimize-images.mjs && next build && node scripts/flatten-rsc-paths.mjs && node scripts/prune-export.mjs",
     "start": "next start",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
@@ -17,7 +17,8 @@
     "check": "npm run lint && npm run typecheck && npm run build",
     "images": "node scripts/optimize-images.mjs",
     "images:force": "node scripts/optimize-images.mjs --force",
-    "prune": "node scripts/prune-export.mjs"
+    "prune": "node scripts/prune-export.mjs",
+    "flatten": "node scripts/flatten-rsc-paths.mjs"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "6.4.2",
