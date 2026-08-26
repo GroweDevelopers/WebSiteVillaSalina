@@ -12,10 +12,10 @@ schermo — ma pesa un terzo, non usa più jQuery, ha metadati e dati strutturat
 
 |                                        |        prima |    dopo |        |
 | -------------------------------------- | -----------: | ------: | ------ |
-| home                                   |      6,36 MB | 2,14 MB | −66 %  |
-| storia                                 |      4,55 MB | 2,19 MB | −52 %  |
-| gallery                                |     10,25 MB | 2,84 MB | −72 %  |
-| contatti                               |      6,09 MB | 3,65 MB | −40 %  |
+| home                                   |      6,36 MB | 3,35 MB | −47 %  |
+| storia                                 |      4,55 MB | 2,49 MB | −45 %  |
+| gallery                                |     10,25 MB | 3,83 MB | −63 %  |
+| contatti                               |      6,09 MB | 4,38 MB | −28 %  |
 | font per pagina                        |       864 KB |  456 KB | −47 %  |
 | CSS per pagina                         |       588 KB |  463 KB | −21 %  |
 | JavaScript di terze parti              |       1,3 MB |       0 | −100 % |
@@ -86,7 +86,9 @@ Stessa storia per `bootstrap.css`, anch'esso ritoccato a mano in un punto solo s
 
 - Portate solo le 74 effettivamente usate, su 233 (le altre erano demo del tema)
 - Ognuna dichiara `width` e `height`, così la pagina non sobbalza mentre arrivano
-- Le fotografie passano da `next/image`, che le converte in AVIF e WebP e le ridimensiona
+- Le fotografie passano da `next/image`, che le converte in **WebP a qualita' 95** e le
+  ridimensiona. Niente AVIF: l'encoder di sharp cancella le texture fini, e non basta alzare la
+  qualita' (vedi `src/lib/image.ts`)
 - I font sono in WOFF2: 916 KB diventano 316 KB
 
 ### 5. SEO e accessibilità

@@ -8,8 +8,8 @@ verificata automaticamente, pagina per pagina e viewport per viewport
 
 |                           | prima (ASP.NET) | dopo (Next.js) |
 | ------------------------- | --------------: | -------------: |
-| peso della home           |         6,36 MB |    **2,14 MB** |
-| peso della gallery        |        10,25 MB |    **2,84 MB** |
+| peso della home           |         6,36 MB |    **3,35 MB** |
+| peso della gallery        |        10,25 MB |    **3,83 MB** |
 | problemi di accessibilità |              95 |         **29** |
 | repository                |           89 MB |      **17 MB** |
 | jQuery e plugin           |          1,3 MB |          **0** |
@@ -95,8 +95,7 @@ la pagina sobbalza mentre le immagini arrivano.
 
 ## Requisiti di pubblicazione
 
-Il sito usa `next/image`, che converte le fotografie in AVIF e WebP **al momento della
-richiesta**. Serve quindi un ambiente che esegua Node: `next start`, un container, Vercel,
+Il sito usa `next/image`, che converte le fotografie in **WebP** **al momento della richiesta**. Serve quindi un ambiente che esegua Node: `next start`, un container, Vercel,
 Netlify o simili.
 
 Se in futuro servisse un'esportazione puramente statica (`output: 'export'`), va aggiunto in

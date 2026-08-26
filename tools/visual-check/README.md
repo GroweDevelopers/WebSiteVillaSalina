@@ -106,5 +106,7 @@ ricampionamento delle fotografie, impercettibile a occhio.
 | `stats.mjs a.png b.png x y w h` | scarto medio e massimo per canale in una regione |
 | `npm run swiper` | posizione e contenuto di ogni slide dei caroselli, sui due siti |
 | `npm run images` | risoluzione reale servita per ogni immagine, sui due siti |
+| `npm run fedelta` | quanto i pixel mostrati si discostano dall'originale lossless (PSNR) |
+| `npm run zoom` | affianca i formati ingranditi 4x: e' cosi' che si e' visto il difetto dell'AVIF |
 | `npm run perf` | peso e numero di richieste per pagina |
 | `npm run a11y` | audit di accessibilita' con axe |
