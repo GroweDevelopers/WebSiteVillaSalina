@@ -13,8 +13,8 @@ export const qualities: Quality[] = [
     icon: '/assets/images/icon/ospitalita.svg',
     title: "PASSIONE PER L'OSPITALITÀ",
     text:
-      'Accogliamo i nostri clienti con calore e cortesia, creando un’atmosfera familiare dove ogni ' +
-      'momento diventa un’esperienza indimenticabile.',
+      "Accogliamo i nostri clienti con calore e cortesia, creando un'atmosfera familiare dove ogni " +
+      "momento diventa un'esperienza indimenticabile.",
   },
   {
     icon: '/assets/images/icon/innovazione.svg',

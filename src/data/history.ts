@@ -59,7 +59,7 @@ export const historySteps: HistoryStep[] = [
     title: 'Inaugurazione: Un Evento Indimenticabile',
     text:
       'Nel 2020, Villa Salina apre le sue porte con una cerimonia sontuosa, accogliendo ospiti e ' +
-      'autorità locali in un’atmosfera di festa e raffinatezza.',
+      "autorità locali in un'atmosfera di festa e raffinatezza.",
     image: {
       src: '/assets/images/storia/pastona.png',
       width: 501,
