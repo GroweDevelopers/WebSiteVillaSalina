@@ -592,13 +592,13 @@
     }
 
     .s-menu {
+        padding: 134px 0 138px;
+        background: #fff;
         .container {
             max-width: 1655px;
 
         }
 
-        padding: 134px 0 138px;
-        background: #fff;
 
         .flat-tabs {
             margin-top: 0;
@@ -908,6 +908,8 @@
             flex-direction: column;
             align-items: center;
 
+            padding: 214px 102px 102px;
+            @include transition3;
             .block-text {
                 img {
                     margin-bottom: 27px;
@@ -933,8 +935,6 @@
                     margin-bottom: 11px;
                 }
             }
-            padding: 214px 102px 102px;
-            @include transition3;
             &.t1 {
                 .block-text {
                     .text {
@@ -1004,11 +1004,11 @@
             .book-content {
                 padding: 128px 102px 139px;
 
+                background: $color-main;
                 &::before {
                     display: none;
                 }
 
-                background: $color-main;
             }
         }
     }
@@ -4679,6 +4679,7 @@ form.s2 {
             }
 
             .widget {
+                margin-bottom: 49px;
                 form.s1 {
                     margin-top: 43px;
                     input {
@@ -4702,7 +4703,6 @@ form.s2 {
                         }
                     }
                 }
-                margin-bottom: 49px;
                 .heading-top {
                     background: $color-main;
                     padding: 20px 30px;
@@ -4726,11 +4726,11 @@ form.s2 {
                             margin-bottom: 19px;
                             position: relative;
 
+                            @include transition3;
                             &:last-child {
                                 margin-bottom: 0
                             }
 
-                            @include transition3;
 
                             &::before {
                                 content: '';
@@ -4772,13 +4772,13 @@ form.s2 {
                                 padding-bottom: 23px;
                                 padding-right: 10px;
 
+                                display: flex;
                                 &:last-child {
                                     margin-bottom: 0;
                                     border: none;
                                     padding-bottom: 0;
                                 }
 
-                                display: flex;
 
                                 .img {
                                     width: 76px;

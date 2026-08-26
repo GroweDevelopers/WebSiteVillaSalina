@@ -105,10 +105,10 @@
                 padding-left: 0 !important;
                 padding-right: 0 !important;
                 .img {
+                    width: 100% !important;
                     &:last-child {
                         display: none;
                     }
-                    width: 100% !important;
                     img {
                         object-fit: cover;
                     }
@@ -756,10 +756,10 @@
     }
 
     .choose {
+        padding: 80px 0;
         .shape {
             display: none;
         }
-        padding: 80px 0;
         .choose-content {
             padding-top: 0;
         } 
