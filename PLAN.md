@@ -129,16 +129,16 @@ Legenda stato: `[ ]` da fare · `[x]` fatto e committato
 - [x] 1.9 `src/app/layout.tsx` minimale che compila
 - [x] 1.10 `src/app/page.tsx` placeholder — primo `next build` verde
 
-### FASE 2 — Migrazione asset statici
+### FASE 2 — Migrazione asset statici ✅
 
-- [ ] 2.1 Copia `wwwroot/assets/images/**` → `public/assets/images/**`
-- [ ] 2.2 Copia font Audrey (6 file `.otf`) → `public/assets/font/`
-- [ ] 2.3 Copia font Cerebri Sans (14 file `.ttf`) → `public/assets/font/`
-- [ ] 2.4 Copia font Inter (2 file `.ttf`) → `public/assets/font/`
-- [ ] 2.5 Font Awesome 6.4.2 dal pacchetto npm `@fortawesome/fontawesome-free` (scarta 28 MB di js/less/scss/svgs/sprites/metadata)
-- [ ] 2.6 Rimozione asset non referenziati (`assets/font/icon` FA5, `fontawesome-free` legacy)
-- [ ] 2.7 `favicon.ico` + icone da `assets/images/favicon.png`
-- [ ] 2.8 Report `docs/ASSET-AUDIT.md` (cosa è stato portato, cosa scartato e perché)
+- [x] 2.1 Copia `wwwroot/assets/images/**` → `public/assets/images/**`
+- [x] 2.2 Copia font Audrey (6 file `.otf`) → `public/assets/font/`
+- [x] 2.3 Copia font Cerebri Sans (14 file `.ttf`) → `public/assets/font/`
+- [x] 2.4 Copia font Inter (2 file `.ttf`) → `public/assets/font/`
+- [x] 2.5 Font Awesome 6.4.2 dal pacchetto npm `@fortawesome/fontawesome-free` (scarta 28 MB di js/less/scss/svgs/sprites/metadata)
+- [x] 2.6 Rimozione asset non referenziati (`assets/font/icon` FA5, `fontawesome-free` legacy)
+- [x] 2.7 `favicon.ico` + icone da `assets/images/favicon.png`
+- [x] 2.8 Report `docs/ASSET-AUDIT.md` (cosa è stato portato, cosa scartato e perché)
 
 ### FASE 3 — Migrazione stili
 
