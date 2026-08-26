@@ -1,8 +1,8 @@
 name: CI
 
+# Sulle push a main ci pensa deploy.yml, che builda comunque: qui si
+# controllano solo le pull request, per non fare due volte lo stesso lavoro.
 on:
-  push:
-    branches: [main]
   pull_request:
     branches: [main]
 

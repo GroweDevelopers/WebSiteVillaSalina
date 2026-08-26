@@ -1,0 +1,75 @@
+name: Pubblica su GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  # permette di ripubblicare a mano dalla tab Actions
+  workflow_dispatch:
+
+# il token deve poter scrivere su Pages e firmare il deploy
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# un deploy alla volta; le push successive non annullano quello in corso
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Build dell'export statico
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Scarica il codice
+        uses: actions/checkout@v4
+
+      - name: Prepara Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Installa le dipendenze
+        run: npm ci
+
+      - name: Configura Pages
+        uses: actions/configure-pages@v5
+
+      # `npm run build` converte le immagini, genera l'export e pota gli asset
+      # che nessuno scarica. Se un asset richiesto manca, la potatura fallisce
+      # e il deploy non parte.
+      - name: Build
+        run: npm run build
+
+      - name: Controlla che l'export sia completo
+        run: |
+          for f in index.html storia/index.html gallery/index.html \
+                   contatti/index.html prenotazioni/index.html \
+                   404.html sitemap.xml robots.txt CNAME .nojekyll; do
+            if [ ! -e "out/$f" ]; then
+              echo "::error::manca out/$f"
+              exit 1
+            fi
+          done
+          echo "Export completo: $(du -sh out | cut -f1)"
+
+      - name: Carica l'artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: out
+
+  deploy:
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Pubblica su Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
