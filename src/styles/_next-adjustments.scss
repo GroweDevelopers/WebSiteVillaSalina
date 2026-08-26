@@ -52,3 +52,12 @@ h1.title {
         font-size: 28px;
     }
 }
+
+/* Telefono e email nella pagina contatti erano testo semplice: ora sono link,
+   per poter chiamare o scrivere con un tocco da telefono. La regola del tema
+   '.location .content a { margin-top: 36px }' era pensata per il pulsante
+   Google Maps e li spingerebbe in basso. */
+.location .content .phone a,
+.location .content p a {
+    margin-top: 0;
+}
