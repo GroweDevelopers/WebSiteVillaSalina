@@ -103,18 +103,18 @@ sorgente SCSS**, non perse.
 
 Legenda stato: `[ ]` da fare · `[x]` fatto e committato
 
-### FASE 0 — Setup repository, piano e memoria
+### FASE 0 — Setup repository, piano e memoria ✅
 
-- [ ] 0.1 Creare cartella progetto di destinazione
-- [ ] 0.2 `git init` + branch `main` + config autore locale (Singh-Growe)
-- [ ] 0.3 Collegare remote `origin` a GroweDevelopers/WebSiteVillaSalina
-- [ ] 0.4 `.gitignore` per Next.js
-- [ ] 0.5 `PLAN.md` (questo file)
-- [ ] 0.6 `docs/ANALISI-PROGETTO-ORIGINALE.md` — inventario completo dell'originale
-- [ ] 0.7 `docs/CONVENZIONI-COMMIT.md` — regola commit + autore
-- [ ] 0.8 `CLAUDE.md` — istruzioni permanenti per il repo
-- [ ] 0.9 Scrittura in memoria Claude (regola commit + contesto progetto)
-- [ ] 0.10 Verifica assenza di commit `Co-Authored-By: Claude` nella storia esistente
+- [x] 0.1 Creare cartella progetto di destinazione
+- [x] 0.2 `git init` + branch `main` + config autore locale (Singh-Growe)
+- [x] 0.3 Collegare remote `origin` a GroweDevelopers/WebSiteVillaSalina
+- [x] 0.4 `.gitignore` per Next.js
+- [x] 0.5 `PLAN.md` (questo file)
+- [x] 0.6 `docs/ANALISI-PROGETTO-ORIGINALE.md` — inventario completo dell'originale
+- [x] 0.7 `docs/CONVENZIONI-COMMIT.md` — regola commit + autore
+- [x] 0.8 `CLAUDE.md` — istruzioni permanenti per il repo
+- [x] 0.9 Scrittura in memoria Claude (regola commit + contesto progetto)
+- [x] 0.10 Verifica assenza di commit `Co-Authored-By: Claude` nella storia esistente
 
 ### FASE 1 — Scaffolding Next.js
 
