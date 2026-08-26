@@ -1,0 +1,19 @@
+{
+  "name": "villa-salina-visual-check",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Confronto automatico fra il sito Next.js e il sito ASP.NET originale",
+  "scripts": {
+    "setup": "npm install && npx playwright install chromium",
+    "shots": "node compare.mjs ./shots",
+    "pixels": "node pixdiff.mjs ./shots",
+    "text": "node text.mjs",
+    "sections": "node measure.mjs / 1920"
+  },
+  "dependencies": {
+    "pixelmatch": "^7.1.0",
+    "playwright": "^1.62.1",
+    "pngjs": "^7.0.0"
+  }
+}

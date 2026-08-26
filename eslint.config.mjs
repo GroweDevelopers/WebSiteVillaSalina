@@ -5,7 +5,16 @@ import prettier from 'eslint-config-prettier'
 /** @type {import('eslint').Linter.Config[]} */
 const eslintConfig = [
   {
-    ignores: ['.next/**', 'out/**', 'build/**', 'node_modules/**', 'next-env.d.ts', 'public/**'],
+    ignores: [
+      '.next/**',
+      'out/**',
+      'build/**',
+      'node_modules/**',
+      'next-env.d.ts',
+      'public/**',
+      // script di confronto con il sito originale, con le proprie dipendenze
+      'tools/**',
+    ],
   },
   ...nextCoreWebVitals,
   ...nextTypescript,

@@ -6,3 +6,6 @@ public
 package-lock.json
 # SCSS portato dall'originale: non riformattare, serve il diff con dist/app.css
 src/styles/**/*.scss
+
+# script di confronto con il sito originale
+tools
