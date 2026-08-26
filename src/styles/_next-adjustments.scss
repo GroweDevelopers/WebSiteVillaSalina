@@ -61,3 +61,13 @@ h1.title {
 .location .content p a {
     margin-top: 0;
 }
+
+/* Anche bootstrap.css era stato modificato a mano nel progetto ASP.NET: e'
+   l'unica differenza in 11.265 righe rispetto al pacchetto ufficiale 5.1.3.
+   Le colonne avevano 15 px di padding invece dei 12 px del gutter standard,
+   mentre i margini negativi di .row erano rimasti quelli di serie. Va
+   riprodotto cosi' com'e', o tutte le colonne si allargano di 6 px. */
+.row > * {
+    padding-right: 15px;
+    padding-left: 15px;
+}
