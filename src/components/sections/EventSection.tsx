@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import { bookingHref } from '@/data/navigation'
 import { eventHighlights } from '@/data/qualities'
@@ -11,13 +12,12 @@ export function EventSection() {
         <div className="row">
           <div className="col-xl-5 col-md-12">
             <div className="event-image" data-aos-duration="1000" data-aos="fade-right">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              <Image
                 src="/assets/images/my/bicchiere.png"
                 alt="Calice di vino servito a Villa Salina"
                 width={501}
                 height={609}
-                loading="lazy"
+                sizes="(max-width: 1199px) 100vw, 30vw"
               />
             </div>
           </div>
@@ -74,13 +74,12 @@ export function EventSection() {
 
           <div className="col-xl-5 col-md-12">
             <div className="event-image style-2" data-aos-duration="1000" data-aos="fade-left">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              <Image
                 src="/assets/images/my/villa.jpg"
                 alt="Villa Salina vista dal giardino"
                 width={1140}
                 height={855}
-                loading="lazy"
+                sizes="(max-width: 1199px) 100vw, 30vw"
               />
             </div>
           </div>

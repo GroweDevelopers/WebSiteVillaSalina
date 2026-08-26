@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { historySteps } from '@/data/history'
 
 /** Timeline delle sei tappe della storia di Villa Salina. */
@@ -24,13 +25,12 @@ export function HistoryTimeline() {
                       data-aos-duration="1000"
                       data-aos={isMirrored ? 'fade-left' : 'fade-right'}
                     >
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
+                      <Image
                         src={step.image.src}
                         alt={step.image.alt}
                         width={step.image.width}
                         height={step.image.height}
-                        loading="lazy"
+                        sizes="(max-width: 991px) 100vw, 45vw"
                       />
                     </div>
                     <div className="content">

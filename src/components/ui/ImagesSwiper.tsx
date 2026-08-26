@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import type { ImageRef } from '@/types'
 
@@ -28,13 +29,12 @@ export function ImagesSwiper({ images, className }: ImagesSwiperProps) {
     >
       {images.map((image) => (
         <SwiperSlide key={image.src}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+          <Image
             src={image.src}
             alt={image.alt}
             width={image.width}
             height={image.height}
-            loading="lazy"
+            sizes="(max-width: 767px) 100vw, (max-width: 990px) 66vw, 42vw"
             style={{ width: '100%', height: 459, objectFit: 'cover' }}
           />
         </SwiperSlide>

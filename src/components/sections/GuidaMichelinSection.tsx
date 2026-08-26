@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { site } from '@/data/site'
 
 /** Blocco dedicato alla menzione nella guida Michelin. */
@@ -9,13 +10,12 @@ export function GuidaMichelinSection() {
           <div className="col-md-6 col-sm-12 mt-5">
             <div className="testimonials-main">
               <div className="testimonials-img">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src="/assets/images/my/bagna3.png"
                   alt="Bagna cauda servita a Villa Salina"
                   width={878}
                   height={625}
-                  loading="lazy"
+                  sizes="(max-width: 767px) 100vw, 46vw"
                 />
               </div>
             </div>

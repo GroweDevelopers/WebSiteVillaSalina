@@ -1,3 +1,4 @@
+import Image from 'next/image'
 /** Introduzione della pagina Storia: chi siamo e da dove viene il nome. */
 export function AboutStoriaSection() {
   return (
@@ -37,13 +38,12 @@ export function AboutStoriaSection() {
                 data-aos="fade-left"
                 style={{ maxWidth: 676 }}
               >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src="/assets/images/my/villa.jpg"
                   alt="Villa Salina vista dall'esterno"
                   width={1140}
                   height={855}
-                  loading="lazy"
+                  sizes="(max-width: 767px) 100vw, 40vw"
                 />
               </div>
             </div>

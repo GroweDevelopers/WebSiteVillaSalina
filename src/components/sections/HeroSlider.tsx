@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
 import { Navigation, Pagination } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
@@ -41,13 +42,13 @@ export function HeroSlider({ image, title, subtitle, action }: HeroSliderProps) 
     >
       <SwiperSlide>
         <div className="overlay">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+          <Image
             src={image.src}
             alt={image.alt}
             width={image.width}
             height={image.height}
-            fetchPriority="high"
+            sizes="100vw"
+            priority
           />
         </div>
         <div className="container">

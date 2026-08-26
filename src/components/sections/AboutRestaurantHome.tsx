@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 
 /**
@@ -14,13 +15,12 @@ export function AboutRestaurantHome() {
           <div className="col-md-12">
             <div className="about-restaurant-main">
               <div className="image left" data-aos-duration="1000" data-aos="fade-right">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src="/assets/images/my/palazzo.png"
                   alt="La facciata storica di Villa Salina"
                   width={722}
                   height={722}
-                  loading="lazy"
+                  sizes="(max-width: 991px) 100vw, 25vw"
                 />
               </div>
 
@@ -54,13 +54,12 @@ export function AboutRestaurantHome() {
                 data-aos-duration="1000"
                 data-aos="fade-left"
               >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src="/assets/images/my/scale.png"
                   alt="Lo scalone interno di Villa Salina"
                   width={1000}
                   height={1000}
-                  loading="lazy"
+                  sizes="(max-width: 991px) 100vw, 25vw"
                 />
               </div>
             </div>

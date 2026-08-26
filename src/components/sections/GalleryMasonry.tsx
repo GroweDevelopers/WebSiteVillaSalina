@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { galleryDishes } from '@/data/gallery'
 import type { ImageRef } from '@/types'
 
@@ -5,13 +6,12 @@ function PortfolioBox({ image, className }: { image: ImageRef; className?: strin
   return (
     <div className={['portfolio-box-2', className].filter(Boolean).join(' ')}>
       <div className="image">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
+        <Image
           src={image.src}
           alt={image.alt}
           width={image.width}
           height={image.height}
-          loading="lazy"
+          sizes="(max-width: 767px) 100vw, (max-width: 1199px) 50vw, 40vw"
         />
       </div>
     </div>

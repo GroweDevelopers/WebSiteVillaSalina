@@ -1,16 +1,16 @@
+import Image from 'next/image'
 import { restorationGallery } from '@/data/history'
 import type { ImageRef } from '@/types'
 
 function IgBox({ image }: { image: ImageRef }) {
   return (
     <div className="ig-box">
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
+      <Image
         src={image.src}
         alt={image.alt}
         width={image.width}
         height={image.height}
-        loading="lazy"
+        sizes="(max-width: 991px) 100vw, 33vw"
       />
     </div>
   )

@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import { site } from '@/data/site'
 
@@ -39,13 +40,12 @@ export function ChefSection() {
 
               <div className="chef-box col-12 col-lg-6">
                 <div className="img" data-aos-duration="1000" data-aos="fade-left">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
+                  <Image
                     src="/assets/images/my/propietario.jpg"
                     alt={`Lo chef ${site.chef} nel ristorante ${site.name}`}
                     width={1066}
                     height={1066}
-                    loading="lazy"
+                    sizes="(max-width: 991px) 100vw, 45vw"
                     style={{ objectPosition: 'center' }}
                   />
                 </div>
