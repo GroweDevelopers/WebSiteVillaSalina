@@ -11,8 +11,10 @@ import { heroImage, heroSubtitle } from '@/data/hero'
 
 export const metadata: Metadata = {
   // Nell'originale il titolo era "Home Page - Villa Salina": sostituito con
-  // uno che dice davvero di cosa si tratta.
-  title: 'Ristorante a Moretta (CN)',
+  // uno che dice davvero di cosa si tratta. Va scritto per intero perche' il
+  // template definito nel layout radice non si applica alla pagina che sta
+  // nello stesso segmento.
+  title: 'Villa Salina - Ristorante a Moretta (CN)',
   description:
     'Villa Salina, ristorante con menzione nella guida Michelin a Moretta, in provincia di Cuneo. ' +
     'Cucina piemontese dello chef Ivo Druetta in una villa dell’Ottocento restaurata.',
