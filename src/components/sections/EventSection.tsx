@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { bookingHref } from '@/data/navigation'
 import { eventHighlights } from '@/data/qualities'
+import { IMAGE_SIZES } from '@/lib/imageSizes'
 
 /** I due blocchi alternati su eventi e restauro, nella home. */
 export function EventSection() {
@@ -17,7 +18,7 @@ export function EventSection() {
                 alt="Calice di vino servito a Villa Salina"
                 width={501}
                 height={609}
-                sizes="(max-width: 1199px) 100vw, 30vw"
+                sizes={IMAGE_SIZES}
               />
             </div>
           </div>
@@ -79,7 +80,7 @@ export function EventSection() {
                 alt="Villa Salina vista dal giardino"
                 width={1140}
                 height={855}
-                sizes="(max-width: 1199px) 100vw, 30vw"
+                sizes={IMAGE_SIZES}
               />
             </div>
           </div>

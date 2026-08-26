@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { site } from '@/data/site'
+import { IMAGE_SIZES } from '@/lib/imageSizes'
 
 /** Blocco dedicato alla menzione nella guida Michelin. */
 export function GuidaMichelinSection() {
@@ -15,7 +16,7 @@ export function GuidaMichelinSection() {
                   alt="Bagna cauda servita a Villa Salina"
                   width={878}
                   height={625}
-                  sizes="(max-width: 767px) 100vw, 46vw"
+                  sizes={IMAGE_SIZES}
                 />
               </div>
             </div>

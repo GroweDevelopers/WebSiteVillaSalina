@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import type { ImageRef } from '@/types'
+import { IMAGE_SIZES } from '@/lib/imageSizes'
 
 type ImagesSwiperProps = {
   images: ImageRef[]
@@ -34,7 +35,7 @@ export function ImagesSwiper({ images, className }: ImagesSwiperProps) {
             alt={image.alt}
             width={image.width}
             height={image.height}
-            sizes="(max-width: 767px) 100vw, (max-width: 990px) 66vw, 42vw"
+            sizes={IMAGE_SIZES}
             style={{ width: '100%', height: 459, objectFit: 'cover' }}
           />
         </SwiperSlide>

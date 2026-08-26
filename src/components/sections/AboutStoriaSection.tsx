@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { IMAGE_SIZES } from '@/lib/imageSizes'
 /** Introduzione della pagina Storia: chi siamo e da dove viene il nome. */
 export function AboutStoriaSection() {
   return (
@@ -43,7 +44,7 @@ export function AboutStoriaSection() {
                   alt="Villa Salina vista dall'esterno"
                   width={1140}
                   height={855}
-                  sizes="(max-width: 767px) 100vw, 40vw"
+                  sizes={IMAGE_SIZES}
                 />
               </div>
             </div>

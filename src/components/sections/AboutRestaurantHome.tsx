@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { IMAGE_SIZES } from '@/lib/imageSizes'
 
 /**
  * Blocco "Un Passato di Tradizione e Eccellenza" della home.
@@ -20,7 +21,7 @@ export function AboutRestaurantHome() {
                   alt="La facciata storica di Villa Salina"
                   width={722}
                   height={722}
-                  sizes="(max-width: 991px) 100vw, 25vw"
+                  sizes={IMAGE_SIZES}
                 />
               </div>
 
@@ -59,7 +60,7 @@ export function AboutRestaurantHome() {
                   alt="Lo scalone interno di Villa Salina"
                   width={1000}
                   height={1000}
-                  sizes="(max-width: 991px) 100vw, 25vw"
+                  sizes={IMAGE_SIZES}
                 />
               </div>
             </div>

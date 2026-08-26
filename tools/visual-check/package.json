@@ -11,7 +11,10 @@
     "text": "node text.mjs",
     "sections": "node measure.mjs / 1920",
     "a11y": "node a11y.mjs http://localhost:4310",
-    "a11y:old": "node a11y.mjs http://localhost:4320"
+    "a11y:old": "node a11y.mjs http://localhost:4320",
+    "images": "node imgquality.mjs",
+    "widths": "node imgwidths.mjs",
+    "perf": "node perf.mjs"
   },
   "dependencies": {
     "pixelmatch": "^7.1.0",

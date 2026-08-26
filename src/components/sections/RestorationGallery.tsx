@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { restorationGallery } from '@/data/history'
 import type { ImageRef } from '@/types'
+import { IMAGE_SIZES } from '@/lib/imageSizes'
 
 function IgBox({ image }: { image: ImageRef }) {
   return (
@@ -10,7 +11,7 @@ function IgBox({ image }: { image: ImageRef }) {
         alt={image.alt}
         width={image.width}
         height={image.height}
-        sizes="(max-width: 991px) 100vw, 33vw"
+        sizes={IMAGE_SIZES}
       />
     </div>
   )
