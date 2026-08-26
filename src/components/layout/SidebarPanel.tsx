@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react'
 import { site } from '@/data/site'
+import { asset } from '@/lib/basePath'
 
 /**
  * Pannello laterale con i contatti, aperto dal pulsante a tre righe.
@@ -49,7 +50,7 @@ export function SidebarPanel() {
 
       <div id="sidebar-content" className={`sidebar-content${isOpen ? ' active' : ''}`}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img className="mb-50" src="/assets/images/logogold.svg" alt={site.name} />
+        <img className="mb-50" src={asset('/assets/images/logogold.svg')} alt={site.name} />
         <p className="mb-46">{site.description}</p>
         <h4 className="mb-11">{site.phone.short}</h4>
         <p className="mb-5p">{site.address.short}</p>

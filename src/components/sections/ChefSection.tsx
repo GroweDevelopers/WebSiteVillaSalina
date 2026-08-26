@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { site } from '@/data/site'
 import { IMAGE_SIZES } from '@/lib/image'
+import { asset } from '@/lib/basePath'
 
 /** Presentazione dello chef, con ritratto e rimando alla pagina Storia. */
 export function ChefSection() {
@@ -14,7 +15,7 @@ export function ChefSection() {
               <div className="block-text center style-2 col-12 col-lg-6">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="/assets/images/icon/chef.png"
+                  src={asset('/assets/images/icon/chef.png')}
                   alt=""
                   aria-hidden="true"
                   width={69}

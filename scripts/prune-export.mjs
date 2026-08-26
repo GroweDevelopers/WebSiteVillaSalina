@@ -26,6 +26,13 @@ const OUT = path.join(ROOT, 'out')
 const ASSETS = path.join(OUT, 'assets')
 const DRY = process.argv.includes('--dry')
 
+/**
+ * Quando il sito sta in una sottocartella i riferimenti sono
+ * `/WebSiteVillaSalina/assets/...`: va tolto il prefisso prima di confrontarli
+ * con i file, che stanno comunque sotto `out/assets`.
+ */
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
+
 /** Estensioni dei file generati in cui cercare i riferimenti. */
 const TESTUALI = new Set(['.html', '.css', '.js', '.mjs', '.json', '.txt', '.xml', '.map'])
 
@@ -62,8 +69,9 @@ function raccogli(testo, dentro) {
     for (const m of testo.matchAll(re)) {
       const valori = lista ? m[1].split(',').map((p) => p.trim().split(/\s+/)[0]) : [m[1]]
       for (const v of valori) {
-        if (!v?.startsWith('/assets/')) continue
-        const rel = decodeURIComponent(v.split('?')[0]).replace(/^\/assets\//, '')
+        const senzaBase = BASE_PATH && v?.startsWith(BASE_PATH) ? v.slice(BASE_PATH.length) : v
+        if (!senzaBase?.startsWith('/assets/')) continue
+        const rel = decodeURIComponent(senzaBase.split('?')[0]).replace(/^\/assets\//, '')
         if (rel && !rel.endsWith('/')) dentro.add(rel)
       }
     }
@@ -104,6 +112,21 @@ async function svuota(dir) {
   }
 }
 if (!DRY) await svuota(ASSETS)
+
+/**
+ * Un dominio personalizzato non puo' vivere in una sottocartella: se il CNAME
+ * restasse, GitHub redirigerebbe l'anteprima verso un dominio non ancora
+ * configurato e il sito risulterebbe irraggiungibile.
+ */
+if (BASE_PATH) {
+  const cname = path.join(OUT, 'CNAME')
+  try {
+    await fs.rm(cname)
+    console.log(`CNAME rimosso: il sito e' in sottocartella (${BASE_PATH})`)
+  } catch {
+    /* non c'era */
+  }
+}
 
 const mb = (n) => (n / 1048576).toFixed(1)
 console.log(

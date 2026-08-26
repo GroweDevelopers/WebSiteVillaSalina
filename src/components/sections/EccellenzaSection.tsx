@@ -1,6 +1,7 @@
 import { ImagesSwiper } from '@/components/ui/ImagesSwiper'
 import { showcaseSliders } from '@/data/gallery'
 import { qualities } from '@/data/qualities'
+import { asset } from '@/lib/basePath'
 
 /**
  * Le tre qualita' del ristorante seguite dai due caroselli di piatti.
@@ -38,7 +39,7 @@ export function EccellenzaSection() {
               >
                 <div className="icon">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={quality.icon} alt="" aria-hidden="true" />
+                  <img src={asset(quality.icon)} alt="" aria-hidden="true" />
                 </div>
                 <div className="content">
                   <p className="mb-3 h5" style={{ color: '#0E1618', fontSize: 20 }}>

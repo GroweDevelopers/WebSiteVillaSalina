@@ -61,7 +61,7 @@
             }
         }
         .shape {
-            background: url(/assets/images/section/aboutbg.jpg);
+            background: url(#{$base-path}/assets/images/section/aboutbg.jpg);
             left: auto;
             right: 0;
             width: 399px;
@@ -1071,7 +1071,7 @@
 }
 
 .s-video {
-    background: url('/assets/images/section/video.jpg') no-repeat;
+    background: url('#{$base-path}/assets/images/section/video.jpg') no-repeat;
     background-size: cover;
     background-position: center center;
     padding: 134px 0;
@@ -1126,7 +1126,7 @@
 
 .home-2 {
     .s-video {
-        background: url('/assets/images/section/video1.jpg') no-repeat;
+        background: url('#{$base-path}/assets/images/section/video1.jpg') no-repeat;
         background-size: cover;
         background-position: center center;
     }
@@ -1134,7 +1134,7 @@
 
 .home-3 {
     .s-video {
-        background: url('/assets/images/section/video3.jpg') no-repeat;
+        background: url('#{$base-path}/assets/images/section/video3.jpg') no-repeat;
         background-position: center center;
         background-size: cover;
         position: relative;
@@ -1154,7 +1154,7 @@
 
 .home-4 {
     .s-video {
-        background: url('/assets/images/section/video3.jpg') no-repeat;
+        background: url('#{$base-path}/assets/images/section/video3.jpg') no-repeat;
         background-position: center center;
         background-size: cover;
         padding: 114px 0 113px;
@@ -1432,7 +1432,7 @@
 .home1 {
     .vouchers {
         padding-bottom: 135px;
-        background: url('/assets/images/section/voucher.jpg') no-repeat;
+        background: url('#{$base-path}/assets/images/section/voucher.jpg') no-repeat;
         background-size: cover;
 
         .container {
@@ -1667,7 +1667,7 @@
 }
 
 .booking {
-    background: url('/assets/images/my/tavolo.jpg') no-repeat;
+    background: url('#{$base-path}/assets/images/my/tavolo.jpg') no-repeat;
     background-size: cover;
     padding: 134px 0 133px;
     position: relative;
@@ -2377,7 +2377,7 @@
 
 .vouchers {
     padding: 87px 0 85px;
-    background: url(/assets/images/section/bg-gift.png) no-repeat;
+    background: url(#{$base-path}/assets/images/section/bg-gift.png) no-repeat;
     background-size: cover;
 
     .container {
@@ -2511,7 +2511,7 @@
 }
 
 .s-formmail {
-    background: url(/assets/images/my/sofa.jpg) no-repeat;
+    background: url(#{$base-path}/assets/images/my/sofa.jpg) no-repeat;
     background-position: center center;
     background-size: cover;
     position: relative;
@@ -2754,14 +2754,14 @@ form.s1 {
 
     .book-content {
         width: 50%;
-        background: url(/assets/images/section/book-01.jpg) no-repeat;
+        background: url(#{$base-path}/assets/images/section/book-01.jpg) no-repeat;
         background-size: cover;
         background-position: center center;
         position: relative;
         padding: 127px 15px 133px;
 
         &:last-child {
-            background: url(/assets/images/section/book-02.jpg) no-repeat;
+            background: url(#{$base-path}/assets/images/section/book-02.jpg) no-repeat;
             background-size: cover;
             background-position: center center;
         }
@@ -2902,7 +2902,7 @@ form.s1 {
 .page-404 {
     margin-top: 0;
     padding: 134px 0;
-    background: url(/assets/images/section/bg-404.jpg) no-repeat;
+    background: url(#{$base-path}/assets/images/section/bg-404.jpg) no-repeat;
     background-size: cover;
 
     .p404-main {
@@ -2941,7 +2941,7 @@ form.s1 {
 }
 
 .page-title {
-    background: url('/assets/images/section/bg-pagetitle.jpg') no-repeat;
+    background: url('#{$base-path}/assets/images/section/bg-pagetitle.jpg') no-repeat;
     background-size: cover;
     background-position: center center;
     position: relative;
@@ -2969,7 +2969,7 @@ form.s1 {
             display: inline-block;
             &::before {
                 position: absolute;
-                content: url(/assets/images/icon/x.png);
+                content: url(#{$base-path}/assets/images/icon/x.png);
                 z-index: 20;
                 left: -55px;
                 top: -10px;
@@ -2978,7 +2978,7 @@ form.s1 {
             }
             &::after {
                 position: absolute;
-                content: url(/assets/images/icon/x.png);
+                content: url(#{$base-path}/assets/images/icon/x.png);
                 z-index: 20;
                 right: -55px;
                 top: -10px;
@@ -3001,38 +3001,38 @@ form.s1 {
         }
     }
     &.p-careers {
-        background-image: url(/assets/images/section/bg-careers.jpg);
+        background-image: url(#{$base-path}/assets/images/section/bg-careers.jpg);
     }
     &.p-faq {
-        background-image: url(/assets/images/section/bg-faq.jpg);
+        background-image: url(#{$base-path}/assets/images/section/bg-faq.jpg);
     }
     &.p-gallery {
-        /* background-image: url(/assets/images/close-up-photo-of-fresh-basil-italian-basilico-2023-11-27-05-18-07-utc.jpg); */
-        background-image: url(/assets/images/gallery.png);
+        /* background-image: url(#{$base-path}/assets/images/close-up-photo-of-fresh-basil-italian-basilico-2023-11-27-05-18-07-utc.jpg); */
+        background-image: url(#{$base-path}/assets/images/gallery.png);
     }
     &.p-history {
-        background-image: url(/assets/images/Foto-storica-moretta.jpg);
+        background-image: url(#{$base-path}/assets/images/Foto-storica-moretta.jpg);
     }
     &.p-location {
-        background-image: url(/assets/images/section/bg-location.jpg);
+        background-image: url(#{$base-path}/assets/images/section/bg-location.jpg);
     }
     &.p-gift {
-        background-image: url(/assets/images/section/bg-gift.jpg);
+        background-image: url(#{$base-path}/assets/images/section/bg-gift.jpg);
     }
     &.p-portfolio {
-        background-image: url(/assets/images/section/bg-portfolio.jpg);
+        background-image: url(#{$base-path}/assets/images/section/bg-portfolio.jpg);
     }
     &.p-blog-full {
-        background-image: url(/assets/images/section/bg-blog-full.jpg);
+        background-image: url(#{$base-path}/assets/images/section/bg-blog-full.jpg);
     }
     &.p-contact {
-        background-image: url(/assets/images/section/bg-contact.jpg);
+        background-image: url(#{$base-path}/assets/images/section/bg-contact.jpg);
     }
 }
 
 .p-menu {
     .page-title {
-        background: url('/assets/images/section/bg-menu.jpg') no-repeat;
+        background: url('#{$base-path}/assets/images/section/bg-menu.jpg') no-repeat;
         background-size: cover;
         background-position: center 30%;
         position: relative;
@@ -3584,7 +3584,7 @@ form.s1 {
 
 .comingsoon {
 
-    background: url(/assets/images/section/comingsoon.jpg) no-repeat;
+    background: url(#{$base-path}/assets/images/section/comingsoon.jpg) no-repeat;
     background-size: cover;
     background-position: center center;
     position: relative;
@@ -3956,7 +3956,7 @@ form.s1 {
 
 .gift-vouchers {
     padding: 135px 0 144px;
-    background: url(/assets/images/section/bg-gift.png) no-repeat;
+    background: url(#{$base-path}/assets/images/section/bg-gift.png) no-repeat;
     background-size: cover;
     position: relative;
 
@@ -4129,7 +4129,7 @@ form.s1 {
     }
 
     .formmail-content {
-        background: url(/assets/images/section/s-form.jpg) no-repeat;
+        background: url(#{$base-path}/assets/images/section/s-form.jpg) no-repeat;
         background-position: center center;
         background-size: cover;
         position: relative;
@@ -4522,7 +4522,7 @@ form.s2 {
 
         .info-location {
             width: 59.7%;
-            background: url(/assets/images/section/s-form-1.jpg) no-repeat;
+            background: url(#{$base-path}/assets/images/section/s-form-1.jpg) no-repeat;
             background-size: cover;
             background-position: center center;
             padding: 547px 96px 30px 102px;
@@ -5090,7 +5090,7 @@ form.s2 {
 .chef-img {}
 
 .blog-creative {
-    background: url(/assets/images/section/video1.jpg) no-repeat;
+    background: url(#{$base-path}/assets/images/section/video1.jpg) no-repeat;
     background-size: cover;
     background-position: center center;
     padding: 134px 0 102px;

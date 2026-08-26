@@ -15,7 +15,7 @@ export const site = {
    * i dati strutturati, quindi deve combaciare esattamente con quello servito.
    * L'apex villa-salina.com viene rediretto qui da GitHub Pages.
    */
-  url: 'https://www.villa-salina.com',
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.villa-salina.com',
 
   description:
     'Entra nel nostro mondo culinario dove tradizione e raffinatezza si fondono in piatti unici. ' +

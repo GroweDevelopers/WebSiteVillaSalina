@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { site } from '@/data/site'
 import { IMAGE_SIZES } from '@/lib/image'
+import { asset } from '@/lib/basePath'
 
 /** Blocco dedicato alla menzione nella guida Michelin. */
 export function GuidaMichelinSection() {
@@ -28,7 +29,7 @@ export function GuidaMichelinSection() {
                 <div className="d-flex align-items-start">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
-                    src="/assets/images/icon/quote.png"
+                    src={asset('/assets/images/icon/quote.png')}
                     alt=""
                     aria-hidden="true"
                     width={47}

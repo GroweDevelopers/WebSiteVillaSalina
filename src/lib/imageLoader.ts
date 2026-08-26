@@ -1,4 +1,5 @@
 import manifest from './image-manifest.json'
+import { asset } from './basePath'
 
 /**
  * Loader di `next/image` per l'export statico.
@@ -42,9 +43,11 @@ const PREFISSO = '/assets/images/'
 export default function imageLoader({ src, width }: { src: string; width: number }): string {
   const chiave = src.startsWith(PREFISSO) ? src.slice(PREFISSO.length) : src
   const disponibili = varianti[chiave]
-  if (!disponibili?.length) return src
+  // Con un loader custom `basePath` non viene applicato: il prefisso va messo
+  // qui, o in sottocartella tutte le immagini rispondono 404.
+  if (!disponibili?.length) return asset(src)
 
   // la piu' piccola che copre la larghezza richiesta, altrimenti la piu' grande
   const scelta = disponibili.find(([w]) => w >= width) ?? disponibili[disponibili.length - 1]
-  return scelta ? scelta[1] : src
+  return asset(scelta ? scelta[1] : src)
 }

@@ -1,9 +1,21 @@
 import path from 'node:path'
 import type { NextConfig } from 'next'
 
+/**
+ * Sottocartella da cui il sito viene servito.
+ *
+ * Vuota per un dominio proprio (www.villa-salina.com), valorizzata per
+ * l'anteprima su growedevelopers.github.io/WebSiteVillaSalina/.
+ * Vedi src/lib/basePath.ts e docs/DEPLOY.md.
+ */
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
+
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
+
+  basePath,
+  assetPrefix: basePath || undefined,
 
   /**
    * Sito pubblicato come export statico su GitHub Pages: nessun processo Node

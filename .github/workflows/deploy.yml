@@ -17,6 +17,23 @@ concurrency:
   group: pages
   cancel-in-progress: false
 
+# ------------------------------------------------------------------
+# DOVE VIENE PUBBLICATO IL SITO
+#
+# Adesso: anteprima all'indirizzo di GitHub, in sottocartella.
+#   NEXT_PUBLIC_BASE_PATH: /WebSiteVillaSalina
+#   NEXT_PUBLIC_SITE_URL:  https://growedevelopers.github.io/WebSiteVillaSalina
+#
+# Per passare al dominio proprio, svuotare entrambe le variabili:
+#   NEXT_PUBLIC_BASE_PATH: ''
+#   NEXT_PUBLIC_SITE_URL:  https://www.villa-salina.com
+# e impostare il Custom domain in Settings -> Pages. Il file public/CNAME
+# rientra da solo nell'export quando la sottocartella e' vuota.
+# ------------------------------------------------------------------
+env:
+  NEXT_PUBLIC_BASE_PATH: /WebSiteVillaSalina
+  NEXT_PUBLIC_SITE_URL: https://growedevelopers.github.io/WebSiteVillaSalina
+
 jobs:
   build:
     name: Build dell'export statico

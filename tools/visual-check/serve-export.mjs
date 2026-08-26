@@ -34,6 +34,13 @@ const PORTA = Number(process.argv[2] || 4311)
 const ORIGINALI = path.resolve(QUI, '../../public/assets/images')
 const PREFISSO_ORIGINALI = '/__originali/'
 
+/**
+ * Sottocartella da simulare, la stessa passata alla build. Con
+ * NEXT_PUBLIC_BASE_PATH=/WebSiteVillaSalina il sito risponde solo sotto quel
+ * percorso, esattamente come sull'indirizzo di anteprima di Pages.
+ */
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
+
 const TIPI = {
   '.html': 'text/html; charset=utf-8',
   '.css': 'text/css; charset=utf-8',
@@ -69,7 +76,20 @@ async function stat(p) {
 
 const server = http.createServer(async (req, res) => {
   const url = new URL(req.url, `http://localhost:${PORTA}`)
-  const richiesto = decodeURIComponent(url.pathname)
+  let richiesto = decodeURIComponent(url.pathname)
+
+  if (BASE_PATH) {
+    if (richiesto === BASE_PATH) {
+      res.writeHead(301, { Location: BASE_PATH + '/' }).end()
+      return
+    }
+    if (richiesto.startsWith(BASE_PATH + '/')) {
+      richiesto = richiesto.slice(BASE_PATH.length)
+    } else if (!richiesto.startsWith(PREFISSO_ORIGINALI)) {
+      res.writeHead(404, { 'Content-Type': TIPI['.html'] }).end('fuori dalla sottocartella ' + BASE_PATH)
+      return
+    }
+  }
 
   if (richiesto.startsWith(PREFISSO_ORIGINALI)) {
     const p = path.normalize(path.join(ORIGINALI, richiesto.slice(PREFISSO_ORIGINALI.length)))
@@ -93,7 +113,7 @@ const server = http.createServer(async (req, res) => {
 
   if (s?.isDirectory()) {
     if (!richiesto.endsWith('/')) {
-      res.writeHead(301, { Location: richiesto + '/' }).end()
+      res.writeHead(301, { Location: BASE_PATH + richiesto + '/' }).end()
       return
     }
     const indice = path.join(dentro, 'index.html')

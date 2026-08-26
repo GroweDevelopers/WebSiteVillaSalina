@@ -8,6 +8,7 @@ import { TopBar } from '@/components/layout/TopBar'
 import { AosProvider } from '@/components/providers/AosProvider'
 import { RestaurantJsonLd } from '@/components/seo/RestaurantJsonLd'
 import { site } from '@/data/site'
+import { asset } from '@/lib/basePath'
 
 // L'ordine di questi import determina l'ordine dei CSS in produzione e
 // replica quello del <head> del layout Razor originale.
@@ -79,14 +80,14 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         */}
         <link
           rel="preload"
-          href="/assets/font/Inter-Regular.woff2"
+          href={asset('/assets/font/Inter-Regular.woff2')}
           as="font"
           type="font/woff2"
           crossOrigin="anonymous"
         />
         <link
           rel="preload"
-          href="/assets/font/Inter-Medium.woff2"
+          href={asset('/assets/font/Inter-Medium.woff2')}
           as="font"
           type="font/woff2"
           crossOrigin="anonymous"

@@ -7,6 +7,7 @@ import { SidebarPanel } from '@/components/layout/SidebarPanel'
 import { bookingHref, mainNav } from '@/data/navigation'
 import { site } from '@/data/site'
 import { useHeaderFixed } from '@/hooks/useHeaderFixed'
+import { asset } from '@/lib/basePath'
 
 export function Header() {
   const pathname = usePathname()
@@ -53,7 +54,7 @@ export function Header() {
             <div className="header__logo">
               <Link href="/">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/assets/images/frame1.svg" alt={`${site.name} Ristorante`} />
+                <img src={asset('/assets/images/frame1.svg')} alt={`${site.name} Ristorante`} />
               </Link>
             </div>
 

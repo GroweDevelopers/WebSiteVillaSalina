@@ -89,36 +89,36 @@ h1.title {
    | section/bg-pagetitle    |     60 KB |      3 KB |
 -------------------------------------------------------------- */
 .page-title {
-    background-image: url("/assets/optimized/section/bg-pagetitle-1920.webp");
+    background-image: url("#{$base-path}/assets/optimized/section/bg-pagetitle-1920.webp");
 
     &.p-gallery {
-        background-image: url("/assets/optimized/gallery-1920.webp");
+        background-image: url("#{$base-path}/assets/optimized/gallery-1920.webp");
     }
 
     &.p-history {
-        background-image: url("/assets/optimized/Foto-storica-moretta-1920.webp");
+        background-image: url("#{$base-path}/assets/optimized/Foto-storica-moretta-1920.webp");
     }
 }
 
 .s-formmail {
-    background-image: url("/assets/optimized/my/sofa-1920.webp");
+    background-image: url("#{$base-path}/assets/optimized/my/sofa-1920.webp");
 }
 
 /* Sotto i 992 px basta la meta' della larghezza: su gallery sono 113 KB in meno */
 @include res991 {
     .page-title {
-        background-image: url("/assets/optimized/section/bg-pagetitle-1080.webp");
+        background-image: url("#{$base-path}/assets/optimized/section/bg-pagetitle-1080.webp");
 
         &.p-gallery {
-            background-image: url("/assets/optimized/gallery-1080.webp");
+            background-image: url("#{$base-path}/assets/optimized/gallery-1080.webp");
         }
 
         &.p-history {
-            background-image: url("/assets/optimized/Foto-storica-moretta-1080.webp");
+            background-image: url("#{$base-path}/assets/optimized/Foto-storica-moretta-1080.webp");
         }
     }
 
     .s-formmail {
-        background-image: url("/assets/optimized/my/sofa-1080.webp");
+        background-image: url("#{$base-path}/assets/optimized/my/sofa-1080.webp");
     }
 }

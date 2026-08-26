@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { footerNav } from '@/data/navigation'
 import { site } from '@/data/site'
+import { asset } from '@/lib/basePath'
 
 export function Footer() {
   return (
@@ -10,7 +11,7 @@ export function Footer() {
           <div className="col-xl-4 col-md-12 text-center">
             <div className="widget logo">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/assets/images/logogold.svg" alt={site.name} />
+              <img src={asset('/assets/images/logogold.svg')} alt={site.name} />
               <p>{site.description}</p>
               <ul className="list-social style-2 d-flex justify-content-center">
                 <li>
