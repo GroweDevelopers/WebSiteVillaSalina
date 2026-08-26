@@ -9,11 +9,15 @@
     "shots": "node compare.mjs ./shots",
     "pixels": "node pixdiff.mjs ./shots",
     "text": "node text.mjs",
-    "sections": "node measure.mjs / 1920"
+    "sections": "node measure.mjs / 1920",
+    "a11y": "node a11y.mjs http://localhost:4310",
+    "a11y:old": "node a11y.mjs http://localhost:4320"
   },
   "dependencies": {
     "pixelmatch": "^7.1.0",
     "playwright": "^1.62.1",
-    "pngjs": "^7.0.0"
+    "pngjs": "^7.0.0",
+    "@axe-core/playwright": "^4.11.2",
+    "axe-core": "^4.11.2"
   }
 }

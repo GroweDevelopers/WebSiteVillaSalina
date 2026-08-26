@@ -1,9 +1,15 @@
 import { site } from '@/data/site'
 
-/** Barra superiore con email, indirizzo e telefono. */
+/**
+ * Barra superiore con email, indirizzo e telefono.
+ *
+ * Il `role` con etichetta la rende un punto di riferimento per i lettori di
+ * schermo: senza, i suoi contenuti restavano fuori da qualsiasi landmark e
+ * chi naviga saltando fra le sezioni non li incontrava mai.
+ */
 export function TopBar() {
   return (
-    <div className="top-bar">
+    <div className="top-bar" role="region" aria-label="Contatti rapidi">
       <div className="container">
         <div className="row">
           <div className="col-xl-8 col-md-12">
