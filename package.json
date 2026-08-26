@@ -6,15 +6,18 @@
   "author": "Growe Srl <account@growe.dev>",
   "license": "UNLICENSED",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "node scripts/optimize-images.mjs && next dev",
+    "build": "node scripts/optimize-images.mjs && next build && node scripts/prune-export.mjs",
     "start": "next start",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "typecheck": "tsc --noEmit",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "check": "npm run lint && npm run typecheck && npm run build"
+    "check": "npm run lint && npm run typecheck && npm run build",
+    "images": "node scripts/optimize-images.mjs",
+    "images:force": "node scripts/optimize-images.mjs --force",
+    "prune": "node scripts/prune-export.mjs"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "6.4.2",
