@@ -79,16 +79,16 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         */}
         <link
           rel="preload"
-          href="/assets/font/Inter-Regular.ttf"
+          href="/assets/font/Inter-Regular.woff2"
           as="font"
-          type="font/ttf"
+          type="font/woff2"
           crossOrigin="anonymous"
         />
         <link
           rel="preload"
-          href="/assets/font/Inter-Medium.ttf"
+          href="/assets/font/Inter-Medium.woff2"
           as="font"
-          type="font/ttf"
+          type="font/woff2"
           crossOrigin="anonymous"
         />
       </head>
