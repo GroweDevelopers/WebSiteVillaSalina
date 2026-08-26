@@ -46,15 +46,15 @@ sorgente SCSS**, non perse.
 
 | Ambito | Scelta | Motivo |
 |---|---|---|
-| Framework | Next.js 15 (App Router) | Routing file-based, RSC, metadata API |
+| Framework | Next.js 16 (App Router, Turbopack) | Routing file-based, RSC, metadata API |
 | Linguaggio | TypeScript strict | Sicurezza sui dati di contenuto |
 | Stili | Sass (SCSS) — sorgente originale portato | Fedeltà 1:1 al design esistente |
 | Griglia | Bootstrap 5.1.3 (solo CSS) | Le view usano massicciamente `col-*`, `row`, `d-*` |
-| Slider | `swiper` v11 (React) | Sostituisce `swiper-bundle.min.js` |
+| Slider | `swiper` v14 (React) | Sostituisce `swiper-bundle.min.js` |
 | Animazioni scroll | `aos` v2.3.4 | Il markup usa già `data-aos` |
 | Icone | `@fortawesome/fontawesome-free` 6.4.2 (CSS) | Le classi `fa-*` sono nel markup |
 | Font | `next/font/local` | Audrey, Cerebri Sans, Inter self-hosted |
-| Lint | ESLint (next/core-web-vitals) + Prettier | |
+| Lint | ESLint 9 (next/core-web-vitals) + Prettier | ESLint 10 rompe `eslint-plugin-react` incluso in `eslint-config-next` |
 
 ---
 
@@ -116,18 +116,18 @@ Legenda stato: `[ ]` da fare · `[x]` fatto e committato
 - [x] 0.9 Scrittura in memoria Claude (regola commit + contesto progetto)
 - [x] 0.10 Verifica assenza di commit `Co-Authored-By: Claude` nella storia esistente
 
-### FASE 1 — Scaffolding Next.js
+### FASE 1 — Scaffolding Next.js ✅
 
-- [ ] 1.1 `package.json` con script e dipendenze
-- [ ] 1.2 Installazione dipendenze (`npm install`)
-- [ ] 1.3 `tsconfig.json` strict + path alias `@/*`
-- [ ] 1.4 `next.config.ts`
-- [ ] 1.5 `eslint.config.mjs`
-- [ ] 1.6 `.prettierrc` + `.prettierignore`
-- [ ] 1.7 `.editorconfig`
-- [ ] 1.8 Struttura cartelle `src/{app,components,data,hooks,lib,styles,types}`
-- [ ] 1.9 `src/app/layout.tsx` minimale che compila
-- [ ] 1.10 `src/app/page.tsx` placeholder — primo `next build` verde
+- [x] 1.1 `package.json` con script e dipendenze
+- [x] 1.2 Installazione dipendenze (`npm install`)
+- [x] 1.3 `tsconfig.json` strict + path alias `@/*`
+- [x] 1.4 `next.config.ts`
+- [x] 1.5 `eslint.config.mjs`
+- [x] 1.6 `.prettierrc` + `.prettierignore`
+- [x] 1.7 `.editorconfig`
+- [x] 1.8 Struttura cartelle `src/{app,components,data,hooks,lib,styles,types}`
+- [x] 1.9 `src/app/layout.tsx` minimale che compila
+- [x] 1.10 `src/app/page.tsx` placeholder — primo `next build` verde
 
 ### FASE 2 — Migrazione asset statici
 
@@ -135,7 +135,7 @@ Legenda stato: `[ ]` da fare · `[x]` fatto e committato
 - [ ] 2.2 Copia font Audrey (6 file `.otf`) → `public/assets/font/`
 - [ ] 2.3 Copia font Cerebri Sans (14 file `.ttf`) → `public/assets/font/`
 - [ ] 2.4 Copia font Inter (2 file `.ttf`) → `public/assets/font/`
-- [ ] 2.5 Font Awesome 6.4.2: solo `css/all.min.css` + `webfonts/` (scarta js/less/scss/svgs/sprites/metadata: −27 MB)
+- [ ] 2.5 Font Awesome 6.4.2 dal pacchetto npm `@fortawesome/fontawesome-free` (scarta 28 MB di js/less/scss/svgs/sprites/metadata)
 - [ ] 2.6 Rimozione asset non referenziati (`assets/font/icon` FA5, `fontawesome-free` legacy)
 - [ ] 2.7 `favicon.ico` + icone da `assets/images/favicon.png`
 - [ ] 2.8 Report `docs/ASSET-AUDIT.md` (cosa è stato portato, cosa scartato e perché)
