@@ -1,0 +1,27 @@
+/* overrides
+--------------------------------------------------------------
+   Regole aggiunte a mano in coda a wwwroot/app/dist/app.css nel progetto
+   ASP.NET originale, mai rientrate nel sorgente SCSS. Sono riportate qui in
+   fondo perche' devono continuare a vincere sulla cascata.
+   Vedi docs/ANALISI-PROGETTO-ORIGINALE.md, sezione 6.
+-------------------------------------------------------------- */
+
+/* Singh */
+/* Padding between logo and nav links for xl screens */
+@media (min-width: 991px) {
+    .header .main-nav {
+        position: absolute;
+        left: 35%;
+    }
+}
+
+/* Sam */
+@media only screen and (max-width: 500px) {
+    h2.title {
+        font-size: 28px;
+    }
+
+    p.sub-title {
+        font-size: 15px !important;
+    }
+}
