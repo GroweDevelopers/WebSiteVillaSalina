@@ -16,10 +16,6 @@ const nextConfig: NextConfig = {
     // le immagini sono tutte locali in /public: nessun remote pattern necessario
     formats: ['image/avif', 'image/webp'],
   },
-
-  eslint: {
-    dirs: ['src'],
-  },
 }
 
 export default nextConfig
