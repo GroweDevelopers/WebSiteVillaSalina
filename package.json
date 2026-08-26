@@ -26,12 +26,11 @@
     "swiper": "^14.1.0"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3.3.6",
     "@types/aos": "^3.0.8",
     "@types/node": "^22.13.1",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.5",
-    "eslint": "^10.9.1",
+    "eslint": "^9.39.5",
     "eslint-config-next": "^16.3.3",
     "eslint-config-prettier": "^10.1.8",
     "prettier": "^3.9.6",
