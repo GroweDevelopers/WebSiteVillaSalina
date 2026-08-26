@@ -48,3 +48,6 @@ Thumbs.db
 # cache tooling
 .eslintcache
 .stylelintcache
+
+# immagini generate da scripts/optimize-images.mjs: le ricrea la build
+/public/assets/optimized/
