@@ -21,24 +21,49 @@ for (const route of ROUTES) {
   await page.waitForTimeout(800)
 
   const out = await page.evaluate(async () => {
-    function draw(source, w, h) {
+    function disegna(source, w, h) {
       const c = new OffscreenCanvas(w, h)
       const g = c.getContext('2d')
       g.drawImage(source, 0, 0, w, h)
       return g.getImageData(0, 0, w, h).data
     }
+
+    /**
+     * Risale al file sorgente dall'URL servito.
+     *
+     * Dal nome del WebP l'estensione dell'originale non si ricava
+     * (cotolette-570.webp puo' venire da .png o da .jpg): si prova quale
+     * delle tre risponde. Il server di verifica espone gli originali sotto
+     * /__originali/, perche' l'export non li contiene piu'.
+     */
+    async function sorgenteDi(src) {
+      const d = decodeURIComponent(src)
+      const diretto = d.match(/\/assets\/images\/(.+)$/)
+      if (diretto) return { rel: diretto[1], originale: '/assets/images/' + diretto[1] }
+
+      const opt = d.match(/\/assets\/optimized\/(.+)-\d+\.webp$/)
+      if (!opt) return null
+      for (const ext of ['.png', '.jpg', '.jpeg']) {
+        const rel = opt[1] + ext
+        for (const radice of ['/__originali/', '/assets/images/']) {
+          const r = await fetch(radice + rel, { method: 'HEAD' })
+          if (r.ok) return { rel, originale: radice + rel }
+        }
+      }
+      return null
+    }
+
     const res = []
     for (const im of document.images) {
-      const src = decodeURIComponent(im.currentSrc || '')
-      const m = src.match(/\/assets\/images\/[^&?"]+/)
-      if (!m || /\.svg/.test(m[0])) continue
-      const originale = m[0]
-      // l'immagine originale, non ottimizzata, servita dalla stessa origine
-      const bmp = await createImageBitmap(await (await fetch(originale)).blob())
-      const w = im.naturalWidth ? Math.min(bmp.width, 4000) : bmp.width
-      const h = Math.round((w / bmp.width) * bmp.height)
-      const a = draw(bmp, w, h)
-      const b = draw(im, w, h)
+      const src = im.currentSrc || ''
+      if (!src || /\.svg/.test(src)) continue
+      const s = await sorgenteDi(src)
+      if (!s) continue
+      const bmp = await createImageBitmap(await (await fetch(s.originale)).blob())
+      const w = bmp.width
+      const h = bmp.height
+      const a = disegna(bmp, w, h)
+      const b = disegna(im, w, h)
       bmp.close()
       let se = 0
       for (let i = 0; i < a.length; i += 4)
@@ -49,10 +74,9 @@ for (const route of ROUTES) {
       const mse = se / ((a.length / 4) * 3)
       const psnr = mse === 0 ? 999 : 10 * Math.log10((255 * 255) / mse)
       res.push({
-        file: originale.split('/').slice(-2).join('/'),
+        file: s.rel,
         mostrata: Math.round(im.getBoundingClientRect().width),
         psnr: +psnr.toFixed(1),
-        ottimizzata: src.includes('/_next/image'),
       })
     }
     return res

@@ -24,11 +24,38 @@ async function collect(base) {
       await page.waitForFunction(() => [...document.images].every((i) => i.complete), null, { timeout: 60000 }).catch(() => {})
       await page.waitForTimeout(600)
       const data = await page.evaluate(async () => {
+        /**
+         * Risale al file sorgente dall'URL servito.
+         *
+         * Dal nome del WebP l'estensione dell'originale non si ricava
+         * (cotolette-570.webp puo' venire da .png o da .jpg): si prova quale
+         * delle tre risponde. Il server di verifica espone gli originali sotto
+         * /__originali/, perche' l'export non li contiene piu'.
+         */
+        async function sorgenteDi(src) {
+          const d = decodeURIComponent(src)
+          const diretto = d.match(/\/assets\/images\/(.+)$/)
+          if (diretto) return { rel: diretto[1], originale: '/assets/images/' + diretto[1] }
+
+          const opt = d.match(/\/assets\/optimized\/(.+)-\d+\.webp$/)
+          if (!opt) return null
+          for (const ext of ['.png', '.jpg', '.jpeg']) {
+            const rel = opt[1] + ext
+            for (const radice of ['/__originali/', '/assets/images/']) {
+              const r = await fetch(radice + rel, { method: 'HEAD' })
+              if (r.ok) return { rel, originale: radice + rel }
+            }
+          }
+          return null
+        }
+
         const out = []
         for (const im of document.images) {
           const shown = Math.round(im.getBoundingClientRect().width)
           const src = im.currentSrc || im.src
           if (shown < 20 || !src || /\.svg/.test(src)) continue
+          const s = await sorgenteDi(src)
+          if (!s) continue
           let real = 0
           try {
             const bmp = await createImageBitmap(await (await fetch(src)).blob())
@@ -37,8 +64,7 @@ async function collect(base) {
           } catch {
             real = im.naturalWidth
           }
-          const file = (decodeURIComponent(src).match(/\/assets\/images\/[^&?"]+/) || [src])[0]
-          out.push({ file, shown, real })
+          out.push({ file: s.rel, shown, real })
         }
         return out
       })

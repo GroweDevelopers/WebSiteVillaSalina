@@ -18,7 +18,8 @@
     "boxes": "node boxes.mjs",
     "swiper": "node swiper.mjs 1920",
     "fedelta": "node fedelta.mjs",
-    "zoom": "node zoom.mjs /assets/images/gallery/cotolette.png 640 ./zoom.png 230 110 82,88,92,95"
+    "zoom": "node zoom.mjs /assets/images/gallery/cotolette.png 640 ./zoom.png 230 110 82,88,92,95",
+    "serve": "node serve-export.mjs 4310"
   },
   "dependencies": {
     "pixelmatch": "^7.1.0",
