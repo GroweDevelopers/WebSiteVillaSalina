@@ -69,13 +69,13 @@ perfetti in verticale anche mostrando una slide su tre.
 Fotografa ogni pagina a piena altezza su tre viewport (1920, 768, 390), confronta le altezze
 totali e segnala le risorse che rispondono con un errore.
 
-Durante lo scatto disattiva le animazioni, forza il caricamento immediato delle immagini
-(altrimenti quelle in differita restano vuote nello screenshot) e nasconde i caroselli in loop,
-che partono da slide diverse a seconda della versione di Swiper.
+Durante lo scatto disattiva le animazioni e forza il caricamento immediato delle immagini,
+altrimenti quelle in differita restano vuote nello screenshot. I caroselli **non** vengono
+nascosti: mascherarli e' stato l'errore che ha lasciato passare il difetto delle slide.
 
 ### 5. Differenza al pixel — `npm run pixels`
 
-Confronta gli screenshot generati dal punto 3 e scrive un `-diff.png` per ogni pagina che
+Confronta gli screenshot generati dal punto 4 e scrive un `-diff.png` per ogni pagina che
 supera lo 0,05 %.
 
 ## Come leggere i risultati
