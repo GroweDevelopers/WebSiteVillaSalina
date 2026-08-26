@@ -1,0 +1,55 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  verifica:
+    name: Lint, tipi e build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Scarica il codice
+        uses: actions/checkout@v4
+
+      - name: Prepara Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Installa le dipendenze
+        run: npm ci
+
+      - name: ESLint
+        run: npm run lint
+
+      - name: Controllo dei tipi
+        run: npm run typecheck
+
+      - name: Formattazione
+        run: npm run format:check
+
+      - name: Build di produzione
+        run: npm run build
+
+  storia-git:
+    name: Nessun co-autore nella storia
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Scarica il codice con tutta la storia
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Verifica che non compaiano trailer di co-autore
+        run: |
+          if git log --format='%B' | grep -iE 'co-authored|generated with'; then
+            echo "::error::Trovato un trailer di co-autore. Vedi docs/CONVENZIONI-COMMIT.md"
+            exit 1
+          fi
+          echo "Nessun trailer di co-autore."
