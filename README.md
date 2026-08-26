@@ -97,9 +97,13 @@ la pagina sobbalza mentre le immagini arrivano.
 
 ## Pubblicazione
 
-Il sito è pubblicato come **export statico su GitHub Pages**, dominio **www.villa-salina.com**.
-Ogni push su `main` fa partire [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml), che
-converte le immagini, genera l'export e lo pubblica.
+Il sito è online come **export statico su GitHub Pages**:
+
+> **https://growedevelopers.github.io/WebSiteVillaSalina/**
+
+È l'anteprima; il passaggio a **www.villa-salina.com** è già predisposto e richiede di svuotare due
+variabili nel workflow. [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) converte le
+immagini, genera l'export e lo pubblica.
 
 Istruzioni complete — record DNS, attivazione di Pages, cosa fare se qualcosa non torna — in
 [`docs/DEPLOY.md`](docs/DEPLOY.md).

@@ -1,45 +1,46 @@
 # Pubblicazione su GitHub Pages
 
 Il sito è un **export statico**: nessun server applicativo, solo file. Il workflow
-[`.github/workflows/deploy.yml`](../.github/workflows/deploy.yml) lo costruisce a ogni push su
-`main` e lo pubblica su GitHub Pages.
+[`.github/workflows/deploy.yml`](../.github/workflows/deploy.yml) lo costruisce e lo pubblica.
 
-Dominio: **www.villa-salina.com**, con `villa-salina.com` che redirige al `www`.
+## Stato attuale — anteprima online
 
----
+> **https://growedevelopers.github.io/WebSiteVillaSalina/**
 
-## Da fare una volta sola
+Il repository è pubblico, Pages è attivo con sorgente _GitHub Actions_, e il sito è pubblicato e
+verificato: tutte le rotte rispondono, nessuna immagine rotta, CSS e font applicati, navigazione
+lato client funzionante.
 
-### 1. Il repository deve poter usare Pages
+Poiché su quell'indirizzo il sito vive in una **sottocartella**, la build usa due variabili
+d'ambiente, dichiarate in cima al workflow:
 
-`GroweDevelopers/WebSiteVillaSalina` è **privato**. GitHub Pages da repository privato è
-disponibile solo sui piani **Team ed Enterprise**: sul piano gratuito il deploy fallisce.
+```yaml
+env:
+  NEXT_PUBLIC_BASE_PATH: /WebSiteVillaSalina
+  NEXT_PUBLIC_SITE_URL: https://growedevelopers.github.io/WebSiteVillaSalina
+```
 
-Due strade:
+`basePath` di Next non copre tutto: gli `url()` dell'SCSS, i `src` degli `<img>` semplici, il
+preload dei font e l'URL che restituisce il loader delle immagini passano da
+[`src/lib/basePath.ts`](../src/lib/basePath.ts) e da un partial SCSS generato. Vedi
+[`scripts/write-scss-base-path.mjs`](../scripts/write-scss-base-path.mjs).
 
-- il piano dell'organizzazione è Team o superiore → si procede;
-- altrimenti il repository va reso **pubblico** (Settings → General → Change repository
-  visibility). Nel codice non ci sono credenziali né dati riservati, quindi renderlo pubblico non
-  espone nulla.
+## Passare al dominio www.villa-salina.com
 
-### 2. Attivare Pages con GitHub Actions come sorgente
+Tre cose, nell'ordine:
 
-Settings → **Pages** → _Build and deployment_ → **Source: GitHub Actions**.
+### 1. Svuotare le due variabili nel workflow
 
-Non serve scegliere branch o cartella: se la sorgente è impostata su un branch, il workflow non
-viene usato e il sito resta vuoto.
+```yaml
+env:
+  NEXT_PUBLIC_BASE_PATH: ''
+  NEXT_PUBLIC_SITE_URL: https://www.villa-salina.com
+```
 
-### 3. Lanciare il primo deploy
+Con la sottocartella vuota, `public/CNAME` rientra da solo nell'export e i percorsi tornano
+assoluti dalla radice. Il workflow controlla entrambe le cose e fallisce se non tornano.
 
-Basta una push su `main`, oppure Actions → _Pubblica su GitHub Pages_ → **Run workflow**.
-
-Al termine, il sito è già raggiungibile sull'indirizzo provvisorio
-`https://growedevelopers.github.io/WebSiteVillaSalina/` — che però mostrerà il sito **senza CSS
-né immagini**, perché tutti i percorsi sono assoluti (`/assets/...`) e lì il sito vive in una
-sottocartella. **È normale e si risolve da sé appena il dominio è attivo.** Se serve verificare
-prima di puntare il DNS, si può usare l'anteprima locale (vedi in fondo).
-
-### 4. I record DNS
+### 2. I record DNS
 
 Dal pannello di chi gestisce `villa-salina.com`:
 
@@ -65,7 +66,7 @@ c'è nulla da aggiornare.
 Chi ha IPv6 può aggiungere anche i record AAAA:
 `2606:50c0:8000::153`, `2606:50c0:8001::153`, `2606:50c0:8002::153`, `2606:50c0:8003::153`.
 
-### 5. Impostare il dominio su GitHub
+### 3. Impostare il dominio su GitHub
 
 Settings → Pages → **Custom domain** → `www.villa-salina.com` → Save.
 
@@ -96,7 +97,8 @@ Con il CNAME sul `www` e i record A sull'apex, GitHub redirige da solo `villa-sa
 | il sito appare senza stili sull'indirizzo `github.io` | normale: i percorsi sono assoluti e lì il sito è in una sottocartella. Si risolve col dominio                                           |
 | `404` su `/storia`                                    | l'export usa `/storia/`. GitHub Pages redirige da sé; se non lo fa, controllare `trailingSlash: true` in `next.config.ts`               |
 | il dominio personalizzato si azzera dopo un deploy    | il file `CNAME` non è arrivato nell'export                                                                                              |
-| il deploy fallisce con "Pages is not enabled"         | manca il passo 2, o il repository è privato su piano gratuito                                                                           |
+| il deploy fallisce con "Pages is not enabled"         | Settings → Pages → Source deve essere _GitHub Actions_                                                                                  |
+| una push su `main` non lancia il deploy               | è successo: lanciarlo a mano da Actions → _Pubblica su GitHub Pages_ → **Run workflow**. Vedi la nota qui sotto                         |
 | immagini rotte                                        | la potatura ha tolto un file richiesto. `npm run prune -- --dry` lo elenca; il workflow fallisce già da sé in quel caso                 |
 
 ## Anteprima locale, identica a Pages
@@ -134,3 +136,23 @@ tutto su richiesta. In quel caso, in `next.config.ts`:
 - rimettere `quality={IMAGE_QUALITY}` sui componenti `<Image>`.
 
 Lo script di conversione e la potatura diventano inutili ma non danno fastidio.
+
+## Nota: la push su `main` non sempre lancia il deploy
+
+Durante la messa online si è visto che alcune push su `main` **non hanno creato nessun run**, pur
+essendo arrivate al remoto (verificato con `git ls-remote` e con l'API). Il workflow ha
+`on: push: branches: [main]` corretto ed è in stato _active_; la prima push l'aveva innescato
+regolarmente.
+
+Non è stata trovata la causa. Il deploy a mano funziona sempre:
+
+**Actions → Pubblica su GitHub Pages → Run workflow → main**
+
+oppure, da riga di comando con un token che abbia scope `workflow`:
+
+```bash
+curl -X POST -H "Authorization: Bearer $TOKEN"   -H "Accept: application/vnd.github+json"   https://api.github.com/repos/GroweDevelopers/WebSiteVillaSalina/actions/workflows/343029714/dispatches   -d '{"ref":"main"}'
+```
+
+Se il problema si ripresenta e dà noia, la strada da provare è ricreare il workflow con un nome
+file diverso: GitHub a volte lega i trigger all'identità del file e ricrearlo li reimposta.
