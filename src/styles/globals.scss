@@ -1,9 +1,16 @@
 /* globals
 --------------------------------------------------------------
    Punto di ingresso unico degli stili del sito.
-   Il tema e' il sorgente SCSS portato dal progetto ASP.NET, riconciliato
-   con wwwroot/app/dist/app.css (vedi docs/VERIFICA-STILI.md).
-   L'ordine di caricamento rispetto ai CSS di terze parti e' definito in
-   src/app/layout.tsx e replica quello del <head> del layout Razor.
+
+   'app' e' il tema portato dal progetto ASP.NET e riconciliato con
+   wwwroot/app/dist/app.css: resta confrontabile riga per riga, quindi non va
+   modificato per esigenze di Next (vedi docs/VERIFICA-STILI.md).
+
+   'next-adjustments' contiene le poche regole in piu' che servono perche' in
+   React il DOM non si manipola con jQuery.
+
+   L'ordine rispetto ai CSS di terze parti e' definito in src/app/layout.tsx e
+   replica quello del <head> del layout Razor.
 -------------------------------------------------------------- */
 @use 'app';
+@use 'next-adjustments';

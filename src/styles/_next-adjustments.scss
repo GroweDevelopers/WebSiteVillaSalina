@@ -1,0 +1,39 @@
+/* next-adjustments
+--------------------------------------------------------------
+   Regole che nel progetto ASP.NET non esistevano perche' il loro effetto era
+   ottenuto da jQuery spostando nodi nel DOM. In React il DOM non si manipola a
+   mano: quello che faceva mobileNav() lo fanno queste poche regole.
+
+   Questo file NON fa parte di app.scss, che resta confrontabile riga per riga
+   con dist/app.css (vedi docs/VERIFICA-STILI.md).
+-------------------------------------------------------------- */
+@use 'abstracts' as *;
+
+/* app.js spostava #main-nav dentro #header_main rinominandolo in
+   #main-nav-mobi e lo nascondeva. Qui i due menu convivono e si alternano
+   con una media query, senza il salto visivo dell'originale. */
+@include res991 {
+    .header #site-header-inner #main-nav {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    #main-nav-mobi {
+        display: none !important;
+    }
+}
+
+/* Il pannello laterale copriva i contenuti anche quando era chiuso, perche'
+   restava nel flusso a right: -100%. Con pointer-events non intercetta piu'
+   i click finche' non e' aperto. */
+.sidebar-content:not(.active) {
+    pointer-events: none;
+}
+
+/* La voce del menu corrispondente alla pagina corrente: nel progetto Razor la
+   classe non veniva mai applicata perche' non c'era logica di routing. */
+#main-nav .menu li.current-menu-item > a,
+#main-nav-mobi .menu li.current-menu-item > a {
+    color: $color-hover;
+}
