@@ -1,0 +1,8 @@
+node_modules
+.next
+out
+build
+public
+package-lock.json
+# SCSS portato dall'originale: non riformattare, serve il diff con dist/app.css
+src/styles/**/*.scss
