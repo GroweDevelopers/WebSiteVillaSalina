@@ -37,3 +37,18 @@
 #main-nav-mobi .menu li.current-menu-item > a {
     color: $color-hover;
 }
+
+/* Il titolo principale di ogni pagina (testata interna e slider di apertura)
+   era un <h2>: e' passato a <h1> perche' ogni pagina abbia un solo titolo di
+   primo livello. Queste due regole gli ridanno le dimensioni di un h2 del
+   tema, comprese quelle dell'override marcato Sam sotto i 500 px. */
+h1.title {
+    font-size: 55px;
+    line-height: 1.1;
+}
+
+@media only screen and (max-width: 500px) {
+    h1.title {
+        font-size: 28px;
+    }
+}

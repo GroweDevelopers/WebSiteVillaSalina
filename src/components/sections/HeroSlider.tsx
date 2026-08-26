@@ -48,7 +48,7 @@ export function HeroSlider({ image, title, subtitle, action }: HeroSliderProps) 
             <div className="col-md-12">
               <div className="box-slider">
                 <div className="content-box center style-2">
-                  <h2 className="title">{title}</h2>
+                  <h1 className="title">{title}</h1>
                   <p className="sub-title">{subtitle}</p>
                   <div className="wrap-btn center st2">
                     {action.external ? (
