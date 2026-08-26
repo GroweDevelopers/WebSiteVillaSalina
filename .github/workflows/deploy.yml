@@ -65,12 +65,35 @@ jobs:
         run: |
           for f in index.html storia/index.html gallery/index.html \
                    contatti/index.html prenotazioni/index.html \
-                   404.html sitemap.xml robots.txt CNAME .nojekyll; do
+                   404.html sitemap.xml robots.txt .nojekyll; do
             if [ ! -e "out/$f" ]; then
               echo "::error::manca out/$f"
               exit 1
             fi
           done
+
+          # Il CNAME serve solo alla radice di un dominio proprio. In
+          # sottocartella deve essere assente, altrimenti GitHub redirige
+          # verso un dominio non ancora configurato.
+          if [ -n "$NEXT_PUBLIC_BASE_PATH" ] && [ -e out/CNAME ]; then
+            echo "::error::out/CNAME presente benche' il sito sia in sottocartella"
+            exit 1
+          fi
+          if [ -z "$NEXT_PUBLIC_BASE_PATH" ] && [ ! -e out/CNAME ]; then
+            echo "::error::manca out/CNAME per il deploy sul dominio"
+            exit 1
+          fi
+
+          # Nessun percorso assoluto deve sfuggire al prefisso della sottocartella
+          if [ -n "$NEXT_PUBLIC_BASE_PATH" ]; then
+            SFUGGITI=$(grep -rohE '(src|href)="/(assets|_next)/[^"]*"' out --include='*.html' | sort -u || true)
+            if [ -n "$SFUGGITI" ]; then
+              echo "::error::percorsi assoluti senza il prefisso $NEXT_PUBLIC_BASE_PATH"
+              echo "$SFUGGITI" | head -10
+              exit 1
+            fi
+          fi
+
           echo "Export completo: $(du -sh out | cut -f1)"
 
       - name: Carica l'artifact

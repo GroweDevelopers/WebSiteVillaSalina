@@ -15,6 +15,11 @@
  * perche' Next ripiega su un caricamento completo della pagina, ma ogni link
  * interno ricarica tutto invece di navigare al volo.
  *
+ * Nota: succede solo su Windows. Su Linux, dove gira la build di produzione,
+ * Next scrive direttamente i nomi piatti e questo script non trova nulla da
+ * fare. Resta perche' la build locale su Windows serva a qualcosa, e perche' se
+ * un domani il comportamento cambiasse non ci sarebbe niente da correggere.
+ *
  * Qui si crea, accanto a ogni file dentro una cartella `__next.*`, un gemello
  * col nome che il browser si aspetta. Restano entrambi: costa qualche decina di
  * KB e non rompe niente se un domani Next cambia convenzione.
