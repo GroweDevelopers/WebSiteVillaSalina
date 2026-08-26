@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { site } from '@/data/site'
-import { IMAGE_QUALITY, IMAGE_SIZES } from '@/lib/image'
+import { IMAGE_SIZES } from '@/lib/image'
 
 /** Blocco dedicato alla menzione nella guida Michelin. */
 export function GuidaMichelinSection() {
@@ -17,7 +17,6 @@ export function GuidaMichelinSection() {
                   width={878}
                   height={625}
                   sizes={IMAGE_SIZES}
-                  quality={IMAGE_QUALITY}
                 />
               </div>
             </div>

@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { historySteps } from '@/data/history'
-import { IMAGE_QUALITY, IMAGE_SIZES } from '@/lib/image'
+import { IMAGE_SIZES } from '@/lib/image'
 
 /** Timeline delle sei tappe della storia di Villa Salina. */
 export function HistoryTimeline() {
@@ -32,7 +32,6 @@ export function HistoryTimeline() {
                         width={step.image.width}
                         height={step.image.height}
                         sizes={IMAGE_SIZES}
-                        quality={IMAGE_QUALITY}
                       />
                     </div>
                     <div className="content">

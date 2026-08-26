@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { IMAGE_QUALITY, IMAGE_SIZES } from '@/lib/image'
+import { IMAGE_SIZES } from '@/lib/image'
 
 /**
  * Blocco "Un Passato di Tradizione e Eccellenza" della home.
@@ -22,7 +22,6 @@ export function AboutRestaurantHome() {
                   width={722}
                   height={722}
                   sizes={IMAGE_SIZES}
-                  quality={IMAGE_QUALITY}
                 />
               </div>
 
@@ -62,7 +61,6 @@ export function AboutRestaurantHome() {
                   width={1000}
                   height={1000}
                   sizes={IMAGE_SIZES}
-                  quality={IMAGE_QUALITY}
                 />
               </div>
             </div>

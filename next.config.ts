@@ -5,6 +5,18 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
 
+  /**
+   * Sito pubblicato come export statico su GitHub Pages: nessun processo Node
+   * a runtime. Vedi docs/DEPLOY.md.
+   */
+  output: 'export',
+
+  /**
+   * GitHub Pages serve `/storia/` da `storia/index.html`. Con lo slash finale
+   * l'export genera quella struttura e ogni rotta risponde senza riscritture.
+   */
+  trailingSlash: true,
+
   sassOptions: {
     // permette `@use 'abstracts' as *` senza risalire con i ../
     includePaths: [path.join(process.cwd(), 'src/styles')],
@@ -13,17 +25,19 @@ const nextConfig: NextConfig = {
   },
 
   images: {
-    // le immagini sono tutte locali in /public: nessun remote pattern necessario
-
-    // Solo WebP, niente AVIF. A parita' di peso l'encoder AVIF di sharp
-    // impasta le texture: su gallery/cotolette.png, a 4 ingrandimenti, la
-    // panatura sparisce gia' a q75 e non torna nemmeno a q100. WebP q95 e'
-    // indistinguibile dall'originale e pesa comunque un quinto del PNG.
-    formats: ['image/webp'],
-
-    // Next 16 rifiuta le qualita' non dichiarate: vedi IMAGE_QUALITY in
-    // src/lib/image.ts
-    qualities: [95],
+    /**
+     * Le fotografie sono convertite in WebP prima della build da
+     * `scripts/optimize-images.mjs`; il loader traduce le larghezze richieste
+     * da Next nei file generati. `formats` e `qualities` non servono piu':
+     * riguardano l'ottimizzatore a runtime, che qui non gira.
+     *
+     * Solo WebP, niente AVIF: a parita' di peso l'encoder AVIF di sharp
+     * impasta le texture. Su gallery/cotolette.png, a 4 ingrandimenti, la
+     * panatura sparisce gia' a q75 e non torna nemmeno a q100. WebP q95 e'
+     * indistinguibile dall'originale e pesa un quinto del PNG.
+     */
+    loader: 'custom',
+    loaderFile: './src/lib/imageLoader.ts',
   },
 }
 
