@@ -13,6 +13,8 @@ export function GuidaMichelinSection() {
                 <img
                   src="/assets/images/my/bagna3.png"
                   alt="Bagna cauda servita a Villa Salina"
+                  width={878}
+                  height={625}
                   loading="lazy"
                 />
               </div>
@@ -28,6 +30,8 @@ export function GuidaMichelinSection() {
                     src="/assets/images/icon/quote.png"
                     alt=""
                     aria-hidden="true"
+                    width={47}
+                    height={36}
                     className="me-3 mb-3"
                   />
                   <h3 className="text-start" style={{ color: '#fff', textTransform: 'uppercase' }}>

@@ -25,7 +25,13 @@ export function HistoryTimeline() {
                       data-aos={isMirrored ? 'fade-left' : 'fade-right'}
                     >
                       {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src={step.image.src} alt={step.image.alt} loading="lazy" />
+                      <img
+                        src={step.image.src}
+                        alt={step.image.alt}
+                        width={step.image.width}
+                        height={step.image.height}
+                        loading="lazy"
+                      />
                     </div>
                     <div className="content">
                       <p className="time" data-aos-duration="1000" data-aos="fade-up">

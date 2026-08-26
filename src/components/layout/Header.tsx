@@ -42,7 +42,12 @@ export function Header() {
 
   return (
     <>
-      <header ref={headerRef} style={{ backgroundColor: 'white' }} id="header_main" className={headerClasses}>
+      <header
+        ref={headerRef}
+        style={{ backgroundColor: 'white' }}
+        id="header_main"
+        className={headerClasses}
+      >
         <div className="container">
           <div id="site-header-inner">
             <div className="header__logo">
@@ -86,7 +91,10 @@ export function Header() {
       </header>
 
       {/* Compensa lo spazio lasciato dall'header quando passa a position: fixed. */}
-      <div aria-hidden="true" style={{ height: spacerHeight ?? 0, display: isFixed ? 'block' : 'none' }} />
+      <div
+        aria-hidden="true"
+        style={{ height: spacerHeight ?? 0, display: isFixed ? 'block' : 'none' }}
+      />
     </>
   )
 }

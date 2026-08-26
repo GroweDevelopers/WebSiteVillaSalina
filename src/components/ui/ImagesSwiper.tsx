@@ -32,6 +32,8 @@ export function ImagesSwiper({ images, className }: ImagesSwiperProps) {
           <img
             src={image.src}
             alt={image.alt}
+            width={image.width}
+            height={image.height}
             loading="lazy"
             style={{ width: '100%', height: 459, objectFit: 'cover' }}
           />

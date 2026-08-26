@@ -10,7 +10,11 @@ export function TopBar() {
             <div className="list-info">
               <ul>
                 <li>
-                  <i style={{ color: 'black' }} className="fa fa-envelope-open" aria-hidden="true" />{' '}
+                  <i
+                    style={{ color: 'black' }}
+                    className="fa fa-envelope-open"
+                    aria-hidden="true"
+                  />{' '}
                   <a style={{ color: 'black' }} href={`mailto:${site.email}`}>
                     {site.email}
                   </a>

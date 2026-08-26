@@ -4,10 +4,17 @@ export type NavItem = {
   href: string
 }
 
-/** Immagine con testo alternativo obbligatorio. */
+/**
+ * Immagine con testo alternativo obbligatorio e dimensioni intrinseche.
+ *
+ * Le dimensioni servono al browser per riservare lo spazio prima che il file
+ * arrivi: senza, le immagini caricate in differita fanno sobbalzare la pagina.
+ */
 export type ImageRef = {
   src: string
   alt: string
+  width: number
+  height: number
 }
 
 /** Tappa della timeline nella pagina Storia. */

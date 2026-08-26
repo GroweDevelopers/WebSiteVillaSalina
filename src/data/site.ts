@@ -13,7 +13,7 @@ export const site = {
   url: 'https://www.villasalina.com',
 
   description:
-    "Entra nel nostro mondo culinario dove tradizione e raffinatezza si fondono in piatti unici. " +
+    'Entra nel nostro mondo culinario dove tradizione e raffinatezza si fondono in piatti unici. ' +
     "Ti attende un'esperienza gastronomica indimenticabile, dove ogni dettaglio è curato con passione.",
 
   chef: 'Ivo Druetta',

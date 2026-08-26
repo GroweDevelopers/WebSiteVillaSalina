@@ -41,6 +41,8 @@ export function AboutStoriaSection() {
                 <img
                   src="/assets/images/my/villa.jpg"
                   alt="Villa Salina vista dall'esterno"
+                  width={1140}
+                  height={855}
                   loading="lazy"
                 />
               </div>

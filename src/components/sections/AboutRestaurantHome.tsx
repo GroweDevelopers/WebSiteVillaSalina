@@ -18,6 +18,8 @@ export function AboutRestaurantHome() {
                 <img
                   src="/assets/images/my/palazzo.png"
                   alt="La facciata storica di Villa Salina"
+                  width={722}
+                  height={722}
                   loading="lazy"
                 />
               </div>
@@ -56,6 +58,8 @@ export function AboutRestaurantHome() {
                 <img
                   src="/assets/images/my/scale.png"
                   alt="Lo scalone interno di Villa Salina"
+                  width={1000}
+                  height={1000}
                   loading="lazy"
                 />
               </div>

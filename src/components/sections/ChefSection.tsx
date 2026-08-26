@@ -15,6 +15,8 @@ export function ChefSection() {
                   src="/assets/images/icon/chef.png"
                   alt=""
                   aria-hidden="true"
+                  width={69}
+                  height={71}
                   data-aos-duration="1000"
                   data-aos="fade-up"
                 />
@@ -41,6 +43,9 @@ export function ChefSection() {
                   <img
                     src="/assets/images/my/propietario.jpg"
                     alt={`Lo chef ${site.chef} nel ristorante ${site.name}`}
+                    width={1066}
+                    height={1066}
+                    loading="lazy"
                     style={{ objectPosition: 'center' }}
                   />
                 </div>

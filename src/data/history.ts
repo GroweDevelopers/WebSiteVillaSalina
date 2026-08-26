@@ -10,6 +10,8 @@ export const historySteps: HistoryStep[] = [
       'arricchendo il paesaggio con la sua maestosità e bellezza artistica.',
     image: {
       src: '/assets/images/storia/spinaci.png',
+      width: 501,
+      height: 313,
       alt: 'Piatto di spinaci servito a Villa Salina',
     },
   },
@@ -21,6 +23,8 @@ export const historySteps: HistoryStep[] = [
       'Villa Salina, portando avanti una tradizione culinaria di fama regale.',
     image: {
       src: '/assets/images/storia/tavololimoni.png',
+      width: 501,
+      height: 312,
       alt: 'Tavolo apparecchiato con limoni nella sala di Villa Salina',
     },
   },
@@ -32,6 +36,8 @@ export const historySteps: HistoryStep[] = [
       'nel settore alimentare, preparando il terreno per la nascita di Villa Salina.',
     image: {
       src: '/assets/images/storia/pastona.png',
+      width: 501,
+      height: 312,
       alt: 'Pasta fresca preparata a mano',
     },
   },
@@ -43,6 +49,8 @@ export const historySteps: HistoryStep[] = [
       'maestria, preservando il suo patrimonio artistico e architettonico per le generazioni future.',
     image: {
       src: '/assets/images/storia/tavololimoni.png',
+      width: 501,
+      height: 312,
       alt: 'Dettaglio di una sala restaurata di Villa Salina',
     },
   },
@@ -54,6 +62,8 @@ export const historySteps: HistoryStep[] = [
       'autorità locali in un’atmosfera di festa e raffinatezza.',
     image: {
       src: '/assets/images/storia/pastona.png',
+      width: 501,
+      height: 312,
       alt: 'Piatto di pasta servito la sera dell’inaugurazione',
     },
   },
@@ -65,6 +75,8 @@ export const historySteps: HistoryStep[] = [
       'nuove pagine di eccellenza gastronomica e ospitalità.',
     image: {
       src: '/assets/images/storia/tavololimoni.png',
+      width: 501,
+      height: 312,
       alt: 'Sala di Villa Salina dopo il rinnovamento',
     },
   },
@@ -74,22 +86,32 @@ export const historySteps: HistoryStep[] = [
 export const restorationGallery = {
   left: {
     src: '/assets/images/storia/exscale.png',
+    width: 358,
+    height: 612,
     alt: 'Lo scalone di Villa Salina prima del restauro',
   },
   topLeft: {
     src: '/assets/images/storia/exfrontale.png',
+    width: 358,
+    height: 292,
     alt: 'La facciata di Villa Salina prima del restauro',
   },
   topRight: {
     src: '/assets/images/storia/excucina.png',
+    width: 358,
+    height: 292,
     alt: 'La cucina di Villa Salina prima del restauro',
   },
   bottom: {
     src: '/assets/images/storia/erbacce.png',
+    width: 746,
+    height: 292,
     alt: 'Il giardino di Villa Salina invaso dalle erbacce prima del restauro',
   },
   right: {
     src: '/assets/images/about2.jpg',
+    width: 1600,
+    height: 1000,
     alt: 'Una sala di Villa Salina dopo il restauro',
   },
 }

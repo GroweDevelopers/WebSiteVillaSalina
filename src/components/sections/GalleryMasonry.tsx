@@ -6,7 +6,13 @@ function PortfolioBox({ image, className }: { image: ImageRef; className?: strin
     <div className={['portfolio-box-2', className].filter(Boolean).join(' ')}>
       <div className="image">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={image.src} alt={image.alt} loading="lazy" />
+        <img
+          src={image.src}
+          alt={image.alt}
+          width={image.width}
+          height={image.height}
+          loading="lazy"
+        />
       </div>
     </div>
   )

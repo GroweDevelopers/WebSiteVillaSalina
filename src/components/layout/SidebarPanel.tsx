@@ -40,7 +40,9 @@ export function SidebarPanel() {
         onClick={() => setIsOpen((open) => !open)}
         aria-expanded={isOpen}
         aria-controls="sidebar-content"
-        aria-label={isOpen ? 'Chiudi le informazioni di contatto' : 'Apri le informazioni di contatto'}
+        aria-label={
+          isOpen ? 'Chiudi le informazioni di contatto' : 'Apri le informazioni di contatto'
+        }
       >
         <span />
       </button>

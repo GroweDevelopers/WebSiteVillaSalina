@@ -15,6 +15,8 @@ export function EventSection() {
               <img
                 src="/assets/images/my/bicchiere.png"
                 alt="Calice di vino servito a Villa Salina"
+                width={501}
+                height={609}
                 loading="lazy"
               />
             </div>
@@ -76,6 +78,8 @@ export function EventSection() {
               <img
                 src="/assets/images/my/villa.jpg"
                 alt="Villa Salina vista dal giardino"
+                width={1140}
+                height={855}
                 loading="lazy"
               />
             </div>

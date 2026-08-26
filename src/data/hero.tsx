@@ -5,6 +5,8 @@ import { site } from '@/data/site'
  */
 export const heroImage = {
   src: '/assets/images/my/uovo.jpg',
+  width: 1920,
+  height: 1080,
   alt: 'Uovo con fonduta servito a Villa Salina',
 }
 

@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { Navigation, Pagination } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import type { ImageRef } from '@/types'
 
 type HeroAction = {
   label: string
@@ -12,7 +13,7 @@ type HeroAction = {
 }
 
 type HeroSliderProps = {
-  image: { src: string; alt: string }
+  image: ImageRef
   title: React.ReactNode
   subtitle: React.ReactNode
   action: HeroAction
@@ -41,7 +42,13 @@ export function HeroSlider({ image, title, subtitle, action }: HeroSliderProps) 
       <SwiperSlide>
         <div className="overlay">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={image.src} alt={image.alt} fetchPriority="high" />
+          <img
+            src={image.src}
+            alt={image.alt}
+            width={image.width}
+            height={image.height}
+            fetchPriority="high"
+          />
         </div>
         <div className="container">
           <div className="row">
