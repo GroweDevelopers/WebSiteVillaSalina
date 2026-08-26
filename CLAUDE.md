@@ -17,7 +17,7 @@ Formato messaggi: `tipo(ambito): descrizione` — in italiano, imperativo, minus
 ## Contesto
 
 Porting del sito **Villa Salina** (ristorante, Moretta CN) da ASP.NET Core MVC 8 + Razor + jQuery
-a **Next.js 15 App Router + TypeScript**.
+a **Next.js 16 App Router + TypeScript**.
 
 - Piano completo e stato di avanzamento: [`PLAN.md`](PLAN.md)
 - Analisi dell'originale: [`docs/ANALISI-PROGETTO-ORIGINALE.md`](docs/ANALISI-PROGETTO-ORIGINALE.md)
