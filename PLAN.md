@@ -140,21 +140,21 @@ Legenda stato: `[ ]` da fare · `[x]` fatto e committato
 - [x] 2.7 `favicon.ico` + icone da `assets/images/favicon.png`
 - [x] 2.8 Report `docs/ASSET-AUDIT.md` (cosa è stato portato, cosa scartato e perché)
 
-### FASE 3 — Migrazione stili
+### FASE 3 — Migrazione stili ✅
 
-- [ ] 3.1 Copia sorgenti SCSS → `src/styles/` (solo `.scss`, niente `.css`/`.map` compilati)
-- [ ] 3.2 Riscrittura path `url(../../assets/…)` → `url(/assets/…)`
-- [ ] 3.3 Riconciliazione deriva #1: famiglia font `Inter` (2 `@font-face` + tutte le occorrenze)
-- [ ] 3.4 Riconciliazione deriva #2: `.footer .widget h5::before/::after` (linea centrata 73 px)
-- [ ] 3.5 Riconciliazione deriva #3: padding sezioni `location` e `s-formmail`
-- [ ] 3.6 Riconciliazione deriva #4: background `booking` → `my/tavolo.jpg`, `s-formmail` → `my/sofa.jpg`
-- [ ] 3.7 Riconciliazione deriva #5: `p-gallery` → `gallery.png`, `p-history` → `Foto-storica-moretta.jpg`
-- [ ] 3.8 Riconciliazione deriva #6: `.sidebar-content` background nero
-- [ ] 3.9 Riconciliazione deriva #7: `.block-text .title::after` centrato
-- [ ] 3.10 Riconciliazione deriva #8: override finali (`.header .main-nav` a 991px, tipografia < 500px)
-- [ ] 3.11 Verifica: CSS compilato dal sorgente ≡ `dist/app.css` (diff vuoto)
-- [ ] 3.12 `src/styles/globals.scss` — ordine import (bootstrap → swiper → aos → fontawesome → app)
-- [ ] 3.13 Rimozione regole per pagine inesistenti (audit, non distruttivo se dubbio)
+- [x] 3.1 Copia sorgenti SCSS → `src/styles/` (solo `.scss`, niente `.css`/`.map` compilati)
+- [x] 3.2 Riscrittura path `url(../../assets/…)` → `url(/assets/…)`
+- [x] 3.3 Riconciliazione deriva #1: famiglia font `Inter` (2 `@font-face` + tutte le occorrenze)
+- [x] 3.4 Riconciliazione deriva #2: `.footer .widget h5::before/::after` (linea centrata 73 px)
+- [x] 3.5 Riconciliazione deriva #3: padding sezioni `location` e `s-formmail`
+- [x] 3.6 Riconciliazione deriva #4: background `booking` → `my/tavolo.jpg`, `s-formmail` → `my/sofa.jpg`
+- [x] 3.7 Riconciliazione deriva #5: `p-gallery` → `gallery.png`, `p-history` → `Foto-storica-moretta.jpg`
+- [x] 3.8 Riconciliazione deriva #6: `.sidebar-content` background nero
+- [x] 3.9 Riconciliazione deriva #7: `.block-text .title::after` centrato
+- [x] 3.10 Riconciliazione deriva #8: override finali (`.header .main-nav` a 991px, tipografia < 500px)
+- [x] 3.11 Verifica: CSS compilato dal sorgente ≡ `dist/app.css` (307 → 31 righe di diff, entrambe volute)
+- [x] 3.12 `src/styles/globals.scss` — ordine import (bootstrap → swiper → aos → fontawesome → app)
+- [x] 3.13 Audit delle regole per pagine inesistenti — 285 classi inutilizzate, **non rimosse** (vedi `docs/VERIFICA-STILI.md`)
 
 ### FASE 4 — Componenti di layout
 
