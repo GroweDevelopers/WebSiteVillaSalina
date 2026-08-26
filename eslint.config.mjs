@@ -1,17 +1,15 @@
-import { dirname } from 'node:path'
-import { fileURLToPath } from 'node:url'
-import { FlatCompat } from '@eslint/eslintrc'
+import nextCoreWebVitals from 'eslint-config-next/core-web-vitals'
+import nextTypescript from 'eslint-config-next/typescript'
+import prettier from 'eslint-config-prettier'
 
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = dirname(__filename)
-
-const compat = new FlatCompat({ baseDirectory: __dirname })
-
+/** @type {import('eslint').Linter.Config[]} */
 const eslintConfig = [
   {
-    ignores: ['.next/**', 'out/**', 'node_modules/**', 'next-env.d.ts', 'public/**'],
+    ignores: ['.next/**', 'out/**', 'build/**', 'node_modules/**', 'next-env.d.ts', 'public/**'],
   },
-  ...compat.extends('next/core-web-vitals', 'next/typescript', 'prettier'),
+  ...nextCoreWebVitals,
+  ...nextTypescript,
+  prettier,
   {
     rules: {
       '@typescript-eslint/consistent-type-imports': [
