@@ -28,11 +28,13 @@
             letter-spacing: 1px;
             position: relative;
             margin-bottom: 50px;
+            text-align: center;
             &::before {
                 content: '';
                 position: absolute;
-                left: 0;
+                left: 50%;
                 bottom: -14px;
+                transform: translateX(-50%); /* Center the line */
                 width: 73px;
                 height: 2px;
                 background: $color-hover;
@@ -230,8 +232,11 @@
                 h5::before {
                     content: "";
                     position: absolute;
-                    left: auto;
-                    right: 0;
+                    left: 50%;
+                    transform: translateX(-50%); /* Center the line */
+                    width: 73px; /* Adjust width as needed */
+                    height: 2px;
+                    background: $color-hover;
                 }
             }
         }
