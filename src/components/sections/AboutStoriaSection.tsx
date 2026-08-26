@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { IMAGE_SIZES } from '@/lib/imageSizes'
+import { IMAGE_QUALITY, IMAGE_SIZES } from '@/lib/image'
 /** Introduzione della pagina Storia: chi siamo e da dove viene il nome. */
 export function AboutStoriaSection() {
   return (
@@ -45,6 +45,7 @@ export function AboutStoriaSection() {
                   width={1140}
                   height={855}
                   sizes={IMAGE_SIZES}
+                  quality={IMAGE_QUALITY}
                 />
               </div>
             </div>

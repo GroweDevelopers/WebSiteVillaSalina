@@ -14,7 +14,16 @@ const nextConfig: NextConfig = {
 
   images: {
     // le immagini sono tutte locali in /public: nessun remote pattern necessario
-    formats: ['image/avif', 'image/webp'],
+
+    // Solo WebP, niente AVIF. A parita' di peso l'encoder AVIF di sharp
+    // impasta le texture: su gallery/cotolette.png, a 4 ingrandimenti, la
+    // panatura sparisce gia' a q75 e non torna nemmeno a q100. WebP q95 e'
+    // indistinguibile dall'originale e pesa comunque un quinto del PNG.
+    formats: ['image/webp'],
+
+    // Next 16 rifiuta le qualita' non dichiarate: vedi IMAGE_QUALITY in
+    // src/lib/image.ts
+    qualities: [95],
   },
 }
 

@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { Navigation, Pagination } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import type { ImageRef } from '@/types'
-import { IMAGE_SIZES } from '@/lib/imageSizes'
+import { IMAGE_QUALITY, IMAGE_SIZES } from '@/lib/image'
 
 type HeroAction = {
   label: string
@@ -49,6 +49,7 @@ export function HeroSlider({ image, title, subtitle, action }: HeroSliderProps) 
             width={image.width}
             height={image.height}
             sizes={IMAGE_SIZES}
+            quality={IMAGE_QUALITY}
             priority
           />
         </div>

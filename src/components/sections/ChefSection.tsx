@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { site } from '@/data/site'
-import { IMAGE_SIZES } from '@/lib/imageSizes'
+import { IMAGE_QUALITY, IMAGE_SIZES } from '@/lib/image'
 
 /** Presentazione dello chef, con ritratto e rimando alla pagina Storia. */
 export function ChefSection() {
@@ -47,6 +47,7 @@ export function ChefSection() {
                     width={1066}
                     height={1066}
                     sizes={IMAGE_SIZES}
+                    quality={IMAGE_QUALITY}
                     style={{ objectPosition: 'center' }}
                   />
                 </div>

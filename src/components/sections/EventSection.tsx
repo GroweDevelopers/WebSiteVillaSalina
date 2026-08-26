@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { bookingHref } from '@/data/navigation'
 import { eventHighlights } from '@/data/qualities'
-import { IMAGE_SIZES } from '@/lib/imageSizes'
+import { IMAGE_QUALITY, IMAGE_SIZES } from '@/lib/image'
 
 /** I due blocchi alternati su eventi e restauro, nella home. */
 export function EventSection() {
@@ -19,6 +19,7 @@ export function EventSection() {
                 width={501}
                 height={609}
                 sizes={IMAGE_SIZES}
+                quality={IMAGE_QUALITY}
               />
             </div>
           </div>
@@ -81,6 +82,7 @@ export function EventSection() {
                 width={1140}
                 height={855}
                 sizes={IMAGE_SIZES}
+                quality={IMAGE_QUALITY}
               />
             </div>
           </div>

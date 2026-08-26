@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import { galleryDishes } from '@/data/gallery'
 import type { ImageRef } from '@/types'
-import { IMAGE_SIZES } from '@/lib/imageSizes'
+import { IMAGE_QUALITY, IMAGE_SIZES } from '@/lib/image'
 
 function PortfolioBox({ image, className }: { image: ImageRef; className?: string }) {
   return (
@@ -13,6 +13,7 @@ function PortfolioBox({ image, className }: { image: ImageRef; className?: strin
           width={image.width}
           height={image.height}
           sizes={IMAGE_SIZES}
+          quality={IMAGE_QUALITY}
         />
       </div>
     </div>
