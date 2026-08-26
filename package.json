@@ -1,0 +1,44 @@
+{
+  "name": "website-villa-salina",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sito web del ristorante Villa Salina - Moretta (CN)",
+  "author": "Growe Srl <account@growe.dev>",
+  "license": "UNLICENSED",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "check": "npm run lint && npm run typecheck && npm run build"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "6.4.2",
+    "aos": "2.3.4",
+    "bootstrap": "5.1.3",
+    "next": "^16.3.3",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "swiper": "^14.1.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.3.1",
+    "@types/aos": "^3.0.7",
+    "@types/node": "^22.13.1",
+    "@types/react": "^19.2.8",
+    "@types/react-dom": "^19.2.8",
+    "eslint": "^9.20.0",
+    "eslint-config-next": "^16.3.3",
+    "eslint-config-prettier": "^10.0.1",
+    "prettier": "^3.4.2",
+    "sass": "^1.103.1",
+    "typescript": "^5.7.3"
+  },
+  "engines": {
+    "node": ">=20.9.0"
+  }
+}
