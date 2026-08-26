@@ -156,68 +156,68 @@ Legenda stato: `[ ]` da fare · `[x]` fatto e committato
 - [x] 3.12 `src/styles/globals.scss` — ordine import (bootstrap → swiper → aos → fontawesome → app)
 - [x] 3.13 Audit delle regole per pagine inesistenti — 285 classi inutilizzate, **non rimosse** (vedi `docs/VERIFICA-STILI.md`)
 
-### FASE 4 — Componenti di layout
+### FASE 4 — Componenti di layout ✅
 
-- [ ] 4.1 `src/components/layout/TopBar.tsx`
-- [ ] 4.2 `src/components/layout/Header.tsx` (logo + nav desktop + CTA)
-- [ ] 4.3 Navigazione mobile in React (hamburger, slide-toggle, niente jQuery)
-- [ ] 4.4 `src/components/layout/SidebarPanel.tsx` (pannello laterale + toggle)
-- [ ] 4.5 `src/hooks/useHeaderFixed.ts` (`is-fixed` > 200 px, `is-small` > 300 px + spacer)
-- [ ] 4.6 `src/components/layout/Footer.tsx`
-- [ ] 4.7 `src/components/layout/Preloader.tsx`
-- [ ] 4.8 `src/components/layout/ScrollTopButton.tsx`
-- [ ] 4.9 `src/components/providers/AosProvider.tsx`
-- [ ] 4.10 `src/app/layout.tsx` definitivo (font, classi body, wrapper)
+- [x] 4.1 `src/components/layout/TopBar.tsx`
+- [x] 4.2 `src/components/layout/Header.tsx` (logo + nav desktop + CTA)
+- [x] 4.3 Navigazione mobile in React (hamburger, slide-toggle, niente jQuery)
+- [x] 4.4 `src/components/layout/SidebarPanel.tsx` (pannello laterale + toggle)
+- [x] 4.5 `src/hooks/useHeaderFixed.ts` (`is-fixed` > 200 px, `is-small` > 300 px + spacer)
+- [x] 4.6 `src/components/layout/Footer.tsx`
+- [x] 4.7 `src/components/layout/Preloader.tsx`
+- [x] 4.8 `src/components/layout/ScrollTopButton.tsx`
+- [x] 4.9 `src/components/providers/AosProvider.tsx`
+- [x] 4.10 `src/app/layout.tsx` definitivo (font, classi body, wrapper)
 
-### FASE 5 — Componenti di sezione
+### FASE 5 — Componenti di sezione ✅
 
-- [ ] 5.1 `HeroSlider.tsx` (swiper `.mySwiper`, slide singola con overlay)
-- [ ] 5.2 `EccellenzaSection.tsx` (3 servizi + doppio `imagesSwiper`)
-- [ ] 5.3 `ImagesSwiper.tsx` (carosello immagini riusabile, `centeredSlides`, breakpoint 1 / 1.5 / 2.42)
-- [ ] 5.4 `ChefSection.tsx`
-- [ ] 5.5 `GuidaMichelinSection.tsx`
-- [ ] 5.6 `PrenotazioneCta.tsx`
-- [ ] 5.7 `src/hooks/useCountUp.ts`
-- [ ] 5.8 `CounterSection.tsx` (4 contatori)
-- [ ] 5.9 `AboutRestaurantSection.tsx`
-- [ ] 5.10 `EventSection.tsx` (2 blocchi alternati)
-- [ ] 5.11 `PageTitle.tsx` (varianti `p-history`, `p-gallery`)
-- [ ] 5.12 `HistoryTimeline.tsx` (6 tappe)
-- [ ] 5.13 `GalleryMasonry.tsx` (2 blocchi masonry)
-- [ ] 5.14 `RestorationGallery.tsx` (gallery-ig prima/dopo)
-- [ ] 5.15 `LocationSection.tsx` (contatti + mappa lazy)
+- [x] 5.1 `HeroSlider.tsx` (swiper `.mySwiper`, slide singola con overlay)
+- [x] 5.2 `EccellenzaSection.tsx` (3 servizi + doppio `imagesSwiper`)
+- [x] 5.3 `ImagesSwiper.tsx` (carosello immagini riusabile, `centeredSlides`, breakpoint 1 / 1.5 / 2.42)
+- [x] 5.4 `ChefSection.tsx`
+- [x] 5.5 `GuidaMichelinSection.tsx`
+- [x] 5.6 `PrenotazioneCta.tsx`
+- [x] 5.7 `src/hooks/useCountUp.ts`
+- [x] 5.8 `CounterSection.tsx` (4 contatori)
+- [x] 5.9 `AboutRestaurantSection.tsx`
+- [x] 5.10 `EventSection.tsx` (2 blocchi alternati)
+- [x] 5.11 `PageTitle.tsx` (varianti `p-history`, `p-gallery`)
+- [x] 5.12 `HistoryTimeline.tsx` (6 tappe)
+- [x] 5.13 `GalleryMasonry.tsx` (2 blocchi masonry)
+- [x] 5.14 `RestorationGallery.tsx` (gallery-ig prima/dopo)
+- [x] 5.15 `LocationSection.tsx` (contatti + mappa lazy)
 
-### FASE 6 — Pagine
+### FASE 6 — Pagine ✅
 
-- [ ] 6.1 `src/app/page.tsx` — Home
-- [ ] 6.2 `src/app/storia/page.tsx`
-- [ ] 6.3 `src/app/gallery/page.tsx`
-- [ ] 6.4 `src/app/prenotazioni/page.tsx`
-- [ ] 6.5 `src/app/contatti/page.tsx`
-- [ ] 6.6 `src/app/not-found.tsx`
-- [ ] 6.7 `src/app/error.tsx`
-- [ ] 6.8 Verifica parità visiva pagina per pagina
+- [x] 6.1 `src/app/page.tsx` — Home
+- [x] 6.2 `src/app/storia/page.tsx`
+- [x] 6.3 `src/app/gallery/page.tsx`
+- [x] 6.4 `src/app/prenotazioni/page.tsx`
+- [x] 6.5 `src/app/contatti/page.tsx`
+- [x] 6.6 `src/app/not-found.tsx`
+- [x] 6.7 `src/app/error.tsx`
+- [x] 6.8 Verifica parità visiva pagina per pagina
 
-### FASE 7 — Contenuti centralizzati
+### FASE 7 — Contenuti centralizzati ✅
 
-- [ ] 7.1 `src/data/site.ts` (nome, contatti, indirizzo, orari, social, mappa)
-- [ ] 7.2 `src/data/navigation.ts`
-- [ ] 7.3 `src/data/history.ts` (timeline)
-- [ ] 7.4 `src/data/gallery.ts`
-- [ ] 7.5 `src/data/qualities.ts` (eccellenza / ospitalità / innovazione)
-- [ ] 7.6 `src/data/counters.ts`
-- [ ] 7.7 `src/types/` — tipi condivisi
-- [ ] 7.8 Refactor componenti per consumare `src/data`
+- [x] 7.1 `src/data/site.ts` (nome, contatti, indirizzo, orari, social, mappa)
+- [x] 7.2 `src/data/navigation.ts`
+- [x] 7.3 `src/data/history.ts` (timeline)
+- [x] 7.4 `src/data/gallery.ts`
+- [x] 7.5 `src/data/qualities.ts` (eccellenza / ospitalità / innovazione)
+- [x] 7.6 `src/data/counters.ts`
+- [x] 7.7 `src/types/` — tipi condivisi
+- [x] 7.8 Refactor componenti per consumare `src/data`
 
-### FASE 8 — SEO e metadata
+### FASE 8 — SEO e metadata ✅
 
-- [ ] 8.1 Metadata globali in `layout.tsx` (title template, description, lang `it`)
-- [ ] 8.2 Metadata per singola pagina
-- [ ] 8.3 OpenGraph + Twitter card
-- [ ] 8.4 `src/app/sitemap.ts`
-- [ ] 8.5 `src/app/robots.ts`
-- [ ] 8.6 JSON-LD `Restaurant` (schema.org) con indirizzo, orari, telefono, geo
-- [ ] 8.7 `metadataBase` + canonical
+- [x] 8.1 Metadata globali in `layout.tsx` (title template, description, lang `it`)
+- [x] 8.2 Metadata per singola pagina
+- [x] 8.3 OpenGraph + Twitter card
+- [x] 8.4 `src/app/sitemap.ts`
+- [x] 8.5 `src/app/robots.ts`
+- [x] 8.6 JSON-LD `Restaurant` (schema.org) con indirizzo, orari, telefono, geo
+- [x] 8.7 `metadataBase` + canonical
 
 ### FASE 9 — Qualità, performance, accessibilità
 
