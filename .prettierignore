@@ -9,3 +9,6 @@ src/styles/**/*.scss
 
 # script di confronto con il sito originale
 tools
+
+# riscritto da Next a ogni build
+tsconfig.json

@@ -11,10 +11,10 @@ npm run a11y:old    # sito ASP.NET originale, per confronto
 
 ## Risultato
 
-| | elementi con problemi | tipi di violazione per pagina |
-|---|---:|---:|
-| sito ASP.NET originale | **95** | 6 – 7 |
-| sito Next.js | **29** | 2 |
+|                        | elementi con problemi | tipi di violazione per pagina |
+| ---------------------- | --------------------: | ----------------------------: |
+| sito ASP.NET originale |                **95** |                         6 – 7 |
+| sito Next.js           |                **29** |                             2 |
 
 **−70 %.** I 29 rimasti sono due soli difetti, entrambi ereditati dal design del tema e presenti
 identici nell'originale. Richiedono una decisione sull'aspetto grafico, quindi non sono stati
@@ -22,13 +22,13 @@ cambiati di iniziativa: le correzioni sono pronte qui sotto.
 
 ## Problemi risolti nella migrazione
 
-| regola | quante volte | come |
-|---|---:|---|
-| `link-name` — link senza testo leggibile | **6 per pagina** | i link social erano `<a>` con dentro solo un `<i>` di Font Awesome: per un lettore di schermo erano link vuoti. Ora ognuno ha `aria-label` ("Facebook", "Instagram", "Scrivici una email") e l'icona è `aria-hidden` |
-| `landmark-one-main` — manca il landmark principale | 1 – 2 per pagina | il contenuto è ora dentro `<main>` |
-| `page-has-heading-one` — manca il titolo di primo livello | 1 – 2 per pagina | testata e slider di apertura usano `<h1>`, con le stesse dimensioni di prima |
-| `frame-title` — iframe senza nome | 1 (Contatti, Prenotazioni) | la mappa ha un `title` che dice cosa mostra |
-| `region` — contenuti fuori dai landmark | da 8 a 3 per pagina | la barra contatti in alto è un `region` etichettato; il resto è rientrato in `main`, `header`, `footer`, `nav` |
+| regola                                                    |               quante volte | come                                                                                                                                                                                                                 |
+| --------------------------------------------------------- | -------------------------: | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `link-name` — link senza testo leggibile                  |           **6 per pagina** | i link social erano `<a>` con dentro solo un `<i>` di Font Awesome: per un lettore di schermo erano link vuoti. Ora ognuno ha `aria-label` ("Facebook", "Instagram", "Scrivici una email") e l'icona è `aria-hidden` |
+| `landmark-one-main` — manca il landmark principale        |           1 – 2 per pagina | il contenuto è ora dentro `<main>`                                                                                                                                                                                   |
+| `page-has-heading-one` — manca il titolo di primo livello |           1 – 2 per pagina | testata e slider di apertura usano `<h1>`, con le stesse dimensioni di prima                                                                                                                                         |
+| `frame-title` — iframe senza nome                         | 1 (Contatti, Prenotazioni) | la mappa ha un `title` che dice cosa mostra                                                                                                                                                                          |
+| `region` — contenuti fuori dai landmark                   |        da 8 a 3 per pagina | la barra contatti in alto è un `region` etichettato; il resto è rientrato in `main`, `header`, `footer`, `nav`                                                                                                       |
 
 Oltre a queste, e non misurate da axe perché richiedono l'interazione:
 
@@ -61,10 +61,10 @@ il grigio del `body`: sembra una dimenticanza più che una scelta.
 
 ```scss
 .bottom-footer {
-    p,
-    a {
-        color: #fff;      /* contrasto 15.9:1 */
-    }
+  p,
+  a {
+    color: #fff; /* contrasto 15.9:1 */
+  }
 }
 ```
 
@@ -76,12 +76,12 @@ footer ma passa AA.
 Da 3 a 4 punti per pagina in cui a un `<h3>` segue direttamente un `<h5>` o un `<h6>`, saltando
 un livello. È la struttura del tema:
 
-| dove | sequenza |
-|---|---|
-| sezione Chef | `h3` "Eccellenza Gastronomica" → `h5` "IVO DRUETTA" |
-| pagina Storia | `h3` "Villa Salina: Una Riscoperta…" → `h5` sottotitolo |
-| sezione Michelin | `h3` "Una menzione…" → `h5` attorno al pulsante |
-| footer | `h3` della pagina → `h5` "DOVE SIAMO" |
+| dove             | sequenza                                                |
+| ---------------- | ------------------------------------------------------- |
+| sezione Chef     | `h3` "Eccellenza Gastronomica" → `h5` "IVO DRUETTA"     |
+| pagina Storia    | `h3` "Villa Salina: Una Riscoperta…" → `h5` sottotitolo |
+| sezione Michelin | `h3` "Una menzione…" → `h5` attorno al pulsante         |
+| footer           | `h3` della pagina → `h5` "DOVE SIAMO"                   |
 
 Non è stato corretto perché cambiare il tag cambia il corpo del carattere: nel tema `h4` è 28 px,
 `h5` 17 px. Portare "IVO DRUETTA" da `h5` a `h4` lo ingrandirebbe del 65 %.

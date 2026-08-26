@@ -44,17 +44,17 @@ sorgente SCSS**, non perse.
 
 ## Stack scelto
 
-| Ambito | Scelta | Motivo |
-|---|---|---|
-| Framework | Next.js 16 (App Router, Turbopack) | Routing file-based, RSC, metadata API |
-| Linguaggio | TypeScript strict | Sicurezza sui dati di contenuto |
-| Stili | Sass (SCSS) — sorgente originale portato | Fedeltà 1:1 al design esistente |
-| Griglia | Bootstrap 5.1.3 (solo CSS) | Le view usano massicciamente `col-*`, `row`, `d-*` |
-| Slider | `swiper` v14 (React) | Sostituisce `swiper-bundle.min.js` |
-| Animazioni scroll | `aos` v2.3.4 | Il markup usa già `data-aos` |
-| Icone | `@fortawesome/fontawesome-free` 6.4.2 (CSS) | Le classi `fa-*` sono nel markup |
-| Font | `next/font/local` | Audrey, Cerebri Sans, Inter self-hosted |
-| Lint | ESLint 9 (next/core-web-vitals) + Prettier | ESLint 10 rompe `eslint-plugin-react` incluso in `eslint-config-next` |
+| Ambito            | Scelta                                      | Motivo                                                                |
+| ----------------- | ------------------------------------------- | --------------------------------------------------------------------- |
+| Framework         | Next.js 16 (App Router, Turbopack)          | Routing file-based, RSC, metadata API                                 |
+| Linguaggio        | TypeScript strict                           | Sicurezza sui dati di contenuto                                       |
+| Stili             | Sass (SCSS) — sorgente originale portato    | Fedeltà 1:1 al design esistente                                       |
+| Griglia           | Bootstrap 5.1.3 (solo CSS)                  | Le view usano massicciamente `col-*`, `row`, `d-*`                    |
+| Slider            | `swiper` v14 (React)                        | Sostituisce `swiper-bundle.min.js`                                    |
+| Animazioni scroll | `aos` v2.3.4                                | Il markup usa già `data-aos`                                          |
+| Icone             | `@fortawesome/fontawesome-free` 6.4.2 (CSS) | Le classi `fa-*` sono nel markup                                      |
+| Font              | `next/font/local`                           | Audrey, Cerebri Sans, Inter self-hosted                               |
+| Lint              | ESLint 9 (next/core-web-vitals) + Prettier  | ESLint 10 rompe `eslint-plugin-react` incluso in `eslint-config-next` |
 
 ---
 
@@ -62,40 +62,40 @@ sorgente SCSS**, non perse.
 
 ### Rotte
 
-| ASP.NET (`HomeController`) | Razor View | Next.js |
-|---|---|---|
-| `[Route("")]` → `Index()` | `Views/Home/Index.cshtml` | `src/app/page.tsx` |
-| `[Route("storia")]` → `Storia()` | `Views/Home/Storia.cshtml` | `src/app/storia/page.tsx` |
-| `[Route("gallery")]` → `Gallery()` | `Views/Home/Gallery.cshtml` | `src/app/gallery/page.tsx` |
-| `[Route("prenotazioni")]` → `Prenotazioni()` | `Views/Home/Prenotazioni.cshtml` | `src/app/prenotazioni/page.tsx` |
-| `[Route("contatti")]` → `Contatti()` | `Views/Home/Contatti.cshtml` | `src/app/contatti/page.tsx` |
-| `Error()` | `Views/Shared/Error.cshtml` | `src/app/error.tsx` + `src/app/not-found.tsx` |
+| ASP.NET (`HomeController`)                   | Razor View                       | Next.js                                       |
+| -------------------------------------------- | -------------------------------- | --------------------------------------------- |
+| `[Route("")]` → `Index()`                    | `Views/Home/Index.cshtml`        | `src/app/page.tsx`                            |
+| `[Route("storia")]` → `Storia()`             | `Views/Home/Storia.cshtml`       | `src/app/storia/page.tsx`                     |
+| `[Route("gallery")]` → `Gallery()`           | `Views/Home/Gallery.cshtml`      | `src/app/gallery/page.tsx`                    |
+| `[Route("prenotazioni")]` → `Prenotazioni()` | `Views/Home/Prenotazioni.cshtml` | `src/app/prenotazioni/page.tsx`               |
+| `[Route("contatti")]` → `Contatti()`         | `Views/Home/Contatti.cshtml`     | `src/app/contatti/page.tsx`                   |
+| `Error()`                                    | `Views/Shared/Error.cshtml`      | `src/app/error.tsx` + `src/app/not-found.tsx` |
 
 ### Layout e partial
 
-| Razor | Next.js |
-|---|---|
-| `Views/Shared/_Layout.cshtml` | `src/app/layout.tsx` |
-| `Views/Shared/_Header.cshtml` | `src/components/layout/TopBar.tsx` + `Header.tsx` + `SidebarPanel.tsx` |
-| `Views/Shared/_Footer.cshtml` | `src/components/layout/Footer.tsx` |
-| `Views/Shared/_chef.cshtml` | `src/components/sections/ChefSection.tsx` |
-| `Views/Shared/_eccellenza.cshtml` | `src/components/sections/EccellenzaSection.tsx` |
-| `Views/Shared/_guidamichelin.cshtml` | `src/components/sections/GuidaMichelinSection.tsx` |
-| `Views/Shared/_Prenotazione.cshtml` | `src/components/sections/PrenotazioneCta.tsx` |
+| Razor                                | Next.js                                                                |
+| ------------------------------------ | ---------------------------------------------------------------------- |
+| `Views/Shared/_Layout.cshtml`        | `src/app/layout.tsx`                                                   |
+| `Views/Shared/_Header.cshtml`        | `src/components/layout/TopBar.tsx` + `Header.tsx` + `SidebarPanel.tsx` |
+| `Views/Shared/_Footer.cshtml`        | `src/components/layout/Footer.tsx`                                     |
+| `Views/Shared/_chef.cshtml`          | `src/components/sections/ChefSection.tsx`                              |
+| `Views/Shared/_eccellenza.cshtml`    | `src/components/sections/EccellenzaSection.tsx`                        |
+| `Views/Shared/_guidamichelin.cshtml` | `src/components/sections/GuidaMichelinSection.tsx`                     |
+| `Views/Shared/_Prenotazione.cshtml`  | `src/components/sections/PrenotazioneCta.tsx`                          |
 
 ### JavaScript da riscrivere (eliminazione jQuery)
 
-| `wwwroot/app/js/app.js` | Sostituto React |
-|---|---|
-| `headerFixed()` | `useHeaderFixed()` — listener scroll + classi `is-fixed` / `is-small` |
-| `mobileNav()` | stato React in `Header.tsx` (niente spostamento DOM) |
-| `.btn-side` toggle | stato React in `SidebarPanel.tsx` |
-| `goTop()` | `ScrollTopButton.tsx` |
-| `Preloader()` | `Preloader.tsx` |
-| `flatCounter()` + `countTo` | `useCountUp()` + `<CounterItem />` |
-| `AOS.init()` | `AosProvider.tsx` (`useEffect`) |
-| `swiper.js` (init globali) | istanze `swiper/react` nei singoli componenti |
-| `ajaxContactForm`, `ajaxSubscribe`, `tabs`, `dropdown`, `flatAccordion`, `popupVideo`, `sticky` | **non usati** dal markup attuale → non portati |
+| `wwwroot/app/js/app.js`                                                                         | Sostituto React                                                       |
+| ----------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| `headerFixed()`                                                                                 | `useHeaderFixed()` — listener scroll + classi `is-fixed` / `is-small` |
+| `mobileNav()`                                                                                   | stato React in `Header.tsx` (niente spostamento DOM)                  |
+| `.btn-side` toggle                                                                              | stato React in `SidebarPanel.tsx`                                     |
+| `goTop()`                                                                                       | `ScrollTopButton.tsx`                                                 |
+| `Preloader()`                                                                                   | `Preloader.tsx`                                                       |
+| `flatCounter()` + `countTo`                                                                     | `useCountUp()` + `<CounterItem />`                                    |
+| `AOS.init()`                                                                                    | `AosProvider.tsx` (`useEffect`)                                       |
+| `swiper.js` (init globali)                                                                      | istanze `swiper/react` nei singoli componenti                         |
+| `ajaxContactForm`, `ajaxSubscribe`, `tabs`, `dropdown`, `flatAccordion`, `popupVideo`, `sticky` | **non usati** dal markup attuale → non portati                        |
 
 ---
 

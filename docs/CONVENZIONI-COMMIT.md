@@ -73,18 +73,18 @@ Poi `git push --force-with-lease`.
 
 ### Tipi ammessi
 
-| Tipo | Uso |
-|---|---|
-| `feat` | nuova funzionalità, componente, pagina |
-| `fix` | correzione di un difetto |
-| `style` | CSS/SCSS, aspetto visivo |
+| Tipo       | Uso                                            |
+| ---------- | ---------------------------------------------- |
+| `feat`     | nuova funzionalità, componente, pagina         |
+| `fix`      | correzione di un difetto                       |
+| `style`    | CSS/SCSS, aspetto visivo                       |
 | `refactor` | riorganizzazione senza cambio di comportamento |
-| `chore` | configurazione, dipendenze, tooling |
-| `assets` | immagini, font, file statici |
-| `docs` | documentazione |
-| `perf` | performance |
-| `ci` | pipeline |
-| `build` | sistema di build |
+| `chore`    | configurazione, dipendenze, tooling            |
+| `assets`   | immagini, font, file statici                   |
+| `docs`     | documentazione                                 |
+| `perf`     | performance                                    |
+| `ci`       | pipeline                                       |
+| `build`    | sistema di build                               |
 
 ### Ambiti ricorrenti
 

@@ -15,38 +15,38 @@ diff <(tr -d ' \t\r' < /tmp/port.css   | grep -v '^$') \
 
 ## Risultato
 
-| Passo | Righe di differenza |
-|---|---:|
-| Copia grezza del sorgente | **307** |
-| Dopo l'allineamento della tipografia a Inter | 168 |
-| Dopo i titoli e le linee del footer | 141 |
-| Dopo padding, sfondi e hamburger | 110 |
-| Dopo il recupero degli override in coda | 101 |
-| Dopo il riordino delle dichiarazioni | **31** |
+| Passo                                        | Righe di differenza |
+| -------------------------------------------- | ------------------: |
+| Copia grezza del sorgente                    |             **307** |
+| Dopo l'allineamento della tipografia a Inter |                 168 |
+| Dopo i titoli e le linee del footer          |                 141 |
+| Dopo padding, sfondi e hamburger             |                 110 |
+| Dopo il recupero degli override in coda      |                 101 |
+| Dopo il riordino delle dichiarazioni         |              **31** |
 
 Le 31 righe rimaste sono **due sole differenze**, entrambe volute e senza alcun effetto sulle
 pagine renderizzate.
 
 ## Differenze chiuse
 
-| # | Cosa | Da | A |
-|---|---|---|---|
-| 1 | famiglia tipografica (31 utilizzazioni + 2 `@font-face`) | Audrey / Cerebri Sans | **Inter** |
-| 2 | `.header .main-nav` | `left: 50%`, `top: 50%` | `left: 25%`, `top: 52%` |
-| 3 | `.header.style-2 … .main-nav` | `left: 50%` | `left: 30.9%` |
-| 4 | `.footer .widget h5` | — | `text-align: center` |
-| 5 | `.footer .widget h5::before` | `left: 0` | `left: 50%` + `translateX(-50%)` |
-| 6 | `.footer.style-2 .widget.time h5::before` | `left: auto; right: 0` | linea centrata 73 × 2 px |
-| 7 | `.testimonials` (in `.home-3`) | `padding: 131px 0 188px` | `100px 0 100px` |
-| 8 | `.testimonials` | `padding: 136px 0 235px` | `86px 0 135px` |
-| 9 | `.booking` | `section/booking.jpg` + `background-attachment: fixed` | `my/tavolo.jpg`, senza `fixed` |
-| 10 | `.s-formmail` | `section/s-form.jpg` | `my/sofa.jpg` |
-| 11 | `.page-title.p-gallery` | `section/bg-gallery.jpg` | `gallery.png` |
-| 12 | `.page-title.p-history` | `section/bg-history.jpg` | `Foto-storica-moretta.jpg` |
-| 13 | `.mobile-button` (hamburger) | `background-color: #fff` | `black` |
-| 14 | coda del file | — | blocco `/* Singh */`: nav a `left: 35%` sopra 991 px |
-| 15 | coda del file | — | blocco `/* Sam */`: `h2.title` 28 px e `p.sub-title` 15 px sotto 500 px |
-| 16 | 10 dichiarazioni dopo regole annidate | ordine dipendente dalla versione di Sass | dichiarazioni spostate prima |
+| #   | Cosa                                                     | Da                                                     | A                                                                       |
+| --- | -------------------------------------------------------- | ------------------------------------------------------ | ----------------------------------------------------------------------- |
+| 1   | famiglia tipografica (31 utilizzazioni + 2 `@font-face`) | Audrey / Cerebri Sans                                  | **Inter**                                                               |
+| 2   | `.header .main-nav`                                      | `left: 50%`, `top: 50%`                                | `left: 25%`, `top: 52%`                                                 |
+| 3   | `.header.style-2 … .main-nav`                            | `left: 50%`                                            | `left: 30.9%`                                                           |
+| 4   | `.footer .widget h5`                                     | —                                                      | `text-align: center`                                                    |
+| 5   | `.footer .widget h5::before`                             | `left: 0`                                              | `left: 50%` + `translateX(-50%)`                                        |
+| 6   | `.footer.style-2 .widget.time h5::before`                | `left: auto; right: 0`                                 | linea centrata 73 × 2 px                                                |
+| 7   | `.testimonials` (in `.home-3`)                           | `padding: 131px 0 188px`                               | `100px 0 100px`                                                         |
+| 8   | `.testimonials`                                          | `padding: 136px 0 235px`                               | `86px 0 135px`                                                          |
+| 9   | `.booking`                                               | `section/booking.jpg` + `background-attachment: fixed` | `my/tavolo.jpg`, senza `fixed`                                          |
+| 10  | `.s-formmail`                                            | `section/s-form.jpg`                                   | `my/sofa.jpg`                                                           |
+| 11  | `.page-title.p-gallery`                                  | `section/bg-gallery.jpg`                               | `gallery.png`                                                           |
+| 12  | `.page-title.p-history`                                  | `section/bg-history.jpg`                               | `Foto-storica-moretta.jpg`                                              |
+| 13  | `.mobile-button` (hamburger)                             | `background-color: #fff`                               | `black`                                                                 |
+| 14  | coda del file                                            | —                                                      | blocco `/* Singh */`: nav a `left: 35%` sopra 991 px                    |
+| 15  | coda del file                                            | —                                                      | blocco `/* Sam */`: `h2.title` 28 px e `p.sub-title` 15 px sotto 500 px |
+| 16  | 10 dichiarazioni dopo regole annidate                    | ordine dipendente dalla versione di Sass               | dichiarazioni spostate prima                                            |
 
 I due blocchi 14–15 vivono ora in `src/styles/_overrides.scss`, caricato per ultimo da
 `app.scss` così da mantenere la stessa priorità di cascata.
@@ -57,8 +57,10 @@ In 10 punti del sorgente una dichiarazione compariva **dopo** una regola annidat
 
 ```scss
 .s-menu {
-    .container { max-width: 1655px; }
-    padding: 134px 0 138px;      // <- dopo la regola annidata
+  .container {
+    max-width: 1655px;
+  }
+  padding: 134px 0 138px; // <- dopo la regola annidata
 }
 ```
 

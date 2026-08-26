@@ -8,14 +8,14 @@ insiemi è l'insieme da portare; il complemento è stato scartato.
 
 ## Riepilogo
 
-| | Originale | Portato | Risparmio |
-|---|---:|---:|---:|
-| Immagini | 32 MB (233 file) | **15,1 MB (74 file)** | 15,7 MB |
-| Font | 18 MB (23 file + FA5) | **916 KB (6 file)** | 17,1 MB |
-| Font Awesome | 31,3 MB (2 copie su disco) | **da npm** | 31,3 MB |
-| Bootstrap | 7,4 MB | **da npm** | 7,4 MB |
-| JS di tema | 1,3 MB | **riscritto in React** | 1,3 MB |
-| **Totale in repo** | **~89 MB** | **~16 MB** | **~73 MB** |
+|                    |                  Originale |                Portato |  Risparmio |
+| ------------------ | -------------------------: | ---------------------: | ---------: |
+| Immagini           |           32 MB (233 file) |  **15,1 MB (74 file)** |    15,7 MB |
+| Font               |      18 MB (23 file + FA5) |    **916 KB (6 file)** |    17,1 MB |
+| Font Awesome       | 31,3 MB (2 copie su disco) |             **da npm** |    31,3 MB |
+| Bootstrap          |                     7,4 MB |             **da npm** |     7,4 MB |
+| JS di tema         |                     1,3 MB | **riscritto in React** |     1,3 MB |
+| **Totale in repo** |                 **~89 MB** |             **~16 MB** | **~73 MB** |
 
 ## Immagini — portate (74)
 
@@ -36,30 +36,30 @@ Tutte quelle citate almeno una volta da una view o da `dist/app.css`:
 
 Sono tutte immagini demo del tema originale, mai referenziate:
 
-| Cartella | File scartati | Cosa erano |
-|---|---:|---|
-| `section/` | 105 | sfondi e foto per blog, chef, menu, shop, team, testimonial del tema |
-| `partner/` | 22 | loghi partner fittizi |
-| `icon/` | 8 | icone di servizi non usate |
-| `my/` | 7 | scatti alternativi non montati |
-| `logo/` | 6 | varianti di logo del tema |
-| `slider/` | 5 | slide demo |
-| `storia/` | 4 | scatti alternativi |
-| `prenotazioni/` | 1 | slider demo |
-| radice | 1 | `logo.png` del tema |
+| Cartella        | File scartati | Cosa erano                                                           |
+| --------------- | ------------: | -------------------------------------------------------------------- |
+| `section/`      |           105 | sfondi e foto per blog, chef, menu, shop, team, testimonial del tema |
+| `partner/`      |            22 | loghi partner fittizi                                                |
+| `icon/`         |             8 | icone di servizi non usate                                           |
+| `my/`           |             7 | scatti alternativi non montati                                       |
+| `logo/`         |             6 | varianti di logo del tema                                            |
+| `slider/`       |             5 | slide demo                                                           |
+| `storia/`       |             4 | scatti alternativi                                                   |
+| `prenotazioni/` |             1 | slider demo                                                          |
+| radice          |             1 | `logo.png` del tema                                                  |
 
 ## Font — portati (6, 916 KB)
 
 Esattamente i file dichiarati da un `@font-face` in `dist/app.css`:
 
-| File | Famiglia | Peso | Realmente usato |
-|---|---|---|---|
-| `Inter-Regular.ttf` | Inter | 400 | ✅ sì — è il font di tutto il sito |
-| `Inter-Medium.ttf` | Inter | 500 | ✅ sì |
-| `Audrey-Medium.otf` | Audrey | 500 | ⚠️ solo dichiarato |
-| `Audrey-Normal.otf` | Audrey | 400 | ⚠️ solo dichiarato |
-| `CerebriSans-Book.ttf` | Cerebri Sans | 400 | ⚠️ solo dichiarato |
-| `CerebriSans-Medium.ttf` | Cerebri Sans | 500 | ⚠️ solo dichiarato |
+| File                     | Famiglia     | Peso | Realmente usato                    |
+| ------------------------ | ------------ | ---- | ---------------------------------- |
+| `Inter-Regular.ttf`      | Inter        | 400  | ✅ sì — è il font di tutto il sito |
+| `Inter-Medium.ttf`       | Inter        | 500  | ✅ sì                              |
+| `Audrey-Medium.otf`      | Audrey       | 500  | ⚠️ solo dichiarato                 |
+| `Audrey-Normal.otf`      | Audrey       | 400  | ⚠️ solo dichiarato                 |
+| `CerebriSans-Book.ttf`   | Cerebri Sans | 400  | ⚠️ solo dichiarato                 |
+| `CerebriSans-Medium.ttf` | Cerebri Sans | 500  | ⚠️ solo dichiarato                 |
 
 Le quattro famiglie "solo dichiarate" restano perché `dist/app.css` le dichiara: il browser non
 le scarica finché nessuna regola le usa, quindi non costano nulla a runtime. Sono state tenute per
