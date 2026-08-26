@@ -26,15 +26,16 @@ $ git log --all --format="%H%n%an%n%ae%n%cn%n%ce%n%B" | grep -icE "claude|co-aut
 0
 
 $ git log --all --format="%an <%ae>" | sort -u
-Lorenzo Fiandino <samuel@polizzamigliore.it>
-Samar Singh <samuel@polizzamigliore.it>
-Samuel Shahinaj <samuel@polizzamigliore.it>
+Lorenzo Fiandino <...@...>
+Samar Singh <...@...>
+Samuel Shahinaj <...@...>
 ```
 
 ✅ **Nessun commit co-autorato da Claude: non serve alcuna riscrittura.**
 
 I tre nomi presenti sono persone reali del team; non sono stati toccati perché la richiesta
-riguarda esclusivamente la rimozione dei co-autori automatici.
+riguarda esclusivamente la rimozione dei co-autori automatici. Gli indirizzi email sono oscurati
+qui perché questo repository è pubblico — nel repository ASP.NET originale restano quelli veri.
 
 ## Controllo continuo
 
