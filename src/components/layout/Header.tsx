@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { SidebarPanel } from '@/components/layout/SidebarPanel'
 import { bookingHref, mainNav } from '@/data/navigation'
 import { site } from '@/data/site'
@@ -14,8 +14,13 @@ export function Header() {
   const { headerRef, isFixed, isSmall, spacerHeight } = useHeaderFixed()
 
   // Cambiando pagina il menu mobile deve richiudersi: senza router lato client
-  // il problema nell'originale non esisteva.
-  useEffect(() => setIsMobileNavOpen(false), [pathname])
+  // il problema nell'originale non esisteva. Lo stato si azzera durante il
+  // render, non in un effetto, per evitare un secondo giro di rendering.
+  const [renderedPathname, setRenderedPathname] = useState(pathname)
+  if (pathname !== renderedPathname) {
+    setRenderedPathname(pathname)
+    setIsMobileNavOpen(false)
+  }
 
   const isCurrent = (href: string) => (href === '/' ? pathname === '/' : pathname.startsWith(href))
 
