@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description:
     'Dalla villa ottocentesca di Edoardo Salina, cuoco di casa Savoia, al restauro voluto dallo ' +
     'chef Ivo Druetta: le tappe che hanno portato Villa Salina fino alla menzione Michelin.',
-  alternates: { canonical: '/storia' },
+  alternates: { canonical: '/storia/' },
 }
 
 export default function StoriaPage() {

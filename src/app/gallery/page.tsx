@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description:
     'I piatti di Villa Salina in fotografia: tortellini, vitello tonnato, gnocchi, cotoletta alla ' +
     'piemontese e i dolci della casa, firmati dallo chef Ivo Druetta.',
-  alternates: { canonical: '/gallery' },
+  alternates: { canonical: '/gallery/' },
 }
 
 export default function GalleryPage() {

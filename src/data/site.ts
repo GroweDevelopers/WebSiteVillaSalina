@@ -10,7 +10,12 @@ export const site = {
   name: 'Villa Salina',
   tagline: 'Cultura con Gusto',
   legalName: 'Villa Salina',
-  url: 'https://www.villasalina.com',
+  /**
+   * Dominio canonico. Da qui derivano canonical, sitemap, robots, OpenGraph e
+   * i dati strutturati, quindi deve combaciare esattamente con quello servito.
+   * L'apex villa-salina.com viene rediretto qui da GitHub Pages.
+   */
+  url: 'https://www.villa-salina.com',
 
   description:
     'Entra nel nostro mondo culinario dove tradizione e raffinatezza si fondono in piatti unici. ' +

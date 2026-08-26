@@ -8,7 +8,7 @@ import { site } from '@/data/site'
 export const metadata: Metadata = {
   title: 'Contatti',
   description: `Dove siamo e come raggiungerci: ${site.address.contact}. Telefono ${site.phone.display}, email ${site.email}. Aperti ${site.openingHours.display.toLowerCase()}.`,
-  alternates: { canonical: '/contatti' },
+  alternates: { canonical: '/contatti/' },
 }
 
 export default function ContattiPage() {

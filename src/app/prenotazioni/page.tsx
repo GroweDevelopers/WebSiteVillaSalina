@@ -8,7 +8,7 @@ import { site } from '@/data/site'
 export const metadata: Metadata = {
   title: 'Prenotazioni',
   description: `Prenota un tavolo da Villa Salina: chiama il ${site.phone.display} o scrivi a ${site.email}. ${site.address.contact}.`,
-  alternates: { canonical: '/prenotazioni' },
+  alternates: { canonical: '/prenotazioni/' },
 }
 
 /**
