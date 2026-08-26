@@ -1,0 +1,9 @@
+/* globals
+--------------------------------------------------------------
+   Punto di ingresso unico degli stili del sito.
+   Il tema e' il sorgente SCSS portato dal progetto ASP.NET, riconciliato
+   con wwwroot/app/dist/app.css (vedi docs/VERIFICA-STILI.md).
+   L'ordine di caricamento rispetto ai CSS di terze parti e' definito in
+   src/app/layout.tsx e replica quello del <head> del layout Razor.
+-------------------------------------------------------------- */
+@use 'app';
