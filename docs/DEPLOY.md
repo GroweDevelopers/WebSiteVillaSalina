@@ -1,7 +1,7 @@
 # Pubblicazione su GitHub Pages
 
 Il sito è un **export statico**: nessun server applicativo, solo file. Il workflow
-[`.github/workflows/deploy.yml`](../.github/workflows/deploy.yml) lo costruisce e lo pubblica.
+[`.github/workflows/pages.yml`](../.github/workflows/pages.yml) lo costruisce e lo pubblica.
 
 ## Stato attuale — anteprima online
 
@@ -137,22 +137,25 @@ tutto su richiesta. In quel caso, in `next.config.ts`:
 
 Lo script di conversione e la potatura diventano inutili ma non danno fastidio.
 
-## Nota: la push su `main` non sempre lancia il deploy
+## Nota: la push su `main` non lancia il deploy
 
-Durante la messa online si è visto che alcune push su `main` **non hanno creato nessun run**, pur
-essendo arrivate al remoto (verificato con `git ls-remote` e con l'API). Il workflow ha
-`on: push: branches: [main]` corretto ed è in stato _active_; la prima push l'aveva innescato
-regolarmente.
+Durante la messa online si è visto che le push su `main` **non creano nessun run**, pur arrivando
+al remoto (verificato con `git ls-remote` e con l'API). Il workflow ha `on: push: branches: [main]`
+corretto ed è in stato _active_; la primissima push l'aveva innescato regolarmente, poi non più.
 
-Non è stata trovata la causa. Il deploy a mano funziona sempre:
+Provato senza successo: commit vuoto, commit con modifiche reali, e rinominare il file del
+workflow da `deploy.yml` a `pages.yml` (che di solito reimposta i trigger). La causa non è stata
+trovata.
+
+**Il lancio a mano funziona sempre**, e va fatto dopo ogni push che debba andare online:
 
 **Actions → Pubblica su GitHub Pages → Run workflow → main**
 
-oppure, da riga di comando con un token che abbia scope `workflow`:
+oppure da riga di comando, con un token che abbia scope `workflow`:
 
 ```bash
-curl -X POST -H "Authorization: Bearer $TOKEN"   -H "Accept: application/vnd.github+json"   https://api.github.com/repos/GroweDevelopers/WebSiteVillaSalina/actions/workflows/343029714/dispatches   -d '{"ref":"main"}'
+curl -X POST -H "Authorization: Bearer $TOKEN"   -H "Accept: application/vnd.github+json"   https://api.github.com/repos/GroweDevelopers/WebSiteVillaSalina/actions/workflows/343064599/dispatches   -d '{"ref":"main"}'
 ```
 
-Se il problema si ripresenta e dà noia, la strada da provare è ricreare il workflow con un nome
-file diverso: GitHub a volte lega i trigger all'identità del file e ricrearlo li reimposta.
+Se in futuro dà noia, vale la pena aprire una segnalazione al supporto GitHub: dall'esterno il
+workflow è configurato correttamente.

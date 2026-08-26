@@ -102,8 +102,9 @@ Il sito è online come **export statico su GitHub Pages**:
 > **https://growedevelopers.github.io/WebSiteVillaSalina/**
 
 È l'anteprima; il passaggio a **www.villa-salina.com** è già predisposto e richiede di svuotare due
-variabili nel workflow. [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) converte le
-immagini, genera l'export e lo pubblica.
+variabili nel workflow. [`.github/workflows/pages.yml`](.github/workflows/pages.yml) converte le
+immagini, genera l'export e lo pubblica. Va lanciato a mano da Actions: vedi la nota in
+[`docs/DEPLOY.md`](docs/DEPLOY.md).
 
 Istruzioni complete — record DNS, attivazione di Pages, cosa fare se qualcosa non torna — in
 [`docs/DEPLOY.md`](docs/DEPLOY.md).
