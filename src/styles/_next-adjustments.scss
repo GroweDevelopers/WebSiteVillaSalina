@@ -71,3 +71,54 @@ h1.title {
     padding-right: 15px;
     padding-left: 15px;
 }
+
+/* Sfondi in WebP
+--------------------------------------------------------------
+   Le immagini messe da `background-image` non passano da next/image, quindi
+   nessuno le converte: vanno indirizzate a mano ai file generati da
+   scripts/optimize-images.mjs.
+
+   I path stanno qui e non in component/_section.scss per non rompere la
+   confrontabilita' di app.scss con dist/app.css (vedi docs/VERIFICA-STILI.md).
+
+   | sfondo                  | originale | WebP 1920 |
+   |-------------------------|----------:|----------:|
+   | gallery.png             |   1040 KB |    205 KB |
+   | Foto-storica-moretta    |    267 KB |    205 KB |
+   | my/sofa.jpg             |    173 KB |     50 KB |
+   | section/bg-pagetitle    |     60 KB |      3 KB |
+-------------------------------------------------------------- */
+.page-title {
+    background-image: url("/assets/optimized/section/bg-pagetitle-1920.webp");
+
+    &.p-gallery {
+        background-image: url("/assets/optimized/gallery-1920.webp");
+    }
+
+    &.p-history {
+        background-image: url("/assets/optimized/Foto-storica-moretta-1920.webp");
+    }
+}
+
+.s-formmail {
+    background-image: url("/assets/optimized/my/sofa-1920.webp");
+}
+
+/* Sotto i 992 px basta la meta' della larghezza: su gallery sono 113 KB in meno */
+@include res991 {
+    .page-title {
+        background-image: url("/assets/optimized/section/bg-pagetitle-1080.webp");
+
+        &.p-gallery {
+            background-image: url("/assets/optimized/gallery-1080.webp");
+        }
+
+        &.p-history {
+            background-image: url("/assets/optimized/Foto-storica-moretta-1080.webp");
+        }
+    }
+
+    .s-formmail {
+        background-image: url("/assets/optimized/my/sofa-1080.webp");
+    }
+}
