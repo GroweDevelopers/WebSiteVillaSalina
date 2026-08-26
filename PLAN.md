@@ -219,26 +219,26 @@ Legenda stato: `[ ]` da fare · `[x]` fatto e committato
 - [x] 8.6 JSON-LD `Restaurant` (schema.org) con indirizzo, orari, telefono, geo
 - [x] 8.7 `metadataBase` + canonical
 
-### FASE 9 — Qualità, performance, accessibilità
+### FASE 9 — Qualità, performance, accessibilità ✅
 
-- [ ] 9.1 `next/font/local` per Audrey / Cerebri Sans / Inter
-- [ ] 9.2 `next/image` dove porta beneficio reale
-- [ ] 9.3 `loading="lazy"` su iframe Google Maps + `title`
-- [ ] 9.4 `alt` significativi su tutte le immagini
-- [ ] 9.5 Accessibilità: `aria-*` su hamburger/sidebar, focus visibile, landmark
-- [ ] 9.6 Link esterni con `rel="noopener noreferrer"`
-- [ ] 9.7 `npm run lint` pulito
-- [ ] 9.8 `npx tsc --noEmit` pulito
-- [ ] 9.9 `npm run build` verde
-- [ ] 9.10 Smoke test runtime di tutte le rotte
+- [x] 9.1 Font self-hosted convertiti in WOFF2 e precaricati (scelto al posto di `next/font/local`, che avrebbe rotto la confrontabilità del CSS con `dist/app.css`)
+- [x] 9.2 `next/image` su tutte le fotografie, con verifica che nessuna perda risoluzione
+- [x] 9.3 `loading="lazy"` su iframe Google Maps + `title`
+- [x] 9.4 `alt` significativi su tutte le immagini
+- [x] 9.5 Accessibilità: `aria-*` su hamburger/sidebar, focus visibile, landmark
+- [x] 9.6 Link esterni con `rel="noopener noreferrer"`
+- [x] 9.7 `npm run lint` pulito
+- [x] 9.8 `npx tsc --noEmit` pulito
+- [x] 9.9 `npm run build` verde
+- [x] 9.10 Smoke test runtime di tutte le rotte
 
-### FASE 10 — Documentazione, CI e consegna
+### FASE 10 — Documentazione, CI e consegna ✅
 
-- [ ] 10.1 `README.md` (setup, script, struttura, deploy)
-- [ ] 10.2 `docs/MIGRAZIONE.md` (cosa è cambiato rispetto all'originale)
-- [ ] 10.3 GitHub Actions: lint + typecheck + build
-- [ ] 10.4 Verifica finale storia git: nessun `Co-Authored-By`, autore unico Singh-Growe
-- [ ] 10.5 Push su `origin/main`
+- [x] 10.1 `README.md` (setup, script, struttura, deploy)
+- [x] 10.2 `docs/MIGRAZIONE.md` — riassunto della migrazione
+- [x] 10.3 GitHub Actions: lint + typecheck + build
+- [x] 10.4 Verifica finale storia git: nessun `Co-Authored-By`, autore unico Singh-Growe
+- [x] 10.5 Push su `origin/main`
 
 ---
 
