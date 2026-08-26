@@ -1,0 +1,1032 @@
+@use '../abstracts/' as *;
+
+/* reponsive
+-------------------------------------------------------------- */
+.show-destop {
+    display: block;
+}
+@include res1760 { 
+    .s-contact-2 .contact-main {
+        flex-wrap: wrap;
+
+        form {
+            width: 100%;
+            padding: 100px 30px;
+        }
+        .info-location {
+            width: 100%;
+            padding: 100px 30px;
+        }
+    }
+}
+@include res1600 { 
+    .home-2 .s-menu .flat-tabs {
+        .content-tab .menu-list {
+            max-width: unset;
+        }
+        .menu-tab {
+            position: relative;
+        }
+    }
+        
+    .header.style-2 .container {
+        
+        padding: 0 15px;
+    } 
+}
+@include res1440 { 
+    .swiper-button-next,
+    .swiper-button-prev,
+    .swiper-pagination {
+        display: none !important;
+    }
+    .s-menu .flat-tabs .content-tab .left-img, .s-menu .flat-tabs .content-tab .right-img {
+        width: 200px;
+        height: 200px;
+        min-width: 200px;
+    }
+    .opening .opening-img {
+        position: unset !important;
+    }
+    .chef-main {
+        flex-wrap: wrap;
+
+        .chef-box  {
+            margin: 0 auto;
+        }
+        .block-text {
+            max-width: 100%;
+            margin: 50px auto 80px;
+        }
+    }
+    .about-restaurant .about-restaurant-main .image {
+        min-width: 300px;
+    }
+    .about-restaurant .about-restaurant-main .content {
+        padding: 20px 30px 0;
+    }
+
+    .p-about .event .event-main {
+        flex-wrap: wrap;
+
+        .event-img , .event-content {
+            width: 100%;
+        }
+    }
+
+    .careers .careers-main {
+        flex-wrap: wrap;
+
+        .careers-content {
+            width: 100%;
+            padding: 100px 30px;
+        }
+        .careers-img {
+            width: 100%;
+        }
+    }
+    .s-faq .flat-accordion {
+        margin-right: 0;
+    }
+
+    .s-menu {
+        padding-left: 0 !important;
+        padding-right: 0 !important;     
+        .menu-main {
+            flex-wrap: wrap;
+    
+            .menu-list {
+                width: 100%;
+                padding-right: 0;
+            }
+            .list-img {
+                width: 50% !important;
+                justify-content: space-around;
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+                .img {
+                    &:last-child {
+                        display: none;
+                    }
+                    width: 100% !important;
+                    img {
+                        object-fit: cover;
+                    }
+                }
+            }
+    
+            &.right .menu-list {
+                padding-left: 0;
+            }
+    
+        }
+        &.s1 {
+            padding-bottom: 75px !important;
+        }
+    }
+    
+
+    .s-book .book-main {
+        flex-wrap: wrap;
+        height: unset !important;
+        .book-content {
+            width: 100%;
+            padding-left: 15px !important;
+            padding-right: 15px !important;
+        }
+    }
+    .home-4 .about .shape {
+        display: none;
+    }
+
+}
+@include res1380 {
+    #main-nav .menu li {
+        margin-right: 30px;
+    }
+    .comingsoon .comingsoon-main .js-countdown .countdown__timer .countdown__item{
+        margin: 0 50px;
+    } 
+}
+
+@include res1200 {
+    .s-menu-list .portfolio-main .portfolio-box-1 .content {
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-bottom: 15px;
+        .tag {
+            margin-bottom: 30px;
+        }
+    }
+    .s-menu .flat-tabs .content-tab .menu-list {
+        max-width: unset;
+    }
+    .home-3 .s-menu > img, 
+    .home-4 .s-menu > img,
+    .chef-restaurant > img,
+    .home-3 .event .shape {
+        display: none;
+    }
+    .home-2 .s-menu .flat-tabs .menu-tab {
+        margin: 0 auto 30px;
+    } 
+    .location .image {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .top-bar {
+        height: auto;
+        padding: 20px 0;
+
+        ul {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .language {
+            margin-top: 5px;
+            text-align: center;
+        }
+    }
+    .header #site-header-inner .tf-button {
+        display: none;
+    }
+    .s-menu .flat-tabs .content-tab .left-img, .s-menu .flat-tabs .content-tab .right-img {
+        position: static;
+        margin: 0 20px 60px;
+        display: inline-block;
+    }
+    .about-content {
+        margin-left: 0;
+    }
+    .opening .opening-img {
+        margin-top: 30px;
+        width: unset !important;
+    }
+    .choose .choose-image {
+        margin-left: 0;
+        margin-right: auto;
+        margin-top: 120px;
+        width: unset;
+        height: unset;
+    }
+    .gallery-main {
+        flex-wrap: wrap;
+    }
+    .gallery-box {
+        width: 50%;
+    }
+
+    .swiper-button-next, .swiper-button-prev {
+        display: none;
+    }
+    .mySwiper .swiper-pagination {
+        left: 15px;
+    }
+    
+    .home-2 .opening .opening-content {
+        margin-bottom: 50px;
+    }
+    .home-2 .chef-restaurant .menu-content {
+        padding: 0 15px;
+    }
+    .event .event-image {
+        margin: 0 auto !important;
+        width: 100%;
+    }
+    .event .event-content {
+        padding-left: 0;
+    }
+    .event .event-content.style-2 {
+        padding: 0;
+        margin-bottom: 50px;
+    }
+    .footer {
+        padding: 100px 0 16px;
+    }
+    //1
+    .footer.style-2 .bottom-main {
+        flex-wrap: wrap;
+        margin-top: 0;
+        p {
+            margin: 0 auto 20px;
+        }
+        ul {
+            justify-content: center;
+            width: 100%;
+            li {
+                margin-left: 10px !important;
+                &:first-child {
+                    margin-left: 0 !important;
+                }
+            }
+        }
+    }
+    .about-restaurant .about-restaurant-main .image {
+        min-width: 250px;
+    } 
+
+    .home-3 .s-menu .menu-main {
+        flex-wrap: wrap;
+        padding-top: 0;
+        justify-content: center;
+        .menu-list {
+            width: 100% !important;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+        }
+        .list-img {
+            margin: 40px auto 0;
+        }
+    }
+    .home-3 .event .event-content.style-2 {
+        padding: 80px 0 0;
+    }
+
+    .s-gallery .gallery-main {
+        .gallery-box {
+            width: calc(50% - 30px);
+            margin-bottom: 30px;
+        }
+    }
+    .event {
+        padding: 80px 0;
+    }
+    .home-3 .testimonials {
+        padding: 80px 0;
+    }
+    .p-about .chef-restaurant .menu-content {
+        padding: 0;
+    }
+
+    .p-about .event .event-main .event-content {
+        padding: 80px 0px;
+    }
+
+    .s-faq .block-text p {
+        padding: 0;
+    }
+    .history-box .img  {
+        width: 41%;
+    }
+    .history-box .content {
+        width: 41%;
+    }
+
+    .location-box {
+        flex-wrap: wrap; 
+        max-height: 100%; 
+
+        .box {
+            width: calc(50% - 30px);
+            height: 457px;
+        }
+        .img {
+            width: calc(50% - 30px);
+            height: 457px;
+        }
+        .map {
+            width: 100%;
+            margin: 30px 15px;
+        }
+    }
+
+    .p-contact .location.s2 .location-main {
+        flex-wrap: wrap;
+        .image {
+            margin: 50px auto;
+        }
+        .content {
+            width: 100%;
+            padding: 20px 0;
+        }
+    }
+
+    .blog-creative-list {
+        padding-left: 0;
+        padding-top: 50px;
+    }
+    .blog-sidebar-main {
+        flex-wrap: wrap;
+        .main-content {
+            width: 100% !important;
+            padding-right: 0 !important;
+            margin-bottom: 80px;
+        }
+        .main-sidebar {
+            width: 100% !important;
+        }
+    }
+    .blog-box-5 .bottom-content .d-flex {
+        flex-wrap: wrap;
+        .left {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .right {
+            width: 100%;
+            .right-box {
+                width: 100%;
+            }
+        }
+    }
+    .blog-box-5 {
+        margin-bottom: 100px;
+    }
+    .p-contact .location .location-main {
+        flex-wrap: wrap;
+        .image {
+            margin: 0 auto;
+        }
+        .content {
+            width: 100%;
+            padding: 60px 0;
+        }
+    }
+    .footer.style-2 .widget {
+        text-align: center !important;
+        margin-bottom: 30px;
+    }
+    .footer.style-2 .widget h5::before , .footer.style-2 .widget.time h5::before {
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .footer.style-2 .widget {
+        border-right: none;
+        padding-right: 0 !important;
+        padding-left: 0 !important; 
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        p {
+            padding-right: 0 !important;
+            padding-left: 0 !important; 
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+        }
+    }
+}
+
+@include res991 {
+    .page-404 .p404-main .numb {
+        img {
+            margin: 0 50px;
+            width: 300px;
+        }
+    }
+    .chef-restaurant .chef-restaurant-image .group-img img {
+        width: 48%;
+    }
+    .home-2 .opening-book {
+        width: unset;
+    }
+    #site-header-inner {
+        position: relative;
+    }
+    .mySwiper .box-slider .content-box .sub-title {
+        padding-right: 0;
+    }
+    .sidebar-btn {
+        display: none;
+    }
+    .location .image {
+        width: 300px;
+        height: 300px;
+        min-width: 300px;
+        margin: 30px auto;
+    }
+    .mobile-button {
+        display: block;
+    }
+    .header #site-header-inner .tf-button {
+        margin-right: 40px;
+
+        padding: 16px 20px;
+        font-size: 12px;
+    }
+    .vouchers .vouchers-content .item {
+        width: 100%;
+    }
+
+    .mySwiper .box-slider .content-box {
+        width: 100%;
+        padding-top: 150px;
+    } 
+    .mySwiper .swiper-pagination {
+        display: none;
+    }
+    .vouchers .vouchers-content .content {
+        border-bottom: 1px solid $color-main;
+    }
+    
+    .couter-box::after {
+        display: none;
+    }
+
+    .couter-content {
+        flex-wrap: wrap;
+    }
+    .home-2 .testimonials .testimonials-main {
+        flex-wrap: wrap;
+        .testimonials-img {
+            width: 100%;
+        }
+        .testimonialSwiper {
+            width: 100%;
+            .testimonials-content {
+                padding: 60px 15px 20px;
+            }
+        }
+    }
+    .vouchers .vouchers-main {
+        flex-wrap: wrap;
+
+        .left {
+            max-width: 100%;
+            margin-bottom: 30px;
+        }
+    }
+    .gallery-ig .gallery-ig-main {
+        flex-wrap: wrap;
+    }
+    .gallery-ig .gallery-ig-main .col-img:first-child, .gallery-ig .gallery-ig-main .col-img:last-child , .gallery-ig .gallery-ig-main .col-img{
+        max-width: 100%;
+        width: 100%;
+    }
+    .gallery-ig .gallery-ig-main .col-img .top {
+        justify-content: space-between;
+    }
+
+    .gallery-ig .gallery-ig-main .col-img:nth-child(2) {
+        margin: 30px 0px;
+    }
+    .gallery-ig .gallery-ig-main .col-img .top .ig-box {
+        margin: 0 0 30px;
+    }
+    .gallery-ig .gallery-ig-main .col-img .bottom .ig-box {
+        margin: 0;
+    }
+
+    .about-restaurant .about-restaurant-main {
+        flex-wrap: wrap;
+
+        .image {
+            min-width: 100%;
+        }
+        .content {
+            padding: 50px 0 ;
+        }
+    }
+
+    .home-3 .s-menu {
+        padding: 80px 0;
+    }
+    .about-restaurant {
+        padding: 80px 0;
+    }
+
+    .s-order .order-main .order {
+        height: 510px;
+    }
+    .s-gallery{
+        padding: 80px 0;
+    }
+
+    .s-faq {
+        padding: 80px 0;
+    }
+    .comingsoon .comingsoon-main .title {
+        font-size: 50px;
+    }
+    .comingsoon .comingsoon-main .js-countdown .countdown__timer .countdown__item{
+        margin: 0 30px;
+    }
+
+    .comingsoon .comingsoon-main .js-countdown .countdown__timer .countdown__item:nth-child(1)::after, .comingsoon .comingsoon-main .js-countdown .countdown__timer .countdown__item:nth-child(2)::after, .comingsoon .comingsoon-main .js-countdown .countdown__timer .countdown__item:nth-child(3)::after, .comingsoon .comingsoon-main .js-countdown .countdown__timer .countdown__item:nth-child(4)::after {
+        right: -43px;
+    }
+
+    .page-menu1-wrap #sidebar-sticky,
+    .sidebar {
+       display: none;
+       
+    }
+    .body-main {
+        width: 100vw;
+        position: relative;
+        .mobile-button {
+            top: 30px;
+            left: 30px;
+            z-index: 99;
+       }
+    }
+
+    .vouchers-details .vouchers-details-main {
+        flex-wrap: wrap;
+        .left {
+            width: 100%;
+            padding-right: 0;
+        }
+        .right {
+            width: 100%;
+            padding-left: 0;
+        }
+    }
+    .s-menu.p-list {
+        padding: 400px 0 0px;
+    }    
+
+    .home-3 .s-menu .menu-main .menu-list {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .portfolio-carousel .flat-tabs .menu-tab li {
+        margin: 0 7px !important;
+    }
+
+    .portfolio-carousel .portfolio-carousel-1 {
+        padding: 80px 0;
+    }
+    .portfolio-carousel .portfolio-carousel-3 {
+        padding: 80px 0;
+    }
+    .s-formmail-2 .formmail-content {
+        padding: 79px 15px;
+    }
+    .s-formmail-2 .formmail-content .block-text {
+        width: 100%;
+    }
+    .s-formmail-2 .formmail-content .image {
+        display: none;
+    }
+
+    .s-contact .contact-info {
+        padding-bottom: 0;
+        flex-wrap: wrap;
+
+        .item {
+            width: 100%;
+            border-right: none;
+            border-bottom: 1px solid rgba(200, 200, 200, 0.6);
+            padding-bottom: 40px;
+            margin-bottom: 40px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .s-contact-2 .contact-main .info-location ul {
+        flex-wrap: wrap;
+        li {
+            width: 100%;
+            margin-bottom: 30px;
+        }
+    }
+    .s-contact-2 .contact-main form , .s-contact-2 .contact-main .info-location {
+        padding: 80px 15px;
+    }
+
+    .home-4 .about-info {
+        padding-left: 0;
+        margin-right: 0;
+        margin-left: 0;
+
+        .swiper-button-next, .swiper-button-prev {
+            display: block;
+        }
+    }
+
+    .home-4 .header {
+        display: block;
+        position: absolute;
+        padding: 15px 0;
+        #site-header-inner {
+            border-top: none;
+        }
+    }
+    .footer .widget {
+        margin-bottom: 30px;
+    }
+}
+
+@include res767 {
+    .blog-single .blog-box-2 .d-flex {
+       img {
+        width: 100%;
+        &:last-child {
+            display: none;
+        }
+       }
+    }
+    .chef-restaurant .chef-restaurant-image .group-img img {
+        width: 100%;
+    }
+    .chef-restaurant .chef-restaurant-image .group-img {
+        flex-wrap: wrap;
+    }
+    .top-bar-2 .header__logo {
+        padding-left: 0;
+    }
+    .home-4 .s-menu .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .s-menu .menu-main .list-img {
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    .top-bar {
+        ul {
+            justify-content: center !important; 
+            text-align: center;
+        }
+        .language {
+            display: none;
+        }
+    }
+    .list li {
+        width: 100%;
+    }
+    .portfolio-box-1.style-3 .content {
+        left: 15px;
+        right: 15px;
+        padding: 30px 15px;
+    }
+    .blog-box-4 {
+        flex-wrap: wrap;
+
+        .image {
+            width: 100%;
+            margin-right: 0;
+        }
+        .content {
+            width: 100%;
+        }
+    }
+    .blog-box-6 {
+        padding: 75px 15px 62px ;
+
+    }
+    h2, .h2 {
+        font-size: 40px;
+    }
+    .home-3 .mySwiper .box-slider .content-box {
+        padding-top: 200px;
+    }
+    .home-3 .mySwiper {
+        height: 650px;
+    }
+    .top-bar-2 .top-header {
+
+        .t {
+           display: none;
+        }
+    }
+    .home-2 .mySwiper {
+        height: 630px;
+        .box-slider .content-box {
+            padding-top: 100px;
+        }
+    }
+    .home-2 .mySwiper .box-slider .content-box .title {
+        font-size: 40px;
+    }
+    .about {
+        padding: 80px 0;
+    }
+    .opening {
+        padding-bottom: 80px;
+        .opening-content {
+            padding-top: 0;
+        }
+    }
+    .opening .opening-img {
+        position: relative;
+        top: 20%;
+    }
+    .s-menu .shape {
+        display: none;
+    }
+    .s-menu {
+        padding: 80px 0;
+    }
+
+    .choose {
+        .shape {
+            display: none;
+        }
+        padding: 80px 0;
+        .choose-content {
+            padding-top: 0;
+        } 
+        
+    }
+    .list {
+        padding: 0 !important;
+    }
+    .careers .careers-main .careers-content .d-flex p {
+        margin-right: 10px;
+    }
+    .chef-restaurant .chef-restaurant-content {
+        padding-left: 0;
+        padding-top: 80px;
+    }
+    .chef-restaurant {
+        padding: 80px 0;
+    }
+    .booking {
+        padding: 80px 0;
+    }
+    .booking .booking-content {
+        padding: 0;
+    }
+    .s-blog {
+        padding: 80px 0;
+    }
+    .location {
+        padding: 80px 0;
+    }
+    h3 {
+        font-size: 25px;
+    }
+    .block-text .subtitle {
+        font-size: 13px;
+    }
+    .gallery-box {
+        width: 100%;
+    } 
+
+    .s-menu .flat-tabs .menu-tab li {
+        margin: 0 20px
+    }
+    .footer {
+        padding: 80px 0 16px;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        .bottom-main {
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+    }
+
+    .home-2 .s-menu .flat-tabs .menu-tab  {
+        
+       width: 100%;
+    }
+
+    .home-2 .s-menu .flat-tabs .content-tab .right-img {
+        width: 300px;
+        height: 300px;
+        min-width: 300px;
+    }
+    .home-2 .s-menu {
+        padding: 80px 0 0;
+    }
+    .couter-box {
+        width: 50%;
+        margin-bottom: 30px;
+    }
+
+    .services-box {
+        margin-bottom: 50px;
+    }
+
+    .s-order .order-main .order {
+        width: 100%;
+    }
+    .s-book .book-main {
+        flex-wrap: wrap;
+    }
+    .home-4 .s-book .book-main {
+        height: unset;
+    }
+    .s-book .book-content {
+        width: 100%;
+    }
+
+    .footer .widget  {
+        margin-bottom: 30px;
+        padding-left: 0 !important;
+    }
+    .footer .bottom-main {
+        p {
+            width: 100%;
+            text-align: center;
+        }
+        ul {
+            width: 100%;
+            justify-content: center;
+        }
+    }
+
+    .home-3 .event .event-image {
+        flex-wrap: wrap;
+        height: auto;
+        margin-left: 0;
+        margin-right: 0;
+        .img {
+            width: 100%;
+        }
+    }
+    .s-gallery .gallery-main .gallery-box {
+        width: 100%;
+        margin: 0 0 30px;
+    }
+
+    .comingsoon .comingsoon-main .js-countdown .countdown__timer .countdown__item {
+        font-size: 40px;
+        margin: 0 13px;
+    }
+
+    .comingsoon .comingsoon-main .js-countdown .countdown__timer .countdown__item:nth-child(1)::after, .comingsoon .comingsoon-main .js-countdown .countdown__timer .countdown__item:nth-child(2)::after, .comingsoon .comingsoon-main .js-countdown .countdown__timer .countdown__item:nth-child(3)::after, .comingsoon .comingsoon-main .js-countdown .countdown__timer .countdown__item:nth-child(4)::after {
+        bottom: -8px;
+    right: -20px
+    }
+    .comingsoon .comingsoon-main .js-countdown .countdown__timer .countdown__item:nth-child(1)::before, .comingsoon .comingsoon-main .js-countdown .countdown__timer .countdown__item:nth-child(2)::before, .comingsoon .comingsoon-main .js-countdown .countdown__timer .countdown__item:nth-child(3)::before, .comingsoon .comingsoon-main .js-countdown .countdown__timer .countdown__item:nth-child(4)::before {
+        font-size: 13px;
+    }
+.location-main {
+    padding: 0 15px;
+}
+    .location-box {
+        flex-wrap: wrap; 
+        max-height: 100%; 
+   
+
+        .box {
+            width: 100%;
+            margin: 0;
+       
+        }
+        .img {
+            width: 100%;
+            margin: 0;
+        }
+        .map {
+            margin: 0;
+        }
+    }
+
+    .s-gift-vouchers .s-gift-vouchers-list .main {
+        flex-wrap: wrap;
+
+        .gift-vouchers-box {
+            margin-bottom: 70px;
+            width: 100%;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .portfolio-carousel .flat-tabs .menu-tab li {
+        h5 {
+            font-size: 11px;
+        }
+    }
+
+    .portfolio-details .portfolio-details-main .content {
+        flex-wrap: wrap;
+        .left {
+            width: 100%;
+            padding: 66px 0 51px;
+        }
+        .right {
+            width: 100%;
+            margin: 0;
+            padding-top: 0;
+        }
+    }
+ 
+}
+
+
+@include res600 {
+    .page-404 .p404-main .numb {
+        img {
+            margin: 0 20px;
+            width: 225px;
+        }
+        h2 {
+            font-size: 20px;
+        }
+    } 
+    .s-menu .flat-tabs .menu-tab li {
+        margin: 0 10px;
+        h5 {
+            font-size: 13px;
+        }
+    }
+    .chef-restaurant .chef-restaurant-image .group-img {
+        flex-wrap: wrap;
+        margin-left: 0;
+        margin-right: 0;
+        img {
+            width: 100%;
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+    .mySwiper .contact-info {
+        padding: 15px;
+        width: 100%;
+        height: unset;
+    }
+    .form-group {
+        width: 100% !important;
+    }
+    .top-bar ul li {
+        width: 100%; 
+        margin-right: 0;
+    }
+    .home-2 .opening-book {
+        width: auto;
+        height: auto;
+    }
+    .portfolio-mansonry .row-box {
+        flex-wrap: wrap;
+        > div {
+            width: 100% !important;
+            margin-left: 15px !important;
+            margin-right: 15px !important;
+        }
+    }
+    .p-contact .location .location-main .image {
+        width: 315px;
+        min-width: unset;
+        height: 315px;
+    }
+    .home-4 .s-menu .menu-main.right ,
+    .home-4 .s-menu .menu-main {
+        .menu-list {
+            width: 100% !important;
+            padding-right: 0 !important;
+            padding-left: 0 !important;
+        }
+        .list-img {
+            width: 100% !important;
+            justify-content: space-around;
+        }
+    }
+}
+
+@include res520 {
+    .s-menu .flat-tabs .content-tab .left-img, 
+    .s-menu .flat-tabs .content-tab .right-img {
+        width: 100%;
+        height: unset;
+        margin: 0;
+        margin-bottom: 15px;
+    }
+    .history-box .content h4 {
+        font-size: 18px;
+    }
+    .home-2 .s-menu .flat-tabs .content-tab h5 .txt {
+        font-size: 15px;
+    }
+}

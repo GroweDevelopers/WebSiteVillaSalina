@@ -1,0 +1,284 @@
+/* swiper
+-------------------------------------------------------------- */
+@use '../abstracts/' as *;
+
+.mySwiper {
+    height: 820px;
+    overflow: hidden;
+    // margin-top: 100px;
+    position: relative;
+
+    .overlay {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+
+        &::before {
+            content: '';
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.702);
+            z-index: 1;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .box-slider {
+
+        .content-box {
+            padding-top: 225px;
+            width: 60%;
+            a {
+                font-weight: 500;
+            }
+            p.sub {
+                font-size: 13px;
+                text-transform: uppercase;
+                color: $color-hover;
+
+                letter-spacing: 3px;
+            }
+
+            .title {
+                text-transform: uppercase;
+                letter-spacing: 2.7px;
+                line-height: 1.25;
+                margin-bottom: 12px;
+                color: #fff;
+            }
+
+            .sub-title {
+                color: #fff;
+                letter-spacing: 0px;
+                line-height: 28px;
+                padding-right: 145px;
+                margin-bottom: 40px;
+                font-family: "Inter";
+                font-size: 17px;
+                font-weight: 400;
+            }
+            &.style-2 {
+                width: 100%;
+                .sub-title {
+                    padding-right: 0;
+                    margin-bottom: 41px;
+                }
+                .wrap-btn {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    .contact-info {
+        width: 611px;
+        height: 179px;
+        background: $color-main;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        padding: 46px 40px 46px 92px;
+        display: flex;
+
+        .icon {
+            width: 100px;
+            height: 100px;
+            min-width: 100px;
+            border: 1px solid $color-hover;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            svg {
+                width: 40px;
+                height: 40px;
+                fill: $color-hover;
+            }
+        }
+
+        .left {
+            margin-left: 32px;
+
+            h6 {
+                font-size: 15px;
+                text-transform: uppercase;
+                letter-spacing: 0.7px;
+                color: $color-hover;
+                margin-top: 4px;
+                margin-bottom: 10px;
+            }
+
+            h4 {
+                font-size: 40px;
+                letter-spacing: 1px;
+                color: #fff;
+            }
+        }
+    }
+
+    .swiper-pagination {
+
+        text-align: left;
+        bottom: 64px;
+        left: 200px;
+
+
+        .swiper-pagination-bullet {
+            color: #fff !important;
+            opacity: 1;
+            width: 45px;
+            height: 2px;
+            border-radius: 0;
+            background: rgba(255, 255, 255, 0.251);
+            margin: 0;
+            position: relative;
+            &::after {
+                position: absolute;
+                width: 100%;
+                height: 10px;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                content: '';
+                z-index: 5;
+            }
+            &.swiper-pagination-bullet-active {
+                background: $color-hover;
+            }
+        }
+
+    }
+
+
+
+}
+
+.home-2 {
+    .mySwiper {
+        height: 790px;
+        margin-top: 0;
+
+        .overlay {
+
+            &::before {
+                background: rgba(0, 0, 0, 0.361);
+            }
+
+
+        }
+
+        .box-slider .content-box {
+            padding-top: 280px;
+            height: 790px;
+        }
+    }
+}
+
+.home-3 {
+
+    .mySwiper {
+        margin-top: 0;
+        height: 865px;
+
+        .box-slider .content-box {
+            width: 100%;
+            padding-top: 404px;
+            .sub-title {
+                margin-bottom: 44px;
+            }
+            .wrap-btn {
+                a {
+                    height: 46px;
+                    line-height: 46px;
+                }
+            }
+        }
+        .container {
+            max-width: 1200px;
+        }
+        .swiper-button-next {
+            top: 52.5%;
+            width: 52px;
+            height: 122px;
+            right: 50px;
+            opacity: 1;
+            background-color: rgba(255, 255, 255, 0.2);
+            @include transition3;
+            &::after {
+                color: #fff;
+                opacity: 1;
+                font-size: 20px;
+            }
+            &:hover {
+                opacity: 1;
+                background-color: #fff;
+                &::after {
+                    color: #17222f;
+                }
+            }
+        }
+        .swiper-button-prev {
+            top: 52.5%;
+            width: 52px;
+            height: 122px;
+            left: 50px;
+            opacity: 1;
+            background-color: rgba(255, 255, 255, 0.2);
+            @include transition3;
+            &::after {
+                color: #fff;
+                opacity: 1;
+                font-size: 20px;
+            }
+            &:hover {
+                opacity: 1;
+                background-color: #fff;
+                color: #fff;
+                &::after {
+                    color: #17222f;
+                }
+            }
+        }
+    }
+}
+
+.home-4 {
+    .mySwiper {
+        height: 761px;
+    }
+
+    .box-slider {
+        .content-box {
+            padding-top: 213px;
+
+            .sub {
+                letter-spacing: 3.5px;
+                margin-bottom: 15px;
+            }
+
+            .title {
+                font-size: 45px;
+                letter-spacing: 2px;
+                line-height: 1.3;
+                margin-bottom: 15px;
+            }
+
+            .sub-title {
+                padding-right: 0;
+                margin-bottom: 39px;
+            }
+        }
+    }
+}

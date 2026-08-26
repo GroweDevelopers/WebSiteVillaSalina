@@ -1,0 +1,95 @@
+@use '../abstracts/' as *;
+
+.page-menu1-wrap {
+    display: flex; 
+    #sidebar-sticky {
+        width: 350px;
+        position: relative;
+        z-index: 100;
+        background: $color-main;
+    }
+    .sidebar {
+        width: 350px;
+        height: auto;
+        background: $color-main;
+        text-align: center;
+        padding: 191px 0;
+        
+        .header__logo {
+            margin-bottom: 131px;
+        }
+    
+        #main-nav .menu {
+            flex-direction: column;
+    
+            .sub-menu {
+                left: 100%;
+                top: 0;
+                li {
+                    margin-bottom: 0;
+                    a {
+                        padding: 10px 0;
+                        &::after {
+                            height: 1px;
+                        }
+                    }
+                }
+            }
+            li {
+                margin-right: 0;
+                margin-bottom: 47px;
+                width: 100%;
+                text-align: center;
+    
+                &::after  {
+                    display: none;
+                }
+    
+                a {
+                    margin: 0 auto;
+                    position: relative;
+    
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 0;
+                        height: 2px;
+                        background: #e6c9a2;
+                        @include transition3;
+                    }
+                }
+    
+                &:hover > a {
+                    &::after {
+                        width: 100%;
+                    }
+                }
+    
+                &.current-menu-item  > a {
+                    &::after {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    
+        .action {
+            margin-top: 76px;
+            h6 {
+                color: $color-hover;
+                text-transform: uppercase;
+                margin-bottom: 4px;
+            }
+    
+            h4 {
+                color: #fff;
+                text-transform: uppercase;
+                margin-bottom: 37px;
+                letter-spacing: 1.4px;
+            }
+    
+        }
+    }
+}
