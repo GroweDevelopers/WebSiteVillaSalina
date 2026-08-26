@@ -8,8 +8,8 @@ verificata automaticamente, pagina per pagina e viewport per viewport
 
 |                           | prima (ASP.NET) | dopo (Next.js) |
 | ------------------------- | --------------: | -------------: |
-| peso della home           |         6,36 MB |    **3,35 MB** |
-| peso della gallery        |        10,25 MB |    **3,83 MB** |
+| peso della home           |         6,36 MB |    **2,93 MB** |
+| peso della gallery        |        10,25 MB |    **3,03 MB** |
 | problemi di accessibilità |              95 |         **29** |
 | repository                |           89 MB |      **17 MB** |
 | jQuery e plugin           |          1,3 MB |          **0** |
@@ -27,15 +27,17 @@ Serve **Node 20.9 o superiore**.
 
 ## Comandi
 
-| comando             | cosa fa                               |
-| ------------------- | ------------------------------------- |
-| `npm run dev`       | server di sviluppo                    |
-| `npm run build`     | build di produzione                   |
-| `npm run start`     | serve la build                        |
-| `npm run lint`      | ESLint                                |
-| `npm run typecheck` | `tsc --noEmit`                        |
-| `npm run format`    | Prettier                              |
-| `npm run check`     | lint + typecheck + build, in sequenza |
+| comando             | cosa fa                                      |
+| ------------------- | -------------------------------------------- |
+| `npm run dev`       | server di sviluppo                           |
+| `npm run build`     | build di produzione                          |
+| `npm run start`     | serve la build                               |
+| `npm run lint`      | ESLint                                       |
+| `npm run typecheck` | `tsc --noEmit`                               |
+| `npm run format`    | Prettier                                     |
+| `npm run check`     | lint + typecheck + build, in sequenza        |
+| `npm run images`    | converte le foto in WebP (lo fa già `build`) |
+| `npm run prune`     | toglie dall'export gli asset non richiesti   |
 
 ## Struttura
 
@@ -93,22 +95,25 @@ laterale, pagina contatti e dati strutturati si aggiornano insieme.
 `width` e `height` nel file di `src/data/` corrispondente. Le dimensioni sono obbligatorie: senza,
 la pagina sobbalza mentre le immagini arrivano.
 
-## Requisiti di pubblicazione
+## Pubblicazione
 
-Il sito usa `next/image`, che converte le fotografie in **WebP** **al momento della richiesta**. Serve quindi un ambiente che esegua Node: `next start`, un container, Vercel,
-Netlify o simili.
+Il sito è pubblicato come **export statico su GitHub Pages**, dominio **www.villa-salina.com**.
+Ogni push su `main` fa partire [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml), che
+converte le immagini, genera l'export e lo pubblica.
 
-Se in futuro servisse un'esportazione puramente statica (`output: 'export'`), va aggiunto in
-`next.config.ts`:
+Istruzioni complete — record DNS, attivazione di Pages, cosa fare se qualcosa non torna — in
+[`docs/DEPLOY.md`](docs/DEPLOY.md).
 
-```ts
-images: {
-  unoptimized: true
-}
+Anteprima locale identica a Pages:
+
+```bash
+npm run build
+node tools/visual-check/serve-export.mjs 4310
 ```
 
-Le immagini tornano a essere servite come sono, e il peso delle pagine risale ai valori
-pre-ottimizzazione (circa 5 MB per la home). Tutto il resto continua a funzionare.
+Non essendoci un runtime Node in produzione, le fotografie non possono essere convertite su
+richiesta: le prepara `scripts/optimize-images.mjs` prima della build. Il perché delle scelte di
+formato e qualità è in [`src/lib/image.ts`](src/lib/image.ts).
 
 ## Verificare che non si sia rotto niente
 

@@ -21,6 +21,7 @@ a **Next.js 15 App Router + TypeScript**.
 
 - Piano completo e stato di avanzamento: [`PLAN.md`](PLAN.md)
 - Analisi dell'originale: [`docs/ANALISI-PROGETTO-ORIGINALE.md`](docs/ANALISI-PROGETTO-ORIGINALE.md)
+- Pubblicazione: export statico su GitHub Pages, vedi [`docs/DEPLOY.md`](docs/DEPLOY.md)
 - Progetto di origine: `C:\Users\Samar\source\repos\WebSiteVillaSalina`
 - Remote: https://github.com/GroweDevelopers/WebSiteVillaSalina.git
 

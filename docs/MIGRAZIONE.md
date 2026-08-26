@@ -12,10 +12,10 @@ schermo — ma pesa un terzo, non usa più jQuery, ha metadati e dati strutturat
 
 |                                        |        prima |    dopo |        |
 | -------------------------------------- | -----------: | ------: | ------ |
-| home                                   |      6,36 MB | 3,35 MB | −47 %  |
-| storia                                 |      4,55 MB | 2,49 MB | −45 %  |
-| gallery                                |     10,25 MB | 3,83 MB | −63 %  |
-| contatti                               |      6,09 MB | 4,38 MB | −28 %  |
+| home                                   |      6,36 MB | 2,93 MB | −54 %  |
+| storia                                 |      4,55 MB | 2,23 MB | −51 %  |
+| gallery                                |     10,25 MB | 3,03 MB | −70 %  |
+| contatti                               |      6,09 MB | 4,12 MB | −32 %  |
 | font per pagina                        |       864 KB |  456 KB | −47 %  |
 | CSS per pagina                         |       588 KB |  463 KB | −21 %  |
 | JavaScript di terze parti              |       1,3 MB |       0 | −100 % |
