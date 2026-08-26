@@ -12,3 +12,6 @@ tools
 
 # riscritto da Next a ogni build
 tsconfig.json
+
+# generato da scripts/optimize-images.mjs
+src/lib/image-manifest.json
