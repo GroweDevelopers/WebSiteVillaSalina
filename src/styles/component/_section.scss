@@ -1018,7 +1018,7 @@
     }
 
     .testimonials {
-        padding: 131px 0 188px;
+        padding: 100px 0 100px;
         background: #fff;
 
         .testimonials-content {
@@ -1281,7 +1281,7 @@
 }
 
 .testimonials {
-    padding: 136px 0 235px;
+    padding: 86px 0 135px;
     background: $color-main;
     position: relative;
     z-index: 1;
@@ -1667,9 +1667,8 @@
 }
 
 .booking {
-    background: url('./../../assets/images/section/booking.jpg') no-repeat;
+    background: url('./../../assets/images/my/tavolo.jpg') no-repeat;
     background-size: cover;
-    background-attachment: fixed;
     padding: 134px 0 133px;
     position: relative;
 
@@ -2512,7 +2511,7 @@
 }
 
 .s-formmail {
-    background: url(./../../assets/images/section/s-form.jpg) no-repeat;
+    background: url(./../../assets/images/my/sofa.jpg) no-repeat;
     background-position: center center;
     background-size: cover;
     position: relative;
@@ -3008,10 +3007,11 @@ form.s1 {
         background-image: url(./../../assets/images/section/bg-faq.jpg);
     }
     &.p-gallery {
-        background-image: url(./../../assets/images/section/bg-gallery.jpg);
+        /* background-image: url(./../../assets/images/close-up-photo-of-fresh-basil-italian-basilico-2023-11-27-05-18-07-utc.jpg); */
+        background-image: url(./../../assets/images/gallery.png);
     }
     &.p-history {
-        background-image: url(./../../assets/images/section/bg-history.jpg);
+        background-image: url(./../../assets/images/Foto-storica-moretta.jpg);
     }
     &.p-location {
         background-image: url(./../../assets/images/section/bg-location.jpg);
