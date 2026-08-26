@@ -22,10 +22,7 @@ const FREEZE = `
     transition-duration: 0s !important; transition-delay: 0s !important;
   }
   iframe { visibility: hidden !important; }
-  /* i caroselli in loop partono da slide diverse a seconda della versione di
-     Swiper: si nascondono mantenendo l'ingombro, il confronto riguarda tutto
-     il resto */
-  .imagesSwiper { visibility: hidden !important; }
+
 `
 
 fs.mkdirSync(OUT, { recursive: true })

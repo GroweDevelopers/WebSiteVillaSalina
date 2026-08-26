@@ -14,7 +14,9 @@
     "a11y:old": "node a11y.mjs http://localhost:4320",
     "images": "node imgquality.mjs",
     "widths": "node imgwidths.mjs",
-    "perf": "node perf.mjs"
+    "perf": "node perf.mjs",
+    "boxes": "node boxes.mjs",
+    "swiper": "node swiper.mjs 1920"
   },
   "dependencies": {
     "pixelmatch": "^7.1.0",
