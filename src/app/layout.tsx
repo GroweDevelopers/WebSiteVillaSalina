@@ -17,7 +17,12 @@ import '@fortawesome/fontawesome-free/css/all.min.css'
 import 'aos/dist/aos.css'
 
 export const metadata: Metadata = {
-  title: site.name,
+  metadataBase: new URL(site.url),
+  title: {
+    // Il layout Razor componeva "@ViewData[\"Title\"] - Villa Salina".
+    default: `${site.name} — ${site.tagline}`,
+    template: `%s - ${site.name}`,
+  },
   description: site.description,
 }
 
