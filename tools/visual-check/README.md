@@ -50,7 +50,21 @@ node measure.mjs /storia 390
 
 Le colonne `Δtop` e `Δh` devono essere tutte a zero. Le righe con scarto sono marcate `**`.
 
-### 3. Screenshot e altezze — `npm run shots`
+### 3. Riquadro di ogni elemento — `npm run boxes`
+
+Il controllo piu' completo. Per **ogni elemento visibile** del DOM confronta posizione
+orizzontale, posizione verticale, larghezza e altezza, su tutte le pagine e tre viewport.
+Esce con codice 1 se qualcosa si sposta di piu' di 2 px.
+
+```bash
+npm run boxes
+# 2165 elementi confrontati su 3176, 0 fuori posto oltre i 2 px
+```
+
+Esiste perche' misurare solo le altezze non bastava: i caroselli hanno altezza fissa, e restavano
+perfetti in verticale anche mostrando una slide su tre.
+
+### 4. Screenshot e altezze — `npm run shots`
 
 Fotografa ogni pagina a piena altezza su tre viewport (1920, 768, 390), confronta le altezze
 totali e segnala le risorse che rispondono con un errore.
@@ -59,7 +73,7 @@ Durante lo scatto disattiva le animazioni, forza il caricamento immediato delle 
 (altrimenti quelle in differita restano vuote nello screenshot) e nasconde i caroselli in loop,
 che partono da slide diverse a seconda della versione di Swiper.
 
-### 4. Differenza al pixel — `npm run pixels`
+### 5. Differenza al pixel — `npm run pixels`
 
 Confronta gli screenshot generati dal punto 3 e scrive un `-diff.png` per ogni pagina che
 supera lo 0,05 %.
@@ -71,6 +85,7 @@ Al momento della migrazione il confronto dava:
 | controllo | esito |
 |---|---|
 | testo visibile, 5 pagine | **nessuna differenza** |
+| riquadro di ogni elemento | **2165 su 2165 allineati** |
 | geometria, 5 pagine × 3 viewport | **15 su 15 identiche** |
 | posizione e altezza di ogni sezione | **tutte a zero** |
 | differenza al pixel | **da 0,005 % a 0,12 %** |
@@ -89,3 +104,7 @@ ricampionamento delle fotografie, impercettibile a occhio.
 | `crop.mjs src out y h [x w]` | ritaglia una porzione di screenshot |
 | `sidebyside.mjs a.png b.png out.png` | affianca due ritagli per il confronto visivo |
 | `stats.mjs a.png b.png x y w h` | scarto medio e massimo per canale in una regione |
+| `npm run swiper` | posizione e contenuto di ogni slide dei caroselli, sui due siti |
+| `npm run images` | risoluzione reale servita per ogni immagine, sui due siti |
+| `npm run perf` | peso e numero di richieste per pagina |
+| `npm run a11y` | audit di accessibilita' con axe |

@@ -47,7 +47,25 @@ Per ogni sezione principale (`.top-bar`, `#header_main`, `.mySwiper`, `.page-tit
 
 ✅ **Scarto zero in tutte e quindici le combinazioni.**
 
-## 4. Differenza al pixel — fra 0,005 % e 0,12 %
+## 4. Riquadro di ogni elemento — 2165 su 2165 allineati
+
+Per ogni elemento visibile del DOM vengono confrontati posizione orizzontale, posizione
+verticale, larghezza e altezza, su 5 pagine per 3 viewport.
+
+```
+$ cd tools/visual-check && npm run boxes
+/ @1920px        187/295 elementi accoppiati  ->  ok
+…
+2165 elementi confrontati su 3176, 0 fuori posto oltre i 2 px
+```
+
+Gli elementi non accoppiati sono quelli che esistono solo da una parte, per scelta: i pulsanti
+diventati `<button>`, il menu mobile che non sposta piu' nodi, lo spaziatore dell'header fisso.
+
+Questo controllo e' nato **dopo** aver lasciato passare un difetto vero (vedi sotto): serviva
+qualcosa che guardasse anche l'asse orizzontale.
+
+## 5. Differenza al pixel — fra 0,005 % e 0,12 %
 
 | pagina       | desktop |  tablet |  mobile |
 | ------------ | ------: | ------: | ------: |
@@ -87,6 +105,33 @@ occupava zero pixel: la sezione della menzione Michelin perdeva **70 px** e la p
 durante lo scorrimento. Ora ogni immagine dichiara le proprie dimensioni intrinseche e il browser
 riserva lo spazio in anticipo — il difetto è sparito e ne guadagna anche il punteggio di
 stabilità visiva.
+
+### I caroselli mostravano una slide su tre
+
+**Difetto sfuggito ai primi controlli, segnalato dall'utente.**
+
+Swiper fino alla versione 10 costruiva il loop **duplicando le slide**: con 3 immagini ne
+generava 9, e la striscia risultava piena. Dalla 11 il loop e' implementato spostando le slide
+reali, e se non ce ne sono almeno il doppio di quelle visibili
+(`slidesPerView: 2.42` → ne servono 5) smette di funzionare **senza segnalare niente**.
+
+Risultato: restavano le 3 slide originali, di cui una sola dentro lo schermo, e i due terzi
+destri della striscia erano vuoti. Si vedeva su home, gallery, contatti e prenotazioni.
+
+Perche' non l'avevo visto:
+
+1. La striscia ha `height: 459px` **fissa**. Con una slide o con nove, l'altezza della sezione e
+   della pagina non cambiava di un pixel: il controllo sulla geometria verticale tornava perfetto.
+2. Nel confronto al pixel avevo aggiunto `.imagesSwiper { visibility: hidden }`, perche' i due
+   Swiper partivano da slide diverse e sporcavano il risultato. Ho mascherato proprio la cosa
+   rotta invece di indagarla.
+
+Correzione: la sequenza di immagini viene ripetuta finche' non ci sono abbastanza slide, che e'
+esattamente quello che faceva da solo il vecchio Swiper. Le posizioni tornano identiche, `transform`
+del wrapper compresa (`-1816.86px` su entrambi i siti).
+
+Per non ripetere l'errore e' stato aggiunto `boxes.mjs`, che confronta il riquadro di ogni
+elemento, e la maschera sui caroselli e' stata rimossa.
 
 ### Il padding delle colonne di Bootstrap
 
